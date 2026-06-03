@@ -1,0 +1,42 @@
+Используются параметры запуска из src\SysAssist.Api\Properties\launchSettings.json...
+Сборка…
+[11:22:16 INF] Applying SysAssist database migrations and seed data.
+[11:22:16 INF] Cockroach Cloud detected; creating schema without PostgreSQL migration locks.
+[11:22:21 INF] Seeding SysAssist database.
+[11:22:40 INF] SysAssist database is ready.
+[11:22:40 INF] Now listening on: http://localhost:5089
+[11:22:40 INF] Application started. Press Ctrl+C to shut down.
+[11:22:40 INF] Hosting environment: Development
+[11:22:40 INF] Content root path: C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api
+[11:22:56 INF] HTTP GET /health/ready responded 200 in 3873.4776 ms
+[11:23:14 INF] HTTP POST /api/auth/login responded 200 in 1225.0129 ms
+[11:23:14 INF] HTTP GET /api/modules responded 200 in 548.9953 ms
+[11:23:18 INF] Start processing HTTP request GET http://34.107.8.65:3000/api/health
+[11:23:18 INF] Sending HTTP request GET http://34.107.8.65:3000/api/health
+[11:23:19 INF] Received HTTP response headers after 1154.0296ms - 200
+[11:23:19 INF] End processing HTTP request after 1180.1962ms - 200
+[11:23:20 INF] Start processing HTTP request GET http://34.107.8.65:9115/probe
+[11:23:20 INF] Sending HTTP request GET http://34.107.8.65:9115/probe
+[11:23:33 INF] Start processing HTTP request GET http://34.107.8.65:9100/metrics
+[11:23:33 INF] Sending HTTP request GET http://34.107.8.65:9100/metrics
+[11:23:46 INF] Start processing HTTP request GET http://34.107.8.65/
+[11:23:46 INF] Sending HTTP request GET http://34.107.8.65/
+[11:23:48 INF] Received HTTP response headers after 1672.291ms - 200
+[11:23:48 INF] End processing HTTP request after 1673.7821ms - 200
+[11:24:02 INF] Start processing HTTP request GET http://34.107.8.65:9093/-/ready
+[11:24:02 INF] Sending HTTP request GET http://34.107.8.65:9093/-/ready
+[11:24:03 INF] Received HTTP response headers after 1131.4984ms - 200
+[11:24:03 INF] End processing HTTP request after 1132.7106ms - 200
+[11:24:03 INF] Start processing HTTP request GET http://34.107.8.65:9090/-/ready
+[11:24:03 INF] Sending HTTP request GET http://34.107.8.65:9090/-/ready
+[11:24:04 INF] Received HTTP response headers after 1118.5598ms - 200
+[11:24:04 INF] End processing HTTP request after 1119.9818ms - 200
+[11:24:21 INF] HTTP POST /api/diagnostics/run responded 200 in 66843.9196 ms
+[11:24:25 INF] HTTP GET /api/diagnostics responded 200 in 3384.7344 ms
+[11:24:25 INF] HTTP GET /api/modules responded 200 in 491.0247 ms
+[11:25:09 INF] HTTP POST /api/auth/login responded 200 in 1079.9971 ms
+[11:25:09 INF] HTTP GET /api/modules responded 200 in 523.6908 ms
+[11:25:11 INF] HTTP POST /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/disable responded 200 in 2016.9835 ms
+[11:25:13 INF] HTTP POST /api/modules/019e8055-e953-7e85-b490-c2f5620466f6/disable responded 200 in 2005.2454 ms
+[11:25:15 INF] HTTP POST /api/modules/019e8055-e953-7ba4-8ddd-ac537092eafd/disable responded 200 in 1995.1311 ms
+[11:25:17 INF] HTTP POST /api/modules/019e8055-e953-7c28-a239-b3c1fecb7e88/disable responded 200 in 1985.0887 ms

@@ -1,0 +1,1917 @@
+Используются параметры запуска из src\SysAssist.Api\Properties\launchSettings.json...
+Сборка…
+[14:55:04 INF] Applying SysAssist database migrations and seed data.
+[14:55:04 INF] Cockroach Cloud detected; creating schema without PostgreSQL migration locks.
+[14:55:09 INF] Seeding SysAssist database.
+[14:55:27 INF] SysAssist database is ready.
+[14:55:27 INF] Now listening on: http://localhost:5089
+[14:55:27 INF] Application started. Press Ctrl+C to shut down.
+[14:55:27 INF] Hosting environment: Development
+[14:55:27 INF] Content root path: C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api
+[14:55:43 INF] HTTP GET /health responded 200 in 31.8818 ms
+[14:55:43 INF] HTTP POST /api/auth/login responded 200 in 656.2642 ms
+[14:55:43 INF] HTTP GET /api/license responded 200 in 44.6244 ms
+[14:55:44 INF] HTTP GET /api/modules responded 200 in 610.5288 ms
+[14:55:47 INF] HTTP GET /api/dashboard responded 200 in 2847.0777 ms
+[14:55:50 INF] HTTP GET /api/diagnostics responded 200 in 3337.1160 ms
+[14:55:58 INF] HTTP POST /api/auth/login responded 200 in 533.7392 ms
+[14:56:02 INF] Start processing HTTP request GET http://34.107.8.65:3000/api/health
+[14:56:02 INF] Sending HTTP request GET http://34.107.8.65:3000/api/health
+[14:56:03 INF] Received HTTP response headers after 1216.7381ms - 200
+[14:56:03 INF] End processing HTTP request after 1225.5791ms - 200
+[14:56:04 INF] Start processing HTTP request GET http://34.107.8.65:9115/probe
+[14:56:04 INF] Sending HTTP request GET http://34.107.8.65:9115/probe
+[14:56:17 INF] Start processing HTTP request GET http://34.107.8.65:9100/metrics
+[14:56:17 INF] Sending HTTP request GET http://34.107.8.65:9100/metrics
+[14:56:31 INF] Start processing HTTP request GET http://34.107.8.65/
+[14:56:31 INF] Sending HTTP request GET http://34.107.8.65/
+[14:56:33 INF] Received HTTP response headers after 1789.8773ms - 200
+[14:56:33 INF] End processing HTTP request after 1799.7276ms - 200
+[14:56:48 INF] Start processing HTTP request GET http://34.107.8.65:9093/-/ready
+[14:56:48 INF] Sending HTTP request GET http://34.107.8.65:9093/-/ready
+[14:56:49 INF] Received HTTP response headers after 1160.2324ms - 200
+[14:56:49 INF] End processing HTTP request after 1162.5505ms - 200
+[14:56:49 INF] Start processing HTTP request GET http://34.107.8.65:9090/-/ready
+[14:56:49 INF] Sending HTTP request GET http://34.107.8.65:9090/-/ready
+[14:56:50 INF] Received HTTP response headers after 1150.4438ms - 200
+[14:56:50 INF] End processing HTTP request after 1157.4458ms - 200
+[14:57:07 INF] HTTP POST /api/diagnostics/run responded 200 in 69122.8195 ms
+[14:57:11 INF] HTTP GET /api/diagnostics responded 200 in 3338.3441 ms
+[14:57:18 INF] HTTP POST /api/auth/login responded 200 in 524.6600 ms
+[14:57:19 INF] HTTP GET /api/modules responded 200 in 747.4626 ms
+[14:57:26 INF] HTTP POST /api/auth/login responded 200 in 504.7534 ms
+[14:57:26 INF] HTTP GET /api/modules responded 200 in 508.3780 ms
+[14:57:28 INF] HTTP GET /api/modules/019e8055-e953-7c88-ae3b-dfa4a6a2960a/settings responded 200 in 1555.0717 ms
+[14:58:11 INF] HTTP OPTIONS /api/diagnostics responded 204 in 1.2591 ms
+[14:58:11 INF] HTTP OPTIONS /api/modules responded 204 in 0.2027 ms
+[14:58:11 INF] HTTP OPTIONS /api/license responded 204 in 0.0804 ms
+[14:58:11 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0296 ms
+[14:58:11 INF] HTTP OPTIONS /api/modules responded 204 in 0.0269 ms
+[14:58:11 INF] HTTP GET /api/diagnostics responded 401 in 7.2204 ms
+[14:58:11 INF] HTTP GET /api/modules responded 401 in 0.5033 ms
+[14:58:11 INF] HTTP GET /api/license responded 401 in 0.3052 ms
+[14:58:11 INF] HTTP GET /api/dashboard responded 401 in 0.2141 ms
+[14:58:11 INF] HTTP GET /api/modules responded 401 in 0.1682 ms
+[14:58:12 INF] HTTP OPTIONS /api/auth/login responded 204 in 0.0669 ms
+[14:58:13 INF] HTTP POST /api/auth/login responded 200 in 530.3759 ms
+[14:58:13 INF] HTTP GET /api/license responded 200 in 0.2561 ms
+[14:58:16 INF] HTTP GET /api/diagnostics responded 200 in 3322.0578 ms
+[14:58:16 INF] HTTP GET /api/modules responded 200 in 3548.5388 ms
+[14:58:17 INF] HTTP GET /api/modules responded 200 in 531.5853 ms
+[14:58:23 INF] HTTP GET /api/dashboard responded 200 in 10453.3370 ms
+[14:58:25 INF] HTTP OPTIONS /api/modules responded 204 in 0.0840 ms
+[14:58:25 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0260 ms
+[14:58:25 INF] HTTP GET /api/custom-modules responded 200 in 5.5379 ms
+[14:58:25 INF] HTTP GET /api/modules responded 200 in 520.8997 ms
+[14:58:25 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.3254 ms
+[14:58:27 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1610.8749 ms
+[14:58:30 INF] HTTP OPTIONS /api/actions responded 204 in 0.0667 ms
+[14:58:30 INF] HTTP OPTIONS /api/modules responded 204 in 0.0296 ms
+[14:58:31 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.0870 ms
+[14:58:31 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.1827 ms
+[14:58:31 INF] HTTP GET /api/custom-modules responded 200 in 0.9568 ms
+[14:58:32 INF] HTTP GET /api/actions responded 200 in 2398.3804 ms
+[14:58:32 INF] HTTP GET /api/modules responded 200 in 2417.3035 ms
+[14:58:33 INF] HTTP GET /api/custom-modules responded 200 in 0.8585 ms
+[14:58:33 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 2261.4559 ms
+[14:58:35 INF] HTTP GET /api/modules responded 200 in 1992.5139 ms
+[14:58:42 INF] HTTP OPTIONS /api/modules responded 204 in 0.1666 ms
+[14:58:42 INF] HTTP OPTIONS /api/modules responded 204 in 0.0216 ms
+[14:58:42 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0173 ms
+[14:58:42 INF] HTTP GET /api/custom-modules responded 200 in 0.5927 ms
+[14:58:43 INF] HTTP GET /api/modules responded 200 in 523.5831 ms
+[14:58:43 INF] HTTP GET /api/modules responded 200 in 519.8602 ms
+[14:58:44 INF] HTTP GET /api/custom-modules responded 200 in 0.8619 ms
+[14:58:45 INF] HTTP GET /api/modules responded 200 in 888.7702 ms
+[14:58:45 INF] HTTP GET /api/custom-modules responded 200 in 0.7672 ms
+[14:58:45 INF] HTTP GET /api/modules responded 200 in 512.5352 ms
+[14:58:46 INF] HTTP GET /api/custom-modules responded 200 in 0.7192 ms
+[14:58:46 INF] HTTP GET /api/modules responded 200 in 553.7663 ms
+[14:58:47 INF] HTTP GET /api/modules responded 200 in 882.4087 ms
+[14:58:47 INF] HTTP GET /api/modules responded 200 in 547.3343 ms
+[14:58:48 INF] HTTP GET /api/modules responded 200 in 521.0022 ms
+[14:58:49 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0720 ms
+[14:58:49 INF] HTTP OPTIONS /api/modules responded 204 in 0.0185 ms
+[14:58:50 INF] HTTP GET /api/modules responded 200 in 987.2453 ms
+[14:58:52 INF] HTTP GET /api/dashboard responded 200 in 3132.7483 ms
+[14:58:53 INF] HTTP OPTIONS /api/actions responded 204 in 0.0437 ms
+[14:58:53 INF] HTTP GET /api/modules responded 200 in 541.8007 ms
+[14:58:54 INF] HTTP GET /api/actions responded 200 in 794.2524 ms
+[14:58:55 INF] HTTP OPTIONS /api/audit responded 204 in 0.0530 ms
+[14:58:57 INF] HTTP GET /api/audit responded 200 in 1783.2588 ms
+[14:59:04 INF] HTTP OPTIONS /api/actions responded 204 in 0.1631 ms
+[14:59:04 INF] HTTP OPTIONS /api/modules responded 204 in 0.0381 ms
+[14:59:05 INF] HTTP OPTIONS /api/auth/login responded 204 in 0.0510 ms
+[14:59:05 INF] HTTP GET /api/modules responded 200 in 919.3418 ms
+[14:59:05 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.0411 ms
+[14:59:05 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0341 ms
+[14:59:05 INF] HTTP GET /api/custom-modules responded 200 in 0.7057 ms
+[14:59:08 INF] HTTP OPTIONS /api/approvals responded 204 in 0.0358 ms
+[14:59:08 INF] HTTP OPTIONS /api/events responded 204 in 0.0127 ms
+[14:59:09 INF] HTTP GET /api/custom-modules responded 200 in 0.9143 ms
+[14:59:12 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 6426.4752 ms
+[14:59:12 INF] HTTP POST /api/auth/login responded 200 in 7090.7154 ms
+[14:59:12 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0465 ms
+[14:59:12 INF] HTTP OPTIONS /api/modules responded 204 in 0.0339 ms
+[14:59:12 INF] HTTP OPTIONS /api/license responded 204 in 0.0132 ms
+[14:59:12 INF] HTTP GET /api/license responded 200 in 0.2809 ms
+[14:59:12 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0407 ms
+[14:59:12 INF] HTTP OPTIONS /api/modules responded 204 in 0.0354 ms
+[14:59:12 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0146 ms
+[14:59:12 INF] HTTP GET /api/custom-modules responded 200 in 0.8025 ms
+[14:59:14 INF] HTTP GET /api/custom-modules responded 200 in 0.5773 ms
+[14:59:14 INF] HTTP GET /api/modules responded 200 in 2617.4398 ms
+[14:59:14 INF] HTTP GET /api/modules responded 200 in 9125.9787 ms
+[14:59:14 INF] HTTP GET /api/actions responded 200 in 10149.3473 ms
+[14:59:15 INF] HTTP GET /api/modules responded 200 in 672.8467 ms
+[14:59:15 INF] HTTP GET /api/modules responded 200 in 706.8442 ms
+[14:59:16 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0338 ms
+[14:59:16 INF] HTTP GET /api/modules responded 200 in 1156.0312 ms
+[14:59:18 INF] HTTP GET /api/modules responded 200 in 1612.7646 ms
+[14:59:21 INF] HTTP GET /api/diagnostics responded 200 in 9060.8210 ms
+[14:59:22 INF] HTTP GET /api/modules responded 200 in 3671.2041 ms
+[14:59:23 INF] HTTP GET /api/events responded 200 in 14764.8547 ms
+[14:59:23 INF] HTTP GET /api/dashboard responded 200 in 10958.1299 ms
+[14:59:23 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[14:59:27 INF] HTTP GET /api/dashboard responded 200 in 11008.7853 ms
+[14:59:27 INF] HTTP GET /api/approvals responded 200 in 19574.1662 ms
+[14:59:55 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.1442 ms
+[14:59:55 INF] HTTP OPTIONS /api/modules responded 204 in 0.0333 ms
+[14:59:55 INF] HTTP OPTIONS /api/license responded 204 in 0.0117 ms
+[14:59:55 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0170 ms
+[14:59:55 INF] HTTP OPTIONS /api/modules responded 204 in 0.0195 ms
+[14:59:55 INF] HTTP GET /api/license responded 200 in 0.4235 ms
+[14:59:58 INF] HTTP GET /api/modules responded 200 in 3629.3272 ms
+[14:59:59 INF] HTTP GET /api/modules responded 200 in 587.1519 ms
+[15:00:02 INF] HTTP GET /api/diagnostics responded 200 in 7449.5155 ms
+[15:00:26 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0338 ms
+[15:00:26 INF] HTTP OPTIONS /api/modules responded 204 in 0.0321 ms
+[15:00:26 INF] HTTP OPTIONS /api/license responded 204 in 0.0270 ms
+[15:00:26 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0258 ms
+[15:00:26 INF] HTTP GET /api/license responded 200 in 0.2813 ms
+[15:00:27 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0328 ms
+[15:00:27 INF] HTTP OPTIONS /api/modules responded 204 in 0.0348 ms
+[15:00:27 INF] HTTP OPTIONS /api/license responded 204 in 0.0098 ms
+[15:00:27 INF] HTTP OPTIONS /api/modules responded 204 in 0.0203 ms
+[15:00:27 INF] HTTP GET /api/license responded 200 in 0.1258 ms
+[15:00:30 INF] HTTP GET /api/modules responded 200 in 3542.2145 ms
+[15:00:30 INF] HTTP GET /api/modules responded 200 in 549.9018 ms
+[15:00:31 INF] HTTP GET /api/diagnostics responded 200 in 4501.3287 ms
+[15:00:31 INF] HTTP GET /api/modules responded 200 in 3841.4577 ms
+[15:00:32 INF] HTTP GET /api/modules responded 200 in 505.9818 ms
+[15:00:33 INF] HTTP GET /api/dashboard responded 200 in 6452.1926 ms
+[15:00:33 INF] HTTP GET /api/dashboard responded 200 in 38449.5322 ms
+[15:00:34 INF] HTTP OPTIONS /api/modules responded 204 in 0.0393 ms
+[15:00:34 INF] HTTP OPTIONS /api/license responded 204 in 0.0172 ms
+[15:00:34 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0202 ms
+[15:00:34 INF] HTTP OPTIONS /api/modules responded 204 in 0.0129 ms
+[15:00:34 INF] HTTP GET /api/license responded 200 in 0.1728 ms
+[15:00:34 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0375 ms
+[15:00:34 INF] HTTP OPTIONS /api/modules responded 204 in 0.0274 ms
+[15:00:34 INF] HTTP OPTIONS /api/license responded 204 in 0.0361 ms
+[15:00:34 INF] HTTP GET /api/license responded 200 in 0.1479 ms
+[15:00:34 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0225 ms
+[15:00:34 INF] HTTP GET /api/diagnostics responded 200 in 6575.0939 ms
+[15:00:34 INF] HTTP GET /api/modules responded 200 in 533.7130 ms
+[15:00:34 INF] HTTP GET /api/modules responded 200 in 544.8973 ms
+[15:00:35 INF] HTTP GET /api/modules responded 200 in 505.7826 ms
+[15:00:35 INF] HTTP GET /api/modules responded 200 in 529.2456 ms
+[15:00:37 INF] HTTP GET /api/dashboard responded 200 in 2952.3809 ms
+[15:00:37 INF] HTTP GET /api/dashboard responded 200 in 3232.3120 ms
+[15:00:37 INF] HTTP GET /api/diagnostics responded 200 in 3517.7092 ms
+[15:01:49 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0365 ms
+[15:01:49 INF] HTTP OPTIONS /api/license responded 204 in 0.0236 ms
+[15:01:49 INF] HTTP OPTIONS /api/modules responded 204 in 0.0237 ms
+[15:01:49 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0435 ms
+[15:01:49 INF] HTTP OPTIONS /api/modules responded 204 in 0.0204 ms
+[15:01:49 INF] HTTP OPTIONS /api/license responded 204 in 0.0096 ms
+[15:01:49 INF] HTTP GET /api/license responded 200 in 0.2296 ms
+[15:01:49 INF] HTTP GET /api/license responded 200 in 0.1519 ms
+[15:01:49 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0348 ms
+[15:01:49 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0342 ms
+[15:01:50 INF] HTTP GET /api/modules responded 200 in 534.5244 ms
+[15:01:50 INF] HTTP GET /api/modules responded 200 in 634.0117 ms
+[15:01:50 INF] HTTP GET /api/modules responded 200 in 517.7929 ms
+[15:01:50 INF] HTTP GET /api/modules responded 200 in 535.6193 ms
+[15:01:52 INF] HTTP GET /api/dashboard responded 200 in 2838.3097 ms
+[15:01:52 INF] HTTP GET /api/dashboard responded 200 in 3044.5774 ms
+[15:01:53 INF] HTTP GET /api/diagnostics responded 200 in 3595.1149 ms
+[15:01:53 INF] HTTP GET /api/diagnostics responded 200 in 3788.0676 ms
+[15:02:34 INF] HTTP OPTIONS /api/modules responded 204 in 0.0338 ms
+[15:02:34 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0383 ms
+[15:02:34 INF] HTTP OPTIONS /api/license responded 204 in 0.0077 ms
+[15:02:34 INF] HTTP GET /api/license responded 200 in 0.1253 ms
+[15:02:34 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0183 ms
+[15:02:34 INF] HTTP GET /api/modules responded 200 in 513.8407 ms
+[15:02:35 INF] HTTP GET /api/modules responded 200 in 1133.4208 ms
+[15:02:37 INF] HTTP GET /api/dashboard responded 200 in 3496.7626 ms
+[15:02:38 INF] HTTP GET /api/diagnostics responded 200 in 4210.3337 ms
+[15:03:32 INF] HTTP POST /api/auth/login responded 200 in 612.1941 ms
+[15:03:32 INF] HTTP GET /api/license responded 200 in 0.2397 ms
+[15:03:32 INF] HTTP GET /api/modules responded 200 in 558.2832 ms
+[15:03:35 INF] HTTP GET /api/dashboard responded 200 in 2944.1101 ms
+[15:03:39 INF] HTTP GET /api/diagnostics responded 200 in 3754.0388 ms
+[15:03:47 INF] HTTP POST /api/auth/login responded 200 in 521.4749 ms
+[15:03:48 INF] HTTP GET /api/modules responded 200 in 548.9628 ms
+[15:03:55 INF] HTTP POST /api/auth/login responded 200 in 577.7186 ms
+[15:03:55 INF] HTTP GET /api/license responded 200 in 0.2816 ms
+[15:03:55 INF] HTTP GET /api/modules responded 200 in 528.2618 ms
+[15:03:58 INF] HTTP GET /api/dashboard responded 200 in 2997.7471 ms
+[15:04:02 INF] HTTP GET /api/diagnostics responded 200 in 3971.1953 ms
+[15:04:40 INF] HTTP OPTIONS /api/modules responded 204 in 0.0340 ms
+[15:04:40 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0341 ms
+[15:04:40 INF] HTTP OPTIONS /api/license responded 204 in 0.0101 ms
+[15:04:40 INF] HTTP GET /api/license responded 200 in 0.1336 ms
+[15:04:40 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0277 ms
+[15:04:41 INF] HTTP GET /api/modules responded 200 in 494.6789 ms
+[15:04:41 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0388 ms
+[15:04:41 INF] HTTP OPTIONS /api/modules responded 204 in 0.0505 ms
+[15:04:41 INF] HTTP OPTIONS /api/license responded 204 in 0.0237 ms
+[15:04:41 INF] HTTP GET /api/license responded 200 in 0.2423 ms
+[15:04:41 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0325 ms
+[15:04:41 INF] HTTP GET /api/modules responded 200 in 536.7920 ms
+[15:04:42 INF] HTTP GET /api/modules responded 200 in 525.1203 ms
+[15:04:42 INF] HTTP GET /api/modules responded 200 in 549.0184 ms
+[15:04:43 INF] HTTP GET /api/dashboard responded 200 in 2851.2334 ms
+[15:04:44 INF] HTTP GET /api/diagnostics responded 200 in 3567.8376 ms
+[15:04:44 INF] HTTP GET /api/dashboard responded 200 in 3287.5953 ms
+[15:04:45 INF] HTTP GET /api/diagnostics responded 200 in 3849.1263 ms
+[15:05:04 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0353 ms
+[15:05:04 INF] HTTP OPTIONS /api/license responded 204 in 0.0117 ms
+[15:05:04 INF] HTTP OPTIONS /api/modules responded 204 in 0.0114 ms
+[15:05:04 INF] HTTP GET /api/license responded 200 in 0.1638 ms
+[15:05:04 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0269 ms
+[15:05:04 INF] HTTP GET /api/modules responded 200 in 522.6745 ms
+[15:05:05 INF] HTTP GET /api/modules responded 200 in 634.7323 ms
+[15:05:07 INF] HTTP GET /api/dashboard responded 200 in 3139.1905 ms
+[15:05:08 INF] HTTP GET /api/diagnostics responded 200 in 4122.0246 ms
+[15:06:21 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0289 ms
+[15:06:21 INF] HTTP OPTIONS /api/modules responded 204 in 0.0106 ms
+[15:06:21 INF] HTTP OPTIONS /api/license responded 204 in 0.0090 ms
+[15:06:21 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0100 ms
+[15:06:21 INF] HTTP OPTIONS /api/modules responded 204 in 0.0276 ms
+[15:06:21 INF] HTTP GET /api/license responded 200 in 0.1865 ms
+[15:06:25 INF] HTTP GET /api/modules responded 200 in 4665.3062 ms
+[15:06:26 INF] HTTP GET /api/modules responded 200 in 586.1890 ms
+[15:06:28 INF] HTTP GET /api/dashboard responded 200 in 6894.5069 ms
+[15:06:29 INF] HTTP GET /api/diagnostics responded 200 in 7979.8705 ms
+[15:08:25 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0509 ms
+[15:08:25 INF] HTTP OPTIONS /api/modules responded 204 in 0.0195 ms
+[15:08:25 INF] HTTP OPTIONS /api/license responded 204 in 0.0125 ms
+[15:08:25 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0099 ms
+[15:08:25 INF] HTTP OPTIONS /api/modules responded 204 in 0.0131 ms
+[15:08:25 INF] HTTP GET /api/license responded 200 in 0.1221 ms
+[15:08:26 INF] HTTP GET /api/modules responded 200 in 529.3228 ms
+[15:08:26 INF] HTTP GET /api/modules responded 200 in 520.4316 ms
+[15:08:28 INF] HTTP GET /api/dashboard responded 200 in 3200.7382 ms
+[15:08:29 INF] HTTP GET /api/diagnostics responded 200 in 3739.5896 ms
+[15:13:05 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0400 ms
+[15:13:05 INF] HTTP OPTIONS /api/modules responded 204 in 0.0357 ms
+[15:13:05 INF] HTTP OPTIONS /api/license responded 204 in 0.0297 ms
+[15:13:05 INF] HTTP OPTIONS /api/modules responded 204 in 0.0133 ms
+[15:13:05 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0248 ms
+[15:13:05 INF] HTTP GET /api/license responded 200 in 0.1450 ms
+[15:13:09 INF] HTTP GET /api/modules responded 200 in 4484.9740 ms
+[15:13:10 INF] HTTP GET /api/modules responded 200 in 548.0125 ms
+[15:13:12 INF] HTTP GET /api/dashboard responded 200 in 6725.8581 ms
+[15:13:13 INF] HTTP GET /api/diagnostics responded 200 in 7682.2005 ms
+[15:13:20 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0793 ms
+[15:13:20 INF] HTTP OPTIONS /api/modules responded 204 in 0.0291 ms
+[15:13:20 INF] HTTP OPTIONS /api/license responded 204 in 0.0113 ms
+[15:13:20 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0097 ms
+[15:13:20 INF] HTTP OPTIONS /api/modules responded 204 in 0.0222 ms
+[15:13:20 INF] HTTP GET /api/license responded 200 in 0.1881 ms
+[15:13:21 INF] HTTP GET /api/modules responded 200 in 564.6153 ms
+[15:13:21 INF] HTTP GET /api/license responded 200 in 0.2274 ms
+[15:13:22 INF] HTTP GET /api/modules responded 200 in 615.3653 ms
+[15:13:22 INF] HTTP GET /api/modules responded 200 in 548.3488 ms
+[15:13:23 INF] HTTP GET /api/dashboard responded 200 in 2797.1724 ms
+[15:13:24 INF] HTTP GET /api/diagnostics responded 200 in 3799.9013 ms
+[15:13:58 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0331 ms
+[15:13:58 INF] HTTP OPTIONS /api/modules responded 204 in 0.0332 ms
+[15:13:58 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0083 ms
+[15:13:58 INF] HTTP OPTIONS /api/license responded 204 in 0.0074 ms
+[15:13:58 INF] HTTP OPTIONS /api/modules responded 204 in 0.0125 ms
+[15:13:58 INF] HTTP GET /api/license responded 200 in 0.1571 ms
+[15:13:59 INF] HTTP GET /api/modules responded 200 in 538.2697 ms
+[15:14:00 INF] HTTP GET /api/modules responded 200 in 539.3434 ms
+[15:14:01 INF] HTTP GET /api/dashboard responded 200 in 2801.1894 ms
+[15:14:02 INF] HTTP GET /api/diagnostics responded 200 in 3459.2314 ms
+[15:17:11 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0310 ms
+[15:17:11 INF] HTTP OPTIONS /api/modules responded 204 in 0.0246 ms
+[15:17:11 INF] HTTP OPTIONS /api/license responded 204 in 0.0200 ms
+[15:17:11 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0223 ms
+[15:17:11 INF] HTTP OPTIONS /api/modules responded 204 in 0.0091 ms
+[15:17:11 INF] HTTP GET /api/license responded 200 in 0.1406 ms
+[15:17:12 INF] HTTP GET /api/modules responded 200 in 535.1162 ms
+[15:17:12 INF] HTTP GET /api/modules responded 200 in 568.9269 ms
+[15:17:14 INF] HTTP GET /api/dashboard responded 200 in 2957.9088 ms
+[15:17:15 INF] HTTP GET /api/diagnostics responded 200 in 3513.4210 ms
+[15:19:18 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0306 ms
+[15:19:18 INF] HTTP OPTIONS /api/modules responded 204 in 0.0134 ms
+[15:19:18 INF] HTTP OPTIONS /api/license responded 204 in 0.0102 ms
+[15:19:18 INF] HTTP GET /api/license responded 200 in 0.1220 ms
+[15:19:18 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0123 ms
+[15:19:22 INF] HTTP GET /api/modules responded 200 in 4033.4608 ms
+[15:19:22 INF] HTTP GET /api/modules responded 200 in 517.6302 ms
+[15:19:24 INF] HTTP GET /api/dashboard responded 200 in 6587.5672 ms
+[15:19:25 INF] HTTP GET /api/diagnostics responded 200 in 7213.1379 ms
+[15:20:53 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0301 ms
+[15:20:53 INF] HTTP OPTIONS /api/license responded 204 in 0.0121 ms
+[15:20:53 INF] HTTP OPTIONS /api/modules responded 204 in 0.0084 ms
+[15:20:53 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0097 ms
+[15:20:53 INF] HTTP OPTIONS /api/modules responded 204 in 0.0136 ms
+[15:20:53 INF] HTTP GET /api/license responded 200 in 0.4636 ms
+[15:20:53 INF] HTTP GET /api/modules responded 200 in 716.8629 ms
+[15:20:54 INF] HTTP GET /api/modules responded 200 in 533.8352 ms
+[15:20:59 INF] HTTP GET /api/diagnostics responded 200 in 5842.3606 ms
+[15:21:00 INF] HTTP OPTIONS /api/events responded 204 in 0.0276 ms
+[15:21:00 INF] HTTP OPTIONS /api/modules responded 204 in 0.0167 ms
+[15:21:01 INF] HTTP GET /api/events responded 200 in 598.8175 ms
+[15:21:01 INF] HTTP GET /api/modules responded 200 in 598.8461 ms
+[15:21:01 INF] HTTP OPTIONS /api/approvals responded 204 in 0.0259 ms
+[15:21:01 INF] HTTP OPTIONS /api/actions responded 204 in 0.0098 ms
+[15:21:03 INF] HTTP GET /api/approvals responded 200 in 1942.5070 ms
+[15:21:03 INF] HTTP GET /api/events responded 200 in 1952.6006 ms
+[15:21:04 INF] HTTP GET /api/events responded 200 in 651.1101 ms
+[15:21:04 INF] HTTP OPTIONS /api/audit responded 204 in 0.0263 ms
+[15:21:05 INF] HTTP OPTIONS /api/notifications responded 204 in 0.0266 ms
+[15:21:05 INF] HTTP GET /api/audit responded 200 in 817.4071 ms
+[15:21:05 INF] HTTP OPTIONS /api/users responded 204 in 0.0280 ms
+[15:21:05 INF] HTTP OPTIONS /api/roles responded 204 in 0.0173 ms
+[15:21:05 INF] HTTP GET /api/notifications responded 200 in 658.4822 ms
+[15:21:06 INF] HTTP GET /api/roles responded 200 in 656.4818 ms
+[15:21:07 INF] HTTP GET /api/modules responded 200 in 4973.5141 ms
+[15:21:07 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0295 ms
+[15:21:07 INF] HTTP GET /api/actions responded 200 in 6083.8328 ms
+[15:21:08 INF] HTTP GET /api/dashboard responded 200 in 15247.5271 ms
+[15:21:10 INF] HTTP GET /api/users responded 200 in 4515.6024 ms
+[15:21:10 INF] HTTP GET /api/modules responded 200 in 3385.8924 ms
+[15:21:11 INF] HTTP GET /api/diagnostics responded 200 in 4120.7125 ms
+[15:21:15 INF] HTTP OPTIONS /api/actions responded 204 in 0.0266 ms
+[15:21:15 INF] HTTP OPTIONS /api/modules responded 204 in 0.0101 ms
+[15:21:16 INF] HTTP GET /api/modules responded 200 in 880.2020 ms
+[15:21:16 INF] HTTP GET /api/actions responded 200 in 880.4845 ms
+[15:21:19 INF] HTTP OPTIONS /api/actions/019e805f-63dc-751e-b7b5-06b89ab60b96/execute responded 204 in 0.0508 ms
+[15:21:22 INF] HTTP POST /api/actions/019e805f-63dc-751e-b7b5-06b89ab60b96/execute responded 200 in 2744.0308 ms
+[15:21:25 INF] HTTP OPTIONS /api/actions/019e805f-63fa-7fe1-bf24-b03d57b64d78/execute responded 204 in 0.0291 ms
+[15:21:28 INF] HTTP POST /api/actions/019e805f-63fa-7fe1-bf24-b03d57b64d78/execute responded 200 in 2612.2002 ms
+[15:21:30 INF] HTTP OPTIONS /api/actions/019e805f-63fa-7573-a9f7-e85362d5cdd5/execute responded 204 in 0.0300 ms
+[15:21:32 INF] HTTP POST /api/actions/019e805f-63fa-7573-a9f7-e85362d5cdd5/execute responded 200 in 2809.6849 ms
+[15:21:37 INF] HTTP OPTIONS /api/actions/019e805f-63fa-70ae-85ea-17a342b91070/execute responded 204 in 0.0292 ms
+[15:21:40 INF] HTTP POST /api/actions/019e805f-63fa-70ae-85ea-17a342b91070/execute responded 200 in 2673.5881 ms
+[15:23:58 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0288 ms
+[15:23:58 INF] HTTP OPTIONS /api/modules responded 204 in 0.0220 ms
+[15:23:58 INF] HTTP OPTIONS /api/license responded 204 in 0.0102 ms
+[15:23:58 INF] HTTP OPTIONS /api/actions responded 204 in 0.0199 ms
+[15:23:58 INF] HTTP GET /api/license responded 200 in 0.2297 ms
+[15:23:58 INF] HTTP GET /api/actions responded 200 in 516.6507 ms
+[15:23:58 INF] HTTP GET /api/modules responded 200 in 543.6106 ms
+[15:23:59 INF] HTTP GET /api/modules responded 200 in 492.2827 ms
+[15:24:01 INF] HTTP GET /api/diagnostics responded 200 in 3476.5745 ms
+[15:28:49 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0319 ms
+[15:28:49 INF] HTTP OPTIONS /api/modules responded 204 in 0.0355 ms
+[15:28:49 INF] HTTP OPTIONS /api/license responded 204 in 0.0454 ms
+[15:28:49 INF] HTTP OPTIONS /api/modules responded 204 in 0.0100 ms
+[15:28:49 INF] HTTP OPTIONS /api/actions responded 204 in 0.0129 ms
+[15:28:49 INF] HTTP GET /api/license responded 200 in 0.1990 ms
+[15:28:53 INF] HTTP GET /api/actions responded 200 in 4221.2327 ms
+[15:28:54 INF] HTTP GET /api/modules responded 200 in 4353.3583 ms
+[15:28:54 INF] HTTP GET /api/modules responded 200 in 542.0429 ms
+[15:28:57 INF] HTTP GET /api/diagnostics responded 200 in 7402.8746 ms
+[15:49:46 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0431 ms
+[15:49:46 INF] HTTP OPTIONS /api/modules responded 204 in 0.0307 ms
+[15:49:46 INF] HTTP OPTIONS /api/license responded 204 in 0.0094 ms
+[15:49:46 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0084 ms
+[15:49:46 INF] HTTP OPTIONS /api/modules responded 204 in 0.0238 ms
+[15:49:46 INF] HTTP GET /api/license responded 200 in 0.2018 ms
+[15:49:47 INF] HTTP GET /api/license responded 200 in 0.2902 ms
+[15:49:50 INF] HTTP GET /api/modules responded 200 in 3593.7565 ms
+[15:49:50 INF] HTTP GET /api/modules responded 200 in 198.3343 ms
+[15:49:51 INF] HTTP GET /api/dashboard responded 200 in 4697.4039 ms
+[15:49:52 INF] HTTP GET /api/diagnostics responded 200 in 5197.9451 ms
+[16:06:49 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0401 ms
+[16:06:49 INF] HTTP OPTIONS /api/modules responded 204 in 0.0252 ms
+[16:06:49 INF] HTTP OPTIONS /api/license responded 204 in 0.0077 ms
+[16:06:49 INF] HTTP OPTIONS /api/actions responded 204 in 0.0101 ms
+[16:06:49 INF] HTTP OPTIONS /api/modules responded 204 in 0.0353 ms
+[16:06:49 INF] HTTP GET /api/license responded 200 in 0.1735 ms
+[16:06:54 INF] HTTP GET /api/actions responded 200 in 4957.9105 ms
+[16:06:54 INF] HTTP GET /api/modules responded 200 in 4988.7022 ms
+[16:06:54 INF] HTTP GET /api/modules responded 200 in 535.7527 ms
+[16:06:57 INF] HTTP GET /api/diagnostics responded 200 in 8001.3510 ms
+[16:12:17 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0349 ms
+[16:12:17 INF] HTTP OPTIONS /api/modules responded 204 in 0.0347 ms
+[16:12:17 INF] HTTP OPTIONS /api/actions responded 204 in 0.0108 ms
+[16:12:17 INF] HTTP OPTIONS /api/license responded 204 in 0.0151 ms
+[16:12:17 INF] HTTP OPTIONS /api/modules responded 204 in 0.0117 ms
+[16:12:17 INF] HTTP GET /api/license responded 200 in 0.2450 ms
+[16:12:21 INF] HTTP GET /api/modules responded 200 in 3545.4234 ms
+[16:12:21 INF] HTTP GET /api/actions responded 200 in 3568.3521 ms
+[16:12:21 INF] HTTP GET /api/modules responded 200 in 502.3168 ms
+[16:12:24 INF] HTTP GET /api/diagnostics responded 200 in 6452.1306 ms
+[16:34:18 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0378 ms
+[16:34:18 INF] HTTP OPTIONS /api/license responded 204 in 0.0269 ms
+[16:34:18 INF] HTTP OPTIONS /api/modules responded 204 in 0.0072 ms
+[16:34:18 INF] HTTP OPTIONS /api/modules responded 204 in 0.0176 ms
+[16:34:18 INF] HTTP OPTIONS /api/actions responded 204 in 0.0071 ms
+[16:34:18 INF] HTTP GET /api/license responded 200 in 0.3403 ms
+[16:34:21 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[16:34:21 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[16:34:21 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[16:34:21 ERR] HTTP GET /api/modules responded 500 in 2876.5646 ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Npgsql.Internal.NpgsqlWriteBuffer.Flush(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListModulesAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 194
+   at Program.<>c.<<<Main>$>b__0_21>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 236
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[16:34:21 ERR] HTTP GET /api/diagnostics responded 500 in 2876.7371 ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Npgsql.Internal.NpgsqlWriteBuffer.Flush(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDiagnosticsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 605
+   at Program.<>c.<<<Main>$>b__0_55>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 435
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[16:34:21 ERR] HTTP GET /api/actions responded 500 in 2876.4233 ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Npgsql.Internal.NpgsqlWriteBuffer.Flush(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListActionsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 398
+   at Program.<>c.<<<Main>$>b__0_43>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 388
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:47:31 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0669 ms
+[18:47:31 INF] HTTP OPTIONS /api/modules responded 204 in 0.0224 ms
+[18:47:31 INF] HTTP OPTIONS /api/license responded 204 in 0.0106 ms
+[18:47:31 INF] HTTP GET /api/modules responded 401 in 1.4504 ms
+[18:47:31 INF] HTTP GET /api/license responded 401 in 1.3272 ms
+[18:47:31 INF] HTTP GET /api/diagnostics responded 401 in 1.5245 ms
+[18:47:31 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0421 ms
+[18:47:31 INF] HTTP GET /api/dashboard responded 401 in 0.3337 ms
+[18:47:31 INF] HTTP GET /api/modules responded 401 in 0.2829 ms
+[18:48:27 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0275 ms
+[18:48:27 INF] HTTP OPTIONS /api/modules responded 204 in 0.0135 ms
+[18:48:27 INF] HTTP OPTIONS /api/license responded 204 in 0.0450 ms
+[18:48:27 INF] HTTP GET /api/diagnostics responded 401 in 0.4213 ms
+[18:48:27 INF] HTTP GET /api/modules responded 401 in 0.2418 ms
+[18:48:27 INF] HTTP GET /api/license responded 401 in 0.1816 ms
+[18:48:27 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0274 ms
+[18:48:27 INF] HTTP GET /api/modules responded 401 in 0.2354 ms
+[18:48:27 INF] HTTP GET /api/dashboard responded 401 in 0.3854 ms
+[18:48:29 INF] HTTP OPTIONS /api/auth/login responded 204 in 0.0334 ms
+[18:48:33 INF] HTTP POST /api/auth/login responded 200 in 4578.5723 ms
+[18:48:34 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0271 ms
+[18:48:34 INF] HTTP OPTIONS /api/modules responded 204 in 0.0088 ms
+[18:48:34 INF] HTTP OPTIONS /api/license responded 204 in 0.0089 ms
+[18:48:34 INF] HTTP GET /api/license responded 200 in 0.1163 ms
+[18:48:34 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0392 ms
+[18:48:37 INF] HTTP GET /api/diagnostics responded 200 in 3337.2439 ms
+[18:48:37 INF] HTTP GET /api/modules responded 200 in 3541.8328 ms
+[18:48:38 INF] HTTP GET /api/modules responded 200 in 473.5643 ms
+[18:48:38 INF] HTTP GET /api/license responded 200 in 0.2158 ms
+[18:48:39 INF] HTTP GET /api/modules responded 200 in 584.6213 ms
+[18:48:39 INF] HTTP GET /api/dashboard responded 200 in 5660.9069 ms
+[18:48:40 INF] HTTP GET /api/modules responded 200 in 497.8849 ms
+[18:48:42 INF] HTTP OPTIONS /api/events responded 204 in 0.0663 ms
+[18:48:42 INF] HTTP OPTIONS /api/modules responded 204 in 0.0110 ms
+[18:48:42 INF] HTTP GET /api/diagnostics responded 200 in 3539.1779 ms
+[18:48:42 INF] HTTP GET /api/events responded 200 in 550.7741 ms
+[18:48:42 INF] HTTP GET /api/modules responded 200 in 551.3694 ms
+[18:48:44 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0272 ms
+[18:48:47 INF] HTTP GET /api/diagnostics responded 200 in 3544.7535 ms
+[18:48:48 INF] HTTP OPTIONS /api/modules responded 204 in 0.0406 ms
+[18:48:48 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0127 ms
+[18:48:48 INF] HTTP GET /api/custom-modules responded 200 in 0.6919 ms
+[18:48:48 INF] HTTP GET /api/modules responded 200 in 521.4733 ms
+[18:48:48 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.0332 ms
+[18:48:50 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1518.7529 ms
+[18:48:52 INF] HTTP GET /api/custom-modules responded 200 in 0.7060 ms
+[18:48:53 INF] HTTP GET /api/modules responded 200 in 529.0225 ms
+[18:48:56 INF] HTTP OPTIONS /api/modules responded 204 in 0.0256 ms
+[18:48:56 INF] HTTP OPTIONS /api/modules responded 204 in 0.0092 ms
+[18:48:56 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0086 ms
+[18:48:56 INF] HTTP GET /api/custom-modules responded 200 in 0.5820 ms
+[18:48:57 INF] HTTP GET /api/modules responded 200 in 505.5555 ms
+[18:48:57 INF] HTTP GET /api/modules responded 200 in 516.4500 ms
+[18:49:02 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0297 ms
+[18:49:02 INF] HTTP OPTIONS /api/license responded 204 in 0.0134 ms
+[18:49:02 INF] HTTP OPTIONS /api/modules responded 204 in 0.0077 ms
+[18:49:02 INF] HTTP GET /api/license responded 200 in 0.2187 ms
+[18:49:02 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0386 ms
+[18:49:03 INF] HTTP GET /api/modules responded 200 in 573.0802 ms
+[18:49:04 INF] HTTP GET /api/modules responded 200 in 507.0096 ms
+[18:49:05 INF] HTTP GET /api/dashboard responded 200 in 2817.2068 ms
+[18:49:06 INF] HTTP GET /api/diagnostics responded 200 in 3453.3537 ms
+[18:49:31 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0778 ms
+[18:49:31 INF] HTTP OPTIONS /api/modules responded 204 in 0.0106 ms
+[18:49:31 INF] HTTP OPTIONS /api/license responded 204 in 0.0167 ms
+[18:49:31 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0137 ms
+[18:49:31 INF] HTTP GET /api/license responded 200 in 0.6129 ms
+[18:49:32 INF] HTTP GET /api/modules responded 200 in 488.7193 ms
+[18:49:32 INF] HTTP GET /api/modules responded 200 in 492.0255 ms
+[18:49:34 INF] HTTP GET /api/dashboard responded 200 in 2645.0803 ms
+[18:49:34 INF] HTTP GET /api/diagnostics responded 200 in 3334.2762 ms
+[18:49:37 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0357 ms
+[18:49:37 INF] HTTP OPTIONS /api/modules responded 204 in 0.0383 ms
+[18:49:37 INF] HTTP OPTIONS /api/license responded 204 in 0.0278 ms
+[18:49:37 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0129 ms
+[18:49:37 INF] HTTP GET /api/license responded 200 in 0.3426 ms
+[18:49:38 INF] HTTP GET /api/modules responded 200 in 482.0423 ms
+[18:49:38 INF] HTTP GET /api/modules responded 200 in 477.1897 ms
+[18:49:39 INF] HTTP OPTIONS /api/events responded 204 in 0.0864 ms
+[18:49:39 INF] HTTP GET /api/modules responded 200 in 503.1219 ms
+[18:49:40 INF] HTTP GET /api/dashboard responded 200 in 2624.3139 ms
+[18:49:40 INF] HTTP OPTIONS /api/approvals responded 204 in 0.0814 ms
+[18:49:40 INF] HTTP OPTIONS /api/actions responded 204 in 0.0159 ms
+[18:49:40 INF] HTTP GET /api/diagnostics responded 200 in 3300.0570 ms
+[18:49:41 INF] HTTP GET /api/approvals responded 200 in 469.8178 ms
+[18:49:41 INF] HTTP GET /api/actions responded 200 in 476.9213 ms
+[18:49:41 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0278 ms
+[18:49:41 INF] HTTP GET /api/custom-modules responded 200 in 0.5649 ms
+[18:49:41 INF] HTTP GET /api/modules responded 200 in 483.8183 ms
+[18:49:41 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.0322 ms
+[18:49:42 INF] HTTP GET /api/events responded 200 in 3372.4136 ms
+[18:49:43 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1426.1408 ms
+[18:49:43 INF] HTTP OPTIONS /api/modules responded 204 in 0.0379 ms
+[18:49:43 INF] HTTP GET /api/modules responded 200 in 534.2060 ms
+[18:49:43 INF] HTTP GET /api/actions responded 200 in 543.8069 ms
+[18:49:50 INF] HTTP OPTIONS /api/audit responded 204 in 0.0303 ms
+[18:49:51 INF] HTTP GET /api/audit responded 200 in 652.7486 ms
+[18:49:51 INF] HTTP OPTIONS /api/logs responded 204 in 0.0261 ms
+[18:49:52 INF] HTTP GET /api/logs responded 200 in 511.2840 ms
+[18:49:53 INF] HTTP GET /api/audit responded 200 in 688.7982 ms
+[18:49:56 INF] HTTP OPTIONS /api/events responded 204 in 0.0442 ms
+[18:49:56 INF] HTTP OPTIONS /api/modules responded 204 in 0.0132 ms
+[18:49:56 INF] HTTP GET /api/events responded 200 in 536.6107 ms
+[18:49:56 INF] HTTP GET /api/modules responded 200 in 538.4400 ms
+[18:49:57 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0325 ms
+[18:49:57 INF] HTTP GET /api/modules responded 200 in 526.8938 ms
+[18:49:59 INF] HTTP GET /api/dashboard responded 200 in 2786.6073 ms
+[18:51:22 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0311 ms
+[18:51:22 INF] HTTP OPTIONS /api/modules responded 204 in 0.0353 ms
+[18:51:22 INF] HTTP OPTIONS /api/license responded 204 in 0.0178 ms
+[18:51:22 INF] HTTP GET /api/license responded 200 in 0.1753 ms
+[18:51:22 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0248 ms
+[18:51:22 INF] HTTP GET /api/modules responded 200 in 547.5788 ms
+[18:51:23 INF] HTTP GET /api/modules responded 200 in 511.4289 ms
+[18:51:25 INF] HTTP GET /api/dashboard responded 200 in 2823.8909 ms
+[18:51:25 INF] HTTP GET /api/diagnostics responded 200 in 3472.8063 ms
+[18:51:32 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0278 ms
+[18:51:32 INF] HTTP OPTIONS /api/modules responded 204 in 0.0320 ms
+[18:51:32 INF] HTTP OPTIONS /api/license responded 204 in 0.0198 ms
+[18:51:32 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0256 ms
+[18:51:32 INF] HTTP OPTIONS /api/modules responded 204 in 0.0183 ms
+[18:51:32 INF] HTTP GET /api/license responded 200 in 0.1522 ms
+[18:51:32 INF] HTTP GET /api/modules responded 200 in 470.9331 ms
+[18:51:33 INF] HTTP GET /api/modules responded 200 in 612.7908 ms
+[18:51:35 INF] HTTP GET /api/dashboard responded 200 in 2727.2527 ms
+[18:51:35 INF] HTTP GET /api/license responded 200 in 0.2464 ms
+[18:51:35 INF] HTTP GET /api/diagnostics responded 200 in 3433.2228 ms
+[18:51:35 INF] HTTP GET /api/modules responded 200 in 491.4419 ms
+[18:51:36 INF] HTTP GET /api/modules responded 200 in 485.9535 ms
+[18:51:38 INF] HTTP GET /api/dashboard responded 200 in 2734.3062 ms
+[18:52:37 INF] HTTP OPTIONS /api/auth/login responded 204 in 0.0290 ms
+[18:52:37 INF] HTTP POST /api/auth/login responded 200 in 499.9793 ms
+[18:52:37 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0270 ms
+[18:52:37 INF] HTTP OPTIONS /api/modules responded 204 in 0.0167 ms
+[18:52:37 INF] HTTP OPTIONS /api/license responded 204 in 0.0359 ms
+[18:52:37 INF] HTTP GET /api/license responded 200 in 0.1260 ms
+[18:52:37 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0342 ms
+[18:52:38 INF] HTTP GET /api/modules responded 200 in 496.0216 ms
+[18:52:38 INF] HTTP GET /api/modules responded 200 in 640.1023 ms
+[18:52:41 INF] HTTP GET /api/dashboard responded 200 in 3322.1700 ms
+[18:52:42 INF] HTTP GET /api/diagnostics responded 200 in 4412.8885 ms
+[18:52:43 INF] HTTP OPTIONS /api/modules responded 204 in 0.0268 ms
+[18:52:43 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0459 ms
+[18:52:43 INF] HTTP GET /api/custom-modules responded 200 in 0.8679 ms
+[18:52:44 INF] HTTP GET /api/modules responded 200 in 689.6947 ms
+[18:52:44 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.0263 ms
+[18:52:46 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1516.8515 ms
+[18:52:49 INF] HTTP OPTIONS /api/modules responded 204 in 0.0274 ms
+[18:52:49 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0096 ms
+[18:52:49 INF] HTTP GET /api/custom-modules responded 200 in 0.9040 ms
+[18:52:49 INF] HTTP GET /api/modules responded 200 in 475.5514 ms
+[18:52:56 INF] HTTP OPTIONS /api/modules responded 204 in 0.0273 ms
+[18:52:57 INF] HTTP OPTIONS /api/modules responded 204 in 0.0079 ms
+[18:52:57 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0040 ms
+[18:52:57 INF] HTTP GET /api/custom-modules responded 200 in 0.5528 ms
+[18:52:57 INF] HTTP GET /api/modules responded 200 in 465.3357 ms
+[18:52:57 INF] HTTP GET /api/modules responded 200 in 491.5766 ms
+[18:53:04 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0334 ms
+[18:53:04 INF] HTTP OPTIONS /api/modules responded 204 in 0.0148 ms
+[18:53:04 INF] HTTP OPTIONS /api/license responded 204 in 0.0482 ms
+[18:53:04 INF] HTTP OPTIONS /api/modules responded 204 in 0.0110 ms
+[18:53:04 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0155 ms
+[18:53:04 INF] HTTP GET /api/license responded 200 in 0.1992 ms
+[18:53:04 INF] HTTP GET /api/custom-modules responded 200 in 0.4552 ms
+[18:53:04 INF] HTTP GET /api/modules responded 200 in 508.8237 ms
+[18:53:05 INF] HTTP GET /api/modules responded 200 in 474.2893 ms
+[18:53:07 INF] HTTP GET /api/diagnostics responded 200 in 3276.8734 ms
+[18:53:10 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0739 ms
+[18:53:10 INF] HTTP OPTIONS /api/modules responded 204 in 0.0107 ms
+[18:53:10 INF] HTTP OPTIONS /api/license responded 204 in 0.0077 ms
+[18:53:10 INF] HTTP OPTIONS /api/modules responded 204 in 0.0064 ms
+[18:53:10 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0111 ms
+[18:53:10 INF] HTTP GET /api/license responded 200 in 0.2974 ms
+[18:53:10 INF] HTTP GET /api/custom-modules responded 200 in 0.5108 ms
+[18:53:10 INF] HTTP GET /api/custom-modules responded 200 in 0.7636 ms
+[18:53:11 INF] HTTP GET /api/modules responded 200 in 570.3189 ms
+[18:53:11 INF] HTTP GET /api/modules responded 200 in 472.3281 ms
+[18:53:12 INF] HTTP GET /api/modules responded 200 in 483.9301 ms
+[18:53:12 INF] HTTP GET /api/modules responded 200 in 471.5738 ms
+[18:53:14 INF] HTTP GET /api/diagnostics responded 200 in 3329.0085 ms
+[18:53:18 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0360 ms
+[18:53:18 INF] HTTP OPTIONS /api/modules responded 204 in 0.0091 ms
+[18:53:18 INF] HTTP OPTIONS /api/license responded 204 in 0.0074 ms
+[18:53:18 INF] HTTP OPTIONS /api/modules responded 204 in 0.0340 ms
+[18:53:18 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0065 ms
+[18:53:19 INF] HTTP GET /api/license responded 200 in 0.2117 ms
+[18:53:19 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0549 ms
+[18:53:19 INF] HTTP GET /api/modules responded 200 in 603.4765 ms
+[18:53:20 INF] HTTP GET /api/modules responded 200 in 693.8012 ms
+[18:53:22 INF] HTTP GET /api/dashboard responded 200 in 3130.7595 ms
+[18:53:22 INF] HTTP GET /api/diagnostics responded 200 in 3917.1259 ms
+[18:53:39 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0866 ms
+[18:53:39 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0185 ms
+[18:53:39 INF] HTTP OPTIONS /api/modules responded 204 in 0.0423 ms
+[18:53:39 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0120 ms
+[18:53:39 INF] HTTP OPTIONS /api/modules responded 204 in 0.0104 ms
+[18:53:39 INF] HTTP OPTIONS /api/modules responded 204 in 0.0106 ms
+[18:53:39 INF] HTTP OPTIONS /api/license responded 204 in 0.0120 ms
+[18:53:39 INF] HTTP OPTIONS /api/modules responded 204 in 0.0157 ms
+[18:53:39 INF] HTTP OPTIONS /api/license responded 204 in 0.0097 ms
+[18:53:39 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0092 ms
+[18:53:39 INF] HTTP GET /api/license responded 200 in 0.3506 ms
+[18:53:39 INF] HTTP GET /api/license responded 200 in 0.1142 ms
+[18:53:41 INF] HTTP GET /api/license responded 200 in 0.2022 ms
+[18:53:41 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[18:53:41 ERR] HTTP GET /api/dashboard responded 500 in 2452.2640 ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Npgsql.Internal.NpgsqlWriteBuffer.Flush(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListEventsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 69
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDashboardAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 43
+   at Program.<>c.<<<Main>$>b__0_12>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 210
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:53:41 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[18:53:41 ERR] HTTP GET /api/diagnostics responded 500 in 2490.5600 ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Npgsql.Internal.NpgsqlWriteBuffer.Flush(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDiagnosticsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 605
+   at Program.<>c.<<<Main>$>b__0_55>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 435
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:53:41 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[18:53:41 ERR] HTTP GET /api/modules responded 500 in 2536.5412 ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Npgsql.Internal.NpgsqlWriteBuffer.Flush(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListModulesAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 194
+   at Program.<>c.<<<Main>$>b__0_21>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 236
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:53:42 INF] HTTP GET /api/modules responded 200 in 3385.9343 ms
+[18:53:43 INF] HTTP GET /api/modules responded 200 in 469.3996 ms
+[18:53:44 INF] HTTP GET /api/dashboard responded 200 in 5440.2931 ms
+[18:53:45 INF] HTTP GET /api/modules responded 200 in 3360.1836 ms
+[18:53:45 INF] HTTP GET /api/diagnostics responded 200 in 6117.3746 ms
+[18:53:45 INF] HTTP GET /api/modules responded 200 in 475.9951 ms
+[18:53:47 INF] HTTP GET /api/dashboard responded 200 in 5484.6626 ms
+[18:53:47 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0286 ms
+[18:53:47 INF] HTTP OPTIONS /api/license responded 204 in 0.0090 ms
+[18:53:47 INF] HTTP OPTIONS /api/modules responded 204 in 0.0135 ms
+[18:53:47 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0099 ms
+[18:53:47 INF] HTTP OPTIONS /api/modules responded 204 in 0.0106 ms
+[18:53:47 INF] HTTP GET /api/license responded 200 in 0.2134 ms
+[18:53:48 INF] HTTP GET /api/modules responded 200 in 530.9652 ms
+[18:53:48 INF] HTTP GET /api/diagnostics responded 200 in 6340.6260 ms
+[18:53:48 INF] HTTP GET /api/modules responded 200 in 481.9949 ms
+[18:53:50 INF] HTTP GET /api/dashboard responded 200 in 2643.1472 ms
+[18:53:50 INF] HTTP GET /api/diagnostics responded 200 in 3322.7053 ms
+[18:54:36 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0291 ms
+[18:54:36 INF] HTTP OPTIONS /api/modules responded 204 in 0.0121 ms
+[18:54:36 INF] HTTP OPTIONS /api/license responded 204 in 0.0092 ms
+[18:54:36 INF] HTTP OPTIONS /api/modules responded 204 in 0.0382 ms
+[18:54:36 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0334 ms
+[18:54:36 INF] HTTP GET /api/license responded 200 in 0.2434 ms
+[18:54:36 INF] HTTP GET /api/modules responded 200 in 474.2587 ms
+[18:54:37 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0339 ms
+[18:54:37 INF] HTTP OPTIONS /api/modules responded 204 in 0.0156 ms
+[18:54:37 INF] HTTP OPTIONS /api/license responded 204 in 0.0085 ms
+[18:54:37 INF] HTTP GET /api/license responded 200 in 0.2687 ms
+[18:54:37 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0658 ms
+[18:54:37 INF] HTTP GET /api/modules responded 200 in 499.0652 ms
+[18:54:37 INF] HTTP GET /api/modules responded 200 in 543.6708 ms
+[18:54:38 INF] HTTP GET /api/modules responded 200 in 583.1524 ms
+[18:54:39 INF] HTTP GET /api/dashboard responded 200 in 2944.1251 ms
+[18:54:40 INF] HTTP GET /api/diagnostics responded 200 in 3575.5800 ms
+[18:54:40 INF] HTTP GET /api/dashboard responded 200 in 3077.4898 ms
+[18:54:41 INF] HTTP GET /api/diagnostics responded 200 in 3739.4460 ms
+[18:55:07 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0294 ms
+[18:55:07 INF] HTTP OPTIONS /api/license responded 204 in 0.0128 ms
+[18:55:07 INF] HTTP OPTIONS /api/modules responded 204 in 0.0100 ms
+[18:55:07 INF] HTTP GET /api/license responded 200 in 0.3093 ms
+[18:55:07 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0462 ms
+[18:55:08 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0378 ms
+[18:55:08 INF] HTTP OPTIONS /api/modules responded 204 in 0.0221 ms
+[18:55:08 INF] HTTP OPTIONS /api/license responded 204 in 0.0117 ms
+[18:55:08 INF] HTTP GET /api/license responded 200 in 0.1837 ms
+[18:55:08 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0219 ms
+[18:55:08 INF] HTTP GET /api/modules responded 200 in 504.9250 ms
+[18:55:08 INF] HTTP GET /api/modules responded 200 in 490.7306 ms
+[18:55:08 INF] HTTP GET /api/modules responded 200 in 475.6692 ms
+[18:55:09 INF] HTTP GET /api/modules responded 200 in 479.4731 ms
+[18:55:10 INF] HTTP GET /api/dashboard responded 200 in 2547.6982 ms
+[18:55:10 INF] HTTP GET /api/dashboard responded 200 in 2628.7820 ms
+[18:55:11 INF] HTTP GET /api/diagnostics responded 200 in 3227.9320 ms
+[18:55:11 INF] HTTP GET /api/diagnostics responded 200 in 3248.0058 ms
+[18:56:22 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0673 ms
+[18:56:22 INF] HTTP OPTIONS /api/license responded 204 in 0.0111 ms
+[18:56:22 INF] HTTP OPTIONS /api/modules responded 204 in 0.0664 ms
+[18:56:22 INF] HTTP OPTIONS /api/modules responded 204 in 0.0073 ms
+[18:56:22 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0112 ms
+[18:56:22 INF] HTTP GET /api/license responded 200 in 0.2921 ms
+[18:56:22 INF] HTTP GET /api/modules responded 200 in 476.4388 ms
+[18:56:23 INF] HTTP GET /api/modules responded 200 in 477.6031 ms
+[18:56:25 INF] HTTP GET /api/dashboard responded 200 in 3683.2224 ms
+[18:56:26 INF] HTTP GET /api/diagnostics responded 200 in 4470.5121 ms
+[18:56:31 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0357 ms
+[18:56:31 INF] HTTP OPTIONS /api/modules responded 204 in 0.0242 ms
+[18:56:31 INF] HTTP OPTIONS /api/license responded 204 in 0.0086 ms
+[18:56:31 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0064 ms
+[18:56:31 INF] HTTP OPTIONS /api/modules responded 204 in 0.0108 ms
+[18:56:31 INF] HTTP GET /api/license responded 200 in 0.3849 ms
+[18:56:31 INF] HTTP GET /api/license responded 200 in 0.1993 ms
+[18:56:31 INF] HTTP GET /api/modules responded 200 in 562.7042 ms
+[18:56:32 INF] HTTP GET /api/modules responded 200 in 504.7377 ms
+[18:56:33 ERR] HTTP GET /api/dashboard responded 500 in 2371.3914 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListApprovalsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 105
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDashboardAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 44
+   at Program.<>c.<<<Main>$>b__0_12>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 210
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:56:33 INF] HTTP GET /api/modules responded 200 in 2407.9846 ms
+[18:56:34 INF] HTTP GET /api/dashboard responded 200 in 2708.4326 ms
+[18:56:34 INF] HTTP GET /api/diagnostics responded 200 in 3329.1250 ms
+[18:56:40 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0366 ms
+[18:56:40 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0395 ms
+[18:56:40 INF] HTTP OPTIONS /api/modules responded 204 in 0.0122 ms
+[18:56:40 INF] HTTP OPTIONS /api/modules responded 204 in 0.0586 ms
+[18:56:40 INF] HTTP OPTIONS /api/license responded 204 in 0.0093 ms
+[18:56:40 INF] HTTP OPTIONS /api/license responded 204 in 0.0088 ms
+[18:56:40 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0107 ms
+[18:56:40 INF] HTTP GET /api/license responded 200 in 0.2156 ms
+[18:56:40 INF] HTTP GET /api/license responded 200 in 0.1830 ms
+[18:56:40 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0164 ms
+[18:56:40 INF] HTTP GET /api/modules responded 200 in 545.2934 ms
+[18:56:40 INF] HTTP GET /api/modules responded 200 in 546.4541 ms
+[18:56:41 INF] HTTP GET /api/modules responded 200 in 469.0784 ms
+[18:56:41 INF] HTTP GET /api/modules responded 200 in 476.0880 ms
+[18:56:42 INF] HTTP GET /api/license responded 200 in 0.3090 ms
+[18:56:42 INF] HTTP GET /api/modules responded 200 in 474.5082 ms
+[18:56:42 INF] HTTP GET /api/dashboard responded 200 in 2734.3399 ms
+[18:56:43 INF] HTTP GET /api/modules responded 200 in 473.7574 ms
+[18:56:43 INF] HTTP GET /api/diagnostics responded 200 in 3218.9156 ms
+[18:56:44 ERR] HTTP GET /api/diagnostics responded 500 in 3994.7033 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDiagnosticsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 609
+   at Program.<>c.<<<Main>$>b__0_55>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 435
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:56:44 ERR] HTTP GET /api/dashboard responded 500 in 3991.8031 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListAuditAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 464
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDashboardAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 47
+   at Program.<>c.<<<Main>$>b__0_12>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 210
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:56:44 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0283 ms
+[18:56:44 INF] HTTP GET /api/custom-modules responded 200 in 0.6033 ms
+[18:56:45 INF] HTTP GET /api/modules responded 200 in 497.6664 ms
+[18:56:45 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.0284 ms
+[18:56:45 INF] HTTP GET /api/diagnostics responded 200 in 3398.1280 ms
+[18:56:46 INF] HTTP OPTIONS /api/modules responded 204 in 0.0294 ms
+[18:56:46 INF] HTTP GET /api/custom-modules responded 200 in 0.5327 ms
+[18:56:46 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1490.2779 ms
+[18:56:47 INF] HTTP GET /api/modules responded 200 in 483.9916 ms
+[18:56:47 INF] HTTP GET /api/dashboard responded 200 in 5453.2975 ms
+[18:56:52 INF] HTTP OPTIONS /api/modules responded 204 in 0.0276 ms
+[18:56:52 INF] HTTP OPTIONS /api/modules responded 204 in 0.0103 ms
+[18:56:52 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0078 ms
+[18:56:52 INF] HTTP GET /api/custom-modules responded 200 in 0.5703 ms
+[18:56:53 INF] HTTP GET /api/modules responded 200 in 486.5812 ms
+[18:56:53 INF] HTTP GET /api/custom-modules responded 200 in 0.5065 ms
+[18:56:53 INF] HTTP GET /api/modules responded 200 in 498.6823 ms
+[18:56:54 INF] HTTP GET /api/modules responded 200 in 510.8878 ms
+[18:56:54 INF] HTTP GET /api/custom-modules responded 200 in 0.4347 ms
+[18:56:54 INF] HTTP GET /api/modules responded 200 in 511.5716 ms
+[18:56:55 INF] HTTP GET /api/custom-modules responded 200 in 0.4731 ms
+[18:56:55 INF] HTTP GET /api/modules responded 200 in 510.5132 ms
+[18:56:55 INF] HTTP GET /api/modules responded 200 in 509.3855 ms
+[18:56:56 INF] HTTP GET /api/modules responded 200 in 613.5255 ms
+[18:56:56 INF] HTTP GET /api/modules responded 200 in 512.2427 ms
+[18:56:58 INF] HTTP OPTIONS /api/modules responded 204 in 0.0266 ms
+[18:56:58 INF] HTTP OPTIONS /api/modules responded 204 in 0.0102 ms
+[18:56:58 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0092 ms
+[18:56:58 INF] HTTP GET /api/custom-modules responded 200 in 0.4416 ms
+[18:56:59 INF] HTTP GET /api/modules responded 200 in 516.4181 ms
+[18:56:59 INF] HTTP GET /api/modules responded 200 in 499.7221 ms
+[18:57:01 INF] HTTP GET /api/custom-modules responded 200 in 0.4668 ms
+[18:57:01 INF] HTTP GET /api/modules responded 200 in 528.7507 ms
+[18:57:02 INF] HTTP GET /api/modules responded 200 in 475.5986 ms
+[18:57:02 INF] HTTP GET /api/custom-modules responded 200 in 0.5054 ms
+[18:57:03 INF] HTTP GET /api/modules responded 200 in 526.9347 ms
+[18:57:03 INF] HTTP GET /api/custom-modules responded 200 in 0.6797 ms
+[18:57:03 INF] HTTP GET /api/modules responded 200 in 513.8373 ms
+[18:57:04 INF] HTTP GET /api/modules responded 200 in 479.6272 ms
+[18:57:04 INF] HTTP GET /api/modules responded 200 in 542.6223 ms
+[18:57:09 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0598 ms
+[18:57:09 INF] HTTP OPTIONS /api/modules responded 204 in 0.0358 ms
+[18:57:09 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0100 ms
+[18:57:09 INF] HTTP OPTIONS /api/license responded 204 in 0.0102 ms
+[18:57:09 INF] HTTP GET /api/license responded 200 in 0.1922 ms
+[18:57:09 INF] HTTP GET /api/modules responded 200 in 485.8405 ms
+[18:57:10 INF] HTTP GET /api/modules responded 200 in 472.3364 ms
+[18:57:12 INF] HTTP GET /api/dashboard responded 200 in 3050.6618 ms
+[18:57:12 INF] HTTP GET /api/diagnostics responded 200 in 3745.3261 ms
+[18:57:28 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0447 ms
+[18:57:28 INF] HTTP OPTIONS /api/modules responded 204 in 0.0515 ms
+[18:57:28 INF] HTTP OPTIONS /api/license responded 204 in 0.0083 ms
+[18:57:28 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0412 ms
+[18:57:28 INF] HTTP OPTIONS /api/modules responded 204 in 0.0181 ms
+[18:57:28 ERR] HTTP GET /api/modules responded 500 in 1.2612 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListModulesAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 194
+   at Program.<>c.<<<Main>$>b__0_21>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 236
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:57:28 INF] HTTP GET /api/license responded 200 in 0.2236 ms
+[18:57:28 INF] HTTP GET /api/modules responded 200 in 508.4267 ms
+[18:57:29 INF] HTTP GET /api/modules responded 200 in 481.0180 ms
+[18:57:30 INF] HTTP GET /api/dashboard responded 200 in 2674.3037 ms
+[18:57:31 INF] HTTP GET /api/diagnostics responded 200 in 3261.3909 ms
+[18:57:41 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0360 ms
+[18:57:41 INF] HTTP OPTIONS /api/modules responded 204 in 0.0121 ms
+[18:57:41 INF] HTTP OPTIONS /api/license responded 204 in 0.0102 ms
+[18:57:41 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0098 ms
+[18:57:41 INF] HTTP GET /api/license responded 200 in 0.2567 ms
+[18:57:41 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0565 ms
+[18:57:41 INF] HTTP OPTIONS /api/modules responded 204 in 0.0169 ms
+[18:57:41 INF] HTTP OPTIONS /api/license responded 204 in 0.0092 ms
+[18:57:41 INF] HTTP OPTIONS /api/modules responded 204 in 0.0478 ms
+[18:57:41 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0173 ms
+[18:57:41 INF] HTTP GET /api/license responded 200 in 0.1311 ms
+[18:57:41 INF] HTTP GET /api/custom-modules responded 200 in 0.5487 ms
+[18:57:41 INF] HTTP GET /api/modules responded 200 in 476.2849 ms
+[18:57:41 INF] HTTP GET /api/modules responded 200 in 581.8625 ms
+[18:57:42 INF] HTTP GET /api/modules responded 200 in 529.9294 ms
+[18:57:42 INF] HTTP GET /api/modules responded 200 in 469.8746 ms
+[18:57:43 INF] HTTP GET /api/license responded 200 in 0.2187 ms
+[18:57:43 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0295 ms
+[18:57:43 INF] HTTP GET /api/custom-modules responded 200 in 0.5047 ms
+[18:57:43 INF] HTTP GET /api/modules responded 200 in 500.3436 ms
+[18:57:44 INF] HTTP GET /api/dashboard responded 200 in 2840.7261 ms
+[18:57:44 INF] HTTP GET /api/modules responded 200 in 479.1737 ms
+[18:57:44 INF] HTTP GET /api/diagnostics responded 200 in 3422.0872 ms
+[18:57:44 INF] HTTP GET /api/diagnostics responded 200 in 3456.7862 ms
+[18:57:44 INF] HTTP GET /api/custom-modules responded 200 in 0.6197 ms
+[18:57:44 INF] HTTP GET /api/modules responded 200 in 519.4383 ms
+[18:57:45 INF] HTTP GET /api/modules responded 200 in 614.2223 ms
+[18:57:46 INF] HTTP GET /api/custom-modules responded 200 in 0.5187 ms
+[18:57:46 INF] HTTP GET /api/modules responded 200 in 570.3957 ms
+[18:57:47 INF] HTTP GET /api/modules responded 200 in 705.2558 ms
+[18:58:06 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0351 ms
+[18:58:06 INF] HTTP OPTIONS /api/modules responded 204 in 0.0217 ms
+[18:58:06 INF] HTTP OPTIONS /api/license responded 204 in 0.0113 ms
+[18:58:06 INF] HTTP OPTIONS /api/modules responded 204 in 0.0117 ms
+[18:58:06 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0332 ms
+[18:58:06 INF] HTTP GET /api/license responded 200 in 0.1962 ms
+[18:58:06 INF] HTTP GET /api/custom-modules responded 200 in 0.6877 ms
+[18:58:07 INF] HTTP GET /api/modules responded 200 in 476.4299 ms
+[18:58:07 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0265 ms
+[18:58:07 INF] HTTP OPTIONS /api/modules responded 204 in 0.0413 ms
+[18:58:07 INF] HTTP OPTIONS /api/license responded 204 in 0.0070 ms
+[18:58:07 INF] HTTP GET /api/license responded 200 in 0.1443 ms
+[18:58:07 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0175 ms
+[18:58:07 INF] HTTP GET /api/custom-modules responded 200 in 0.4240 ms
+[18:58:07 INF] HTTP GET /api/modules responded 200 in 534.3285 ms
+[18:58:07 INF] HTTP GET /api/modules responded 200 in 487.4635 ms
+[18:58:08 INF] HTTP GET /api/modules responded 200 in 522.6395 ms
+[18:58:10 INF] HTTP GET /api/diagnostics responded 200 in 3481.3000 ms
+[18:58:10 INF] HTTP GET /api/diagnostics responded 200 in 3441.3318 ms
+[18:58:32 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0340 ms
+[18:58:32 INF] HTTP OPTIONS /api/license responded 204 in 0.0125 ms
+[18:58:32 INF] HTTP OPTIONS /api/modules responded 204 in 0.0093 ms
+[18:58:32 INF] HTTP OPTIONS /api/modules responded 204 in 0.0125 ms
+[18:58:32 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0108 ms
+[18:58:32 INF] HTTP GET /api/license responded 200 in 0.1003 ms
+[18:58:32 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0344 ms
+[18:58:33 INF] HTTP GET /api/modules responded 200 in 487.0216 ms
+[18:58:33 INF] HTTP GET /api/modules responded 200 in 477.4642 ms
+[18:58:34 INF] HTTP GET /api/custom-modules responded 200 in 0.4799 ms
+[18:58:35 INF] HTTP GET /api/dashboard responded 200 in 2634.8555 ms
+[18:58:35 INF] HTTP GET /api/modules responded 200 in 469.0115 ms
+[18:58:35 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.0358 ms
+[18:58:35 INF] HTTP GET /api/diagnostics responded 200 in 3286.7675 ms
+[18:58:35 INF] HTTP GET /api/custom-modules responded 200 in 0.4996 ms
+[18:58:36 INF] HTTP GET /api/modules responded 200 in 474.5974 ms
+[18:58:36 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1448.1996 ms
+[18:58:37 INF] HTTP GET /api/custom-modules responded 200 in 0.4982 ms
+[18:58:37 INF] HTTP GET /api/modules responded 200 in 477.4249 ms
+[18:58:38 INF] HTTP GET /api/modules responded 200 in 614.3461 ms
+[18:58:38 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0293 ms
+[18:58:38 INF] HTTP OPTIONS /api/modules responded 204 in 0.0083 ms
+[18:58:38 INF] HTTP OPTIONS /api/license responded 204 in 0.0096 ms
+[18:58:38 INF] HTTP OPTIONS /api/modules responded 204 in 0.0087 ms
+[18:58:38 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0084 ms
+[18:58:38 ERR] HTTP GET /api/custom-modules responded 500 in 0.9759 ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Text.Json.Serialization.ReadBufferState.ReadFromStreamAsync(Stream utf8Json, CancellationToken cancellationToken, Boolean fillBuffer)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Program.<<Main>$>g__ReadCustomModulesAsync|0_69(IWebHostEnvironment environment, CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 497
+   at Program.<<Main>$>g__ReadCustomModulesAsync|0_69(IWebHostEnvironment environment, CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 497
+   at Program.<>c.<<<Main>$>b__0_35>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 270
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:58:39 INF] HTTP GET /api/license responded 200 in 0.1134 ms
+[18:58:39 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0392 ms
+[18:58:39 INF] HTTP GET /api/modules responded 200 in 558.6434 ms
+[18:58:40 INF] HTTP GET /api/modules responded 200 in 483.2964 ms
+[18:58:41 INF] HTTP GET /api/dashboard responded 200 in 2737.4448 ms
+[18:58:42 INF] HTTP GET /api/diagnostics responded 200 in 3391.4942 ms
+[18:58:57 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0338 ms
+[18:58:57 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0136 ms
+[18:58:57 INF] HTTP OPTIONS /api/modules responded 204 in 0.0134 ms
+[18:58:57 INF] HTTP OPTIONS /api/license responded 204 in 0.0102 ms
+[18:58:57 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0090 ms
+[18:58:57 INF] HTTP OPTIONS /api/modules responded 204 in 0.0097 ms
+[18:58:57 INF] HTTP OPTIONS /api/license responded 204 in 0.0104 ms
+[18:58:57 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0087 ms
+[18:58:57 INF] HTTP GET /api/license responded 200 in 0.1216 ms
+[18:58:57 INF] HTTP GET /api/license responded 200 in 0.2203 ms
+[18:58:57 INF] HTTP GET /api/custom-modules responded 200 in 0.3776 ms
+[18:59:01 ERR] HTTP GET /api/modules responded 500 in 3025.6298 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListModulesAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 194
+   at Program.<>c.<<<Main>$>b__0_21>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 236
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:59:01 INF] HTTP GET /api/license responded 200 in 0.2698 ms
+[18:59:01 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0646 ms
+[18:59:01 INF] HTTP GET /api/modules responded 200 in 3510.8365 ms
+[18:59:01 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[18:59:01 ERR] An exception occurred while iterating over the results of a query for context type 'SysAssist.Infrastructure.Data.SysAssistDbContext'.
+Npgsql.NpgsqlException (0x80004005): Exception while performing SSL handshake
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Npgsql.NpgsqlException (0x80004005): Exception while performing SSL handshake
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+[18:59:01 ERR] HTTP GET /api/modules responded 500 in 944.8280 ms
+Npgsql.NpgsqlException (0x80004005): Exception while performing SSL handshake
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListModulesAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 194
+   at Program.<>c.<<<Main>$>b__0_21>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 236
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:59:01 INF] HTTP GET /api/modules responded 200 in 482.5474 ms
+[18:59:03 INF] HTTP GET /api/diagnostics responded 200 in 5320.2925 ms
+[18:59:03 INF] HTTP GET /api/dashboard responded 200 in 5639.8107 ms
+[18:59:04 INF] HTTP GET /api/diagnostics responded 200 in 6296.1163 ms
+[18:59:04 INF] HTTP GET /api/diagnostics responded 200 in 3264.4520 ms
+[18:59:04 INF] HTTP GET /api/modules responded 200 in 3393.4596 ms
+[18:59:05 INF] HTTP GET /api/modules responded 200 in 532.8903 ms
+[18:59:06 INF] HTTP GET /api/dashboard responded 200 in 5581.0361 ms
+[18:59:15 INF] HTTP OPTIONS /api/auth/login responded 204 in 0.0272 ms
+[18:59:15 INF] HTTP POST /api/auth/login responded 200 in 483.0705 ms
+[18:59:15 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0254 ms
+[18:59:15 INF] HTTP OPTIONS /api/modules responded 204 in 0.0098 ms
+[18:59:15 INF] HTTP OPTIONS /api/license responded 204 in 0.0073 ms
+[18:59:15 INF] HTTP GET /api/license responded 200 in 0.1129 ms
+[18:59:15 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0279 ms
+[18:59:16 INF] HTTP GET /api/modules responded 200 in 469.2924 ms
+[18:59:16 INF] HTTP GET /api/modules responded 200 in 471.6090 ms
+[18:59:16 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0306 ms
+[18:59:16 INF] HTTP OPTIONS /api/modules responded 204 in 0.0119 ms
+[18:59:16 INF] HTTP OPTIONS /api/license responded 204 in 0.0084 ms
+[18:59:16 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0325 ms
+[18:59:16 INF] HTTP OPTIONS /api/modules responded 204 in 0.0096 ms
+[18:59:16 INF] HTTP GET /api/license responded 200 in 0.1067 ms
+[18:59:17 INF] HTTP GET /api/modules responded 200 in 478.9306 ms
+[18:59:17 INF] HTTP GET /api/modules responded 200 in 476.7701 ms
+[18:59:18 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0332 ms
+[18:59:18 INF] HTTP OPTIONS /api/license responded 204 in 0.0105 ms
+[18:59:18 INF] HTTP OPTIONS /api/modules responded 204 in 0.0206 ms
+[18:59:18 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0130 ms
+[18:59:18 INF] HTTP GET /api/license responded 200 in 0.1555 ms
+[18:59:19 INF] HTTP GET /api/modules responded 200 in 484.8582 ms
+[18:59:19 ERR] HTTP GET /api/diagnostics responded 500 in 3501.7293 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDiagnosticsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 608
+   at Program.<>c.<<<Main>$>b__0_55>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 435
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:59:19 ERR] HTTP GET /api/dashboard responded 500 in 3490.2965 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListNotificationsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 482
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDashboardAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 46
+   at Program.<>c.<<<Main>$>b__0_12>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 210
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[18:59:19 INF] HTTP GET /api/dashboard responded 200 in 2571.9021 ms
+[18:59:19 INF] HTTP GET /api/modules responded 200 in 483.6835 ms
+[18:59:20 INF] HTTP GET /api/diagnostics responded 200 in 3202.0194 ms
+[18:59:21 INF] HTTP GET /api/dashboard responded 200 in 2555.2217 ms
+[18:59:21 INF] HTTP GET /api/diagnostics responded 200 in 3150.7982 ms
+[19:00:53 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0351 ms
+[19:00:53 INF] HTTP OPTIONS /api/license responded 204 in 0.0152 ms
+[19:00:53 INF] HTTP OPTIONS /api/modules responded 204 in 0.0100 ms
+[19:00:53 INF] HTTP GET /api/license responded 200 in 0.1584 ms
+[19:00:53 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0345 ms
+[19:00:53 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0278 ms
+[19:00:53 INF] HTTP OPTIONS /api/modules responded 204 in 0.0105 ms
+[19:00:53 INF] HTTP OPTIONS /api/license responded 204 in 0.0088 ms
+[19:00:53 INF] HTTP GET /api/license responded 200 in 0.1071 ms
+[19:00:53 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0283 ms
+[19:00:53 INF] HTTP GET /api/modules responded 200 in 475.3937 ms
+[19:00:53 INF] HTTP GET /api/modules responded 200 in 481.8734 ms
+[19:00:54 INF] HTTP GET /api/modules responded 200 in 480.7636 ms
+[19:00:54 INF] HTTP GET /api/modules responded 200 in 469.7046 ms
+[19:00:55 INF] HTTP GET /api/dashboard responded 200 in 2535.2702 ms
+[19:00:56 INF] HTTP GET /api/dashboard responded 200 in 2631.9130 ms
+[19:00:56 INF] HTTP GET /api/diagnostics responded 200 in 3173.2116 ms
+[19:00:56 INF] HTTP GET /api/diagnostics responded 200 in 3430.3178 ms
+[19:01:00 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0365 ms
+[19:01:00 INF] HTTP OPTIONS /api/modules responded 204 in 0.0212 ms
+[19:01:00 INF] HTTP OPTIONS /api/license responded 204 in 0.0112 ms
+[19:01:00 INF] HTTP GET /api/license responded 200 in 0.1816 ms
+[19:01:00 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0385 ms
+[19:01:00 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0394 ms
+[19:01:00 INF] HTTP OPTIONS /api/modules responded 204 in 0.0251 ms
+[19:01:00 INF] HTTP OPTIONS /api/license responded 204 in 0.0099 ms
+[19:01:00 INF] HTTP GET /api/license responded 200 in 0.1257 ms
+[19:01:00 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0402 ms
+[19:01:00 INF] HTTP GET /api/modules responded 200 in 555.4790 ms
+[19:01:00 INF] HTTP GET /api/modules responded 200 in 505.9065 ms
+[19:01:01 INF] HTTP GET /api/modules responded 200 in 510.4957 ms
+[19:01:01 INF] HTTP GET /api/modules responded 200 in 506.4678 ms
+[19:01:03 INF] HTTP GET /api/dashboard responded 200 in 2979.7808 ms
+[19:01:03 INF] HTTP GET /api/dashboard responded 200 in 2948.3752 ms
+[19:01:04 INF] HTTP GET /api/diagnostics responded 200 in 3776.4206 ms
+[19:01:04 INF] HTTP GET /api/diagnostics responded 200 in 3723.0229 ms
+[19:01:39 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0469 ms
+[19:01:39 INF] HTTP OPTIONS /api/modules responded 204 in 0.0137 ms
+[19:01:39 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0347 ms
+[19:01:39 INF] HTTP OPTIONS /api/license responded 204 in 0.0220 ms
+[19:01:39 INF] HTTP GET /api/license responded 200 in 0.2190 ms
+[19:01:40 INF] HTTP GET /api/modules responded 200 in 477.1841 ms
+[19:01:41 INF] HTTP GET /api/modules responded 200 in 559.8597 ms
+[19:01:42 INF] HTTP GET /api/dashboard responded 200 in 2682.0257 ms
+[19:01:43 INF] HTTP GET /api/diagnostics responded 200 in 3432.2661 ms
+[19:01:54 INF] HTTP OPTIONS /api/modules responded 204 in 0.0484 ms
+[19:01:54 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0134 ms
+[19:01:54 INF] HTTP GET /api/custom-modules responded 200 in 0.5625 ms
+[19:01:55 INF] HTTP GET /api/modules responded 200 in 496.5209 ms
+[19:01:55 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.0312 ms
+[19:01:56 INF] HTTP GET /api/custom-modules responded 200 in 0.4911 ms
+[19:01:56 INF] HTTP GET /api/modules responded 200 in 554.1450 ms
+[19:01:57 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1610.3425 ms
+[19:02:07 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0433 ms
+[19:02:07 INF] HTTP OPTIONS /api/modules responded 204 in 0.0212 ms
+[19:02:07 INF] HTTP OPTIONS /api/license responded 204 in 0.0181 ms
+[19:02:07 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0089 ms
+[19:02:07 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0104 ms
+[19:02:07 INF] HTTP OPTIONS /api/modules responded 204 in 0.0105 ms
+[19:02:07 INF] HTTP OPTIONS /api/license responded 204 in 0.0088 ms
+[19:02:07 INF] HTTP OPTIONS /api/modules responded 204 in 0.0151 ms
+[19:02:07 INF] HTTP GET /api/license responded 200 in 0.1149 ms
+[19:02:07 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0120 ms
+[19:02:07 INF] HTTP GET /api/license responded 200 in 0.1156 ms
+[19:02:07 INF] HTTP GET /api/custom-modules responded 200 in 0.6595 ms
+[19:02:07 INF] HTTP GET /api/modules responded 200 in 559.6600 ms
+[19:02:07 INF] HTTP GET /api/modules responded 200 in 569.5408 ms
+[19:02:08 INF] HTTP GET /api/modules responded 200 in 508.8610 ms
+[19:02:08 INF] HTTP GET /api/modules responded 200 in 503.6473 ms
+[19:02:08 INF] HTTP GET /api/license responded 200 in 0.1294 ms
+[19:02:09 INF] HTTP GET /api/modules responded 200 in 474.9331 ms
+[19:02:09 INF] HTTP GET /api/modules responded 200 in 465.9808 ms
+[19:02:10 INF] HTTP GET /api/license responded 200 in 0.3415 ms
+[19:02:10 INF] HTTP GET /api/custom-modules responded 200 in 0.6812 ms
+[19:02:10 INF] HTTP GET /api/modules responded 200 in 485.7508 ms
+[19:02:10 INF] HTTP GET /api/diagnostics responded 200 in 3463.4672 ms
+[19:02:10 ERR] HTTP GET /api/diagnostics responded 500 in 3503.0637 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDiagnosticsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 608
+   at Program.<>c.<<<Main>$>b__0_55>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 435
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[19:02:10 ERR] HTTP GET /api/dashboard responded 500 in 3514.3353 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListNotificationsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 482
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDashboardAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 46
+   at Program.<>c.<<<Main>$>b__0_12>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 210
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[19:02:11 INF] HTTP GET /api/modules responded 200 in 492.0571 ms
+[19:02:11 INF] HTTP GET /api/dashboard responded 200 in 2651.4771 ms
+[19:02:12 INF] HTTP GET /api/diagnostics responded 200 in 3304.1290 ms
+[19:04:36 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0349 ms
+[19:04:36 INF] HTTP OPTIONS /api/modules responded 204 in 0.0221 ms
+[19:04:36 INF] HTTP OPTIONS /api/license responded 204 in 0.0098 ms
+[19:04:36 INF] HTTP OPTIONS /api/modules responded 204 in 0.0081 ms
+[19:04:36 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0110 ms
+[19:04:36 INF] HTTP GET /api/license responded 200 in 0.1140 ms
+[19:04:36 INF] HTTP GET /api/custom-modules responded 200 in 0.3826 ms
+[19:04:36 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0270 ms
+[19:04:36 INF] HTTP OPTIONS /api/modules responded 204 in 0.0314 ms
+[19:04:36 INF] HTTP OPTIONS /api/license responded 204 in 0.0120 ms
+[19:04:36 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0207 ms
+[19:04:36 INF] HTTP GET /api/license responded 200 in 0.0839 ms
+[19:04:39 INF] HTTP GET /api/modules responded 200 in 3600.7293 ms
+[19:04:39 INF] HTTP GET /api/modules responded 200 in 3305.1313 ms
+[19:04:40 INF] HTTP GET /api/license responded 200 in 0.2614 ms
+[19:04:40 INF] HTTP GET /api/custom-modules responded 200 in 0.4428 ms
+[19:04:40 INF] HTTP GET /api/modules responded 200 in 473.1405 ms
+[19:04:40 INF] HTTP GET /api/modules responded 200 in 482.3533 ms
+[19:04:40 INF] HTTP GET /api/license responded 200 in 0.2030 ms
+[19:04:40 INF] HTTP GET /api/modules responded 200 in 479.0115 ms
+[19:04:40 INF] HTTP GET /api/modules responded 200 in 478.5880 ms
+[19:04:41 INF] HTTP GET /api/modules responded 200 in 470.4414 ms
+[19:04:41 INF] HTTP GET /api/dashboard responded 200 in 5609.4553 ms
+[19:04:42 INF] HTTP GET /api/diagnostics responded 200 in 6273.2334 ms
+[19:04:42 INF] HTTP GET /api/diagnostics responded 200 in 6577.8061 ms
+[19:04:53 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0541 ms
+[19:04:53 INF] HTTP OPTIONS /api/modules responded 204 in 0.0232 ms
+[19:04:53 INF] HTTP OPTIONS /api/license responded 204 in 0.0407 ms
+[19:04:53 INF] HTTP GET /api/license responded 200 in 0.2880 ms
+[19:04:53 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0217 ms
+[19:04:53 INF] HTTP GET /api/custom-modules responded 200 in 0.9061 ms
+[19:04:53 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0317 ms
+[19:04:53 INF] HTTP OPTIONS /api/modules responded 204 in 0.0461 ms
+[19:04:53 INF] HTTP OPTIONS /api/license responded 204 in 0.0119 ms
+[19:04:53 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0312 ms
+[19:04:53 INF] HTTP OPTIONS /api/modules responded 204 in 0.0387 ms
+[19:04:53 INF] HTTP GET /api/license responded 200 in 0.1942 ms
+[19:04:54 INF] HTTP GET /api/modules responded 200 in 562.7744 ms
+[19:04:54 INF] HTTP GET /api/modules responded 200 in 633.5184 ms
+[19:04:54 INF] HTTP GET /api/modules responded 200 in 496.3320 ms
+[19:04:54 INF] HTTP GET /api/modules responded 200 in 473.6582 ms
+[19:04:56 INF] HTTP GET /api/dashboard responded 200 in 2846.7294 ms
+[19:04:57 INF] HTTP GET /api/diagnostics responded 200 in 3661.5064 ms
+[19:04:57 INF] HTTP GET /api/diagnostics responded 200 in 3663.3814 ms
+[19:04:58 INF] HTTP OPTIONS /api/events responded 204 in 0.0643 ms
+[19:04:58 INF] HTTP GET /api/modules responded 200 in 480.3560 ms
+[19:04:58 INF] HTTP GET /api/events responded 200 in 480.8352 ms
+[19:04:59 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0353 ms
+[19:04:59 INF] HTTP OPTIONS /api/modules responded 204 in 0.0133 ms
+[19:05:00 INF] HTTP GET /api/modules responded 200 in 477.8515 ms
+[19:05:00 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0422 ms
+[19:05:00 INF] HTTP OPTIONS /api/modules responded 204 in 0.0336 ms
+[19:05:00 INF] HTTP OPTIONS /api/license responded 204 in 0.0252 ms
+[19:05:00 INF] HTTP OPTIONS /api/modules responded 204 in 0.0104 ms
+[19:05:00 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0224 ms
+[19:05:00 INF] HTTP GET /api/license responded 200 in 0.1223 ms
+[19:05:00 INF] HTTP GET /api/custom-modules responded 200 in 0.4415 ms
+[19:05:01 INF] HTTP GET /api/modules responded 200 in 544.1932 ms
+[19:05:01 INF] HTTP GET /api/modules responded 200 in 497.2263 ms
+[19:05:02 INF] HTTP GET /api/dashboard responded 200 in 2557.6096 ms
+[19:05:03 INF] HTTP GET /api/license responded 200 in 0.3655 ms
+[19:05:03 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0426 ms
+[19:05:03 INF] HTTP OPTIONS /api/license responded 204 in 0.0159 ms
+[19:05:03 INF] HTTP GET /api/custom-modules responded 200 in 0.7662 ms
+[19:05:03 INF] HTTP GET /api/license responded 200 in 0.1215 ms
+[19:05:04 INF] HTTP GET /api/modules responded 200 in 557.2387 ms
+[19:05:04 INF] HTTP GET /api/modules responded 200 in 561.7315 ms
+[19:05:04 INF] HTTP GET /api/license responded 200 in 0.2541 ms
+[19:05:04 INF] HTTP GET /api/custom-modules responded 200 in 0.5482 ms
+[19:05:04 INF] HTTP GET /api/diagnostics responded 200 in 3876.2006 ms
+[19:05:04 INF] HTTP GET /api/modules responded 200 in 491.2828 ms
+[19:05:04 INF] HTTP GET /api/modules responded 200 in 494.3908 ms
+[19:05:05 INF] HTTP GET /api/modules responded 200 in 489.8130 ms
+[19:05:06 INF] HTTP GET /api/dashboard responded 200 in 2636.2549 ms
+[19:05:07 INF] HTTP GET /api/diagnostics responded 200 in 3357.3171 ms
+[19:05:08 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0334 ms
+[19:05:08 INF] HTTP OPTIONS /api/modules responded 204 in 0.0435 ms
+[19:05:08 INF] HTTP OPTIONS /api/license responded 204 in 0.0123 ms
+[19:05:08 INF] HTTP OPTIONS /api/modules responded 204 in 0.0124 ms
+[19:05:08 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0139 ms
+[19:05:08 INF] HTTP GET /api/license responded 200 in 0.3773 ms
+[19:05:08 INF] HTTP GET /api/custom-modules responded 200 in 0.5092 ms
+[19:05:08 INF] HTTP OPTIONS /api/modules responded 204 in 0.0422 ms
+[19:05:08 INF] HTTP GET /api/license responded 200 in 0.2153 ms
+[19:05:08 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0293 ms
+[19:05:08 INF] HTTP GET /api/modules responded 200 in 471.1000 ms
+[19:05:08 INF] HTTP GET /api/modules responded 200 in 481.1410 ms
+[19:05:09 INF] HTTP GET /api/modules responded 200 in 541.4088 ms
+[19:05:09 INF] HTTP GET /api/modules responded 200 in 468.7004 ms
+[19:05:10 INF] HTTP OPTIONS /api/license responded 204 in 0.4228 ms
+[19:05:10 INF] HTTP GET /api/license responded 200 in 0.2939 ms
+[19:05:10 INF] HTTP GET /api/license responded 200 in 0.1406 ms
+[19:05:10 INF] HTTP GET /api/custom-modules responded 200 in 0.6128 ms
+[19:05:10 INF] HTTP GET /api/modules responded 200 in 478.2831 ms
+[19:05:10 INF] HTTP GET /api/modules responded 200 in 508.0784 ms
+[19:05:10 INF] HTTP GET /api/dashboard responded 200 in 2596.3083 ms
+[19:05:11 INF] HTTP GET /api/modules responded 200 in 468.2866 ms
+[19:05:11 INF] HTTP GET /api/modules responded 200 in 512.3939 ms
+[19:05:11 INF] HTTP GET /api/diagnostics responded 200 in 3157.3509 ms
+[19:05:11 INF] HTTP GET /api/diagnostics responded 200 in 3097.0592 ms
+[19:05:12 INF] HTTP GET /api/license responded 200 in 0.1348 ms
+[19:05:12 INF] HTTP GET /api/custom-modules responded 200 in 0.7767 ms
+[19:05:12 INF] HTTP GET /api/modules responded 200 in 507.5074 ms
+[19:05:13 INF] HTTP GET /api/modules responded 200 in 483.1600 ms
+[19:05:15 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0708 ms
+[19:05:15 INF] HTTP OPTIONS /api/modules responded 204 in 0.0290 ms
+[19:05:15 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0076 ms
+[19:05:15 INF] HTTP OPTIONS /api/modules responded 204 in 0.0111 ms
+[19:05:15 INF] HTTP OPTIONS /api/license responded 204 in 0.0127 ms
+[19:05:15 INF] HTTP OPTIONS /api/modules responded 204 in 0.0149 ms
+[19:05:15 INF] HTTP OPTIONS /api/license responded 204 in 0.0407 ms
+[19:05:15 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0190 ms
+[19:05:15 INF] HTTP GET /api/license responded 200 in 0.2748 ms
+[19:05:15 INF] HTTP GET /api/license responded 200 in 0.1398 ms
+[19:05:15 INF] HTTP GET /api/custom-modules responded 200 in 0.8668 ms
+[19:05:15 INF] HTTP GET /api/diagnostics responded 200 in 3267.7130 ms
+[19:05:15 INF] HTTP GET /api/modules responded 200 in 475.9853 ms
+[19:05:15 INF] HTTP GET /api/modules responded 200 in 474.2620 ms
+[19:05:16 INF] HTTP GET /api/modules responded 200 in 545.6879 ms
+[19:05:16 INF] HTTP GET /api/modules responded 200 in 546.9018 ms
+[19:05:18 INF] HTTP GET /api/dashboard responded 200 in 2712.0391 ms
+[19:05:18 INF] HTTP GET /api/diagnostics responded 200 in 3411.6298 ms
+[19:05:39 INF] HTTP OPTIONS /api/modules responded 204 in 0.0290 ms
+[19:05:39 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0294 ms
+[19:05:39 INF] HTTP OPTIONS /api/license responded 204 in 0.0113 ms
+[19:05:39 INF] HTTP GET /api/license responded 200 in 0.2503 ms
+[19:05:39 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0303 ms
+[19:05:39 INF] HTTP GET /api/modules responded 200 in 470.3690 ms
+[19:05:40 INF] HTTP GET /api/modules responded 200 in 466.1324 ms
+[19:05:41 INF] HTTP GET /api/dashboard responded 200 in 2577.0632 ms
+[19:05:42 INF] HTTP GET /api/diagnostics responded 200 in 3197.7290 ms
+[19:06:03 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0344 ms
+[19:06:03 INF] HTTP OPTIONS /api/modules responded 204 in 0.0171 ms
+[19:06:03 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0290 ms
+[19:06:03 INF] HTTP OPTIONS /api/license responded 204 in 0.0109 ms
+[19:06:03 INF] HTTP OPTIONS /api/modules responded 204 in 0.0323 ms
+[19:06:03 INF] HTTP GET /api/license responded 200 in 0.2054 ms
+[19:06:03 INF] HTTP GET /api/modules responded 200 in 498.6946 ms
+[19:06:04 INF] HTTP GET /api/modules responded 200 in 482.3961 ms
+[19:06:06 INF] HTTP GET /api/dashboard responded 200 in 2771.2314 ms
+[19:06:06 INF] HTTP GET /api/diagnostics responded 200 in 3413.3889 ms
+[19:06:11 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0286 ms
+[19:06:11 INF] HTTP OPTIONS /api/modules responded 204 in 0.0097 ms
+[19:06:11 INF] HTTP OPTIONS /api/license responded 204 in 0.0099 ms
+[19:06:11 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0074 ms
+[19:06:11 INF] HTTP OPTIONS /api/modules responded 204 in 0.0098 ms
+[19:06:12 INF] HTTP GET /api/license responded 200 in 0.1711 ms
+[19:06:12 INF] HTTP GET /api/modules responded 200 in 473.1765 ms
+[19:06:13 INF] HTTP GET /api/modules responded 200 in 475.6655 ms
+[19:06:14 INF] HTTP GET /api/dashboard responded 200 in 2676.4125 ms
+[19:06:15 INF] HTTP GET /api/diagnostics responded 200 in 3324.7081 ms
+[19:06:26 INF] HTTP OPTIONS /api/modules responded 204 in 0.0322 ms
+[19:06:26 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0107 ms
+[19:06:26 INF] HTTP GET /api/custom-modules responded 200 in 0.4972 ms
+[19:06:26 INF] HTTP GET /api/modules responded 200 in 478.3938 ms
+[19:06:26 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.0362 ms
+[19:06:27 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0391 ms
+[19:06:27 INF] HTTP OPTIONS /api/license responded 204 in 0.0175 ms
+[19:06:27 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0216 ms
+[19:06:27 INF] HTTP OPTIONS /api/modules responded 204 in 0.0136 ms
+[19:06:27 INF] HTTP OPTIONS /api/license responded 204 in 0.0092 ms
+[19:06:27 INF] HTTP GET /api/license responded 200 in 0.1203 ms
+[19:06:27 INF] HTTP GET /api/custom-modules responded 200 in 0.4823 ms
+[19:06:27 INF] HTTP GET /api/license responded 200 in 0.1109 ms
+[19:06:27 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0177 ms
+[19:06:27 INF] HTTP GET /api/modules responded 200 in 484.0332 ms
+[19:06:27 INF] HTTP GET /api/modules responded 200 in 483.0544 ms
+[19:06:28 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1402.9528 ms
+[19:06:28 INF] HTTP GET /api/license responded 200 in 0.2152 ms
+[19:06:28 INF] HTTP GET /api/custom-modules responded 200 in 0.5735 ms
+[19:06:28 INF] HTTP GET /api/modules responded 200 in 469.7111 ms
+[19:06:28 INF] HTTP GET /api/modules responded 200 in 478.4011 ms
+[19:06:28 INF] HTTP GET /api/custom-modules responded 200 in 0.5193 ms
+[19:06:28 INF] HTTP GET /api/modules responded 200 in 477.6123 ms
+[19:06:29 INF] HTTP GET /api/modules responded 200 in 469.6391 ms
+[19:06:29 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1428.0163 ms
+[19:06:30 INF] HTTP GET /api/diagnostics responded 200 in 3338.5433 ms
+[19:06:30 INF] HTTP GET /api/diagnostics responded 200 in 3338.5528 ms
+[19:06:32 INF] HTTP GET /api/dashboard responded 200 in 5384.1244 ms
+[19:06:36 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0293 ms
+[19:06:36 INF] HTTP OPTIONS /api/modules responded 204 in 0.0132 ms
+[19:06:36 INF] HTTP OPTIONS /api/license responded 204 in 0.0086 ms
+[19:06:36 INF] HTTP OPTIONS /api/modules responded 204 in 0.0077 ms
+[19:06:36 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0094 ms
+[19:06:36 INF] HTTP GET /api/license responded 200 in 0.1292 ms
+[19:06:36 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0326 ms
+[19:06:36 INF] HTTP GET /api/modules responded 200 in 563.1340 ms
+[19:06:37 INF] HTTP GET /api/modules responded 200 in 501.1594 ms
+[19:06:38 INF] HTTP GET /api/dashboard responded 200 in 2687.3254 ms
+[19:06:39 INF] HTTP GET /api/diagnostics responded 200 in 3320.9431 ms
+[19:09:51 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0385 ms
+[19:09:51 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0232 ms
+[19:09:51 INF] HTTP OPTIONS /api/modules responded 204 in 0.0167 ms
+[19:09:51 INF] HTTP OPTIONS /api/license responded 204 in 0.0552 ms
+[19:09:51 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0157 ms
+[19:09:51 INF] HTTP OPTIONS /api/modules responded 204 in 0.0194 ms
+[19:09:51 INF] HTTP OPTIONS /api/modules responded 204 in 0.0104 ms
+[19:09:51 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0089 ms
+[19:09:51 INF] HTTP OPTIONS /api/license responded 204 in 0.0091 ms
+[19:09:51 INF] HTTP OPTIONS /api/modules responded 204 in 0.0164 ms
+[19:09:51 INF] HTTP GET /api/license responded 200 in 0.1693 ms
+[19:09:51 INF] HTTP GET /api/license responded 200 in 0.1250 ms
+[19:09:52 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[19:09:52 ERR] An exception occurred while iterating over the results of a query for context type 'SysAssist.Infrastructure.Data.SysAssistDbContext'.
+Npgsql.NpgsqlException (0x80004005): Exception while performing SSL handshake
+ ---> System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Npgsql.NpgsqlException (0x80004005): Exception while performing SSL handshake
+ ---> System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+[19:09:52 ERR] HTTP GET /api/modules responded 500 in 1466.2092 ms
+Npgsql.NpgsqlException (0x80004005): Exception while performing SSL handshake
+ ---> System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.NegotiateEncryption(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListModulesAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 194
+   at Program.<>c.<<<Main>$>b__0_21>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 236
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[19:09:53 INF] HTTP GET /api/license responded 200 in 0.1034 ms
+[19:09:53 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[19:09:53 ERR] HTTP GET /api/diagnostics responded 500 in 2504.4735 ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Npgsql.Internal.NpgsqlWriteBuffer.Flush(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDiagnosticsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 605
+   at Program.<>c.<<<Main>$>b__0_55>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 435
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[19:09:53 ERR] An error occurred using the connection to database 'defaultdb' on server 'tcp://sneaky-newfie-16368.jxf.gcp-europe-west3.cockroachlabs.cloud:26257'.
+[19:09:53 ERR] HTTP GET /api/dashboard responded 500 in 2507.6033 ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Npgsql.Internal.NpgsqlWriteBuffer.Flush(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|33_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToArrayAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SysAssist.Infrastructure.Services.SysAssistApiService.ListEventsAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 69
+   at SysAssist.Infrastructure.Services.SysAssistApiService.GetDashboardAsync(CancellationToken cancellationToken) in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Infrastructure\Services\SysAssistApiService.cs:line 43
+   at Program.<>c.<<<Main>$>b__0_12>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 210
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_7>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 172
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[19:09:55 INF] HTTP GET /api/modules responded 200 in 4099.7911 ms
+[19:09:56 INF] HTTP GET /api/modules responded 200 in 467.1481 ms
+[19:09:56 INF] HTTP GET /api/modules responded 200 in 3425.4155 ms
+[19:09:56 INF] HTTP OPTIONS /api/logs responded 204 in 0.0277 ms
+[19:09:57 INF] HTTP GET /api/modules responded 200 in 466.8020 ms
+[19:09:57 INF] HTTP GET /api/logs responded 200 in 484.6126 ms
+[19:09:57 INF] HTTP OPTIONS /api/audit responded 204 in 0.0275 ms
+[19:09:57 INF] HTTP GET /api/dashboard responded 200 in 6142.5269 ms
+[19:09:57 INF] HTTP GET /api/audit responded 200 in 684.3544 ms
+[19:09:58 INF] HTTP GET /api/diagnostics responded 200 in 6540.3905 ms
+[19:09:58 INF] HTTP OPTIONS /api/actions responded 204 in 0.0284 ms
+[19:09:58 INF] HTTP OPTIONS /api/modules responded 204 in 0.0236 ms
+[19:09:58 INF] HTTP GET /api/dashboard responded 200 in 5524.1228 ms
+[19:09:58 INF] HTTP GET /api/actions responded 200 in 469.4390 ms
+[19:09:58 INF] HTTP GET /api/modules responded 200 in 475.3144 ms
+[19:09:59 INF] HTTP GET /api/diagnostics responded 200 in 6144.1539 ms
+[19:09:59 INF] HTTP OPTIONS /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 204 in 0.0312 ms
+[19:09:59 INF] HTTP OPTIONS /api/custom-modules responded 204 in 0.0173 ms
+[19:09:59 INF] HTTP GET /api/custom-modules responded 200 in 0.4454 ms
+[19:09:59 INF] HTTP GET /api/modules responded 200 in 473.9619 ms
+[19:10:00 INF] HTTP OPTIONS /api/approvals responded 204 in 0.0310 ms
+[19:10:00 INF] HTTP OPTIONS /api/events responded 204 in 0.0089 ms
+[19:10:00 INF] HTTP GET /api/approvals responded 200 in 521.1955 ms
+[19:10:00 INF] HTTP GET /api/events responded 200 in 522.6353 ms
+[19:10:00 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1451.5195 ms
+[19:10:00 INF] HTTP GET /api/actions responded 200 in 526.2472 ms
+[19:10:01 INF] HTTP GET /api/modules responded 200 in 543.1585 ms
+[19:10:01 INF] HTTP GET /api/events responded 200 in 543.6415 ms
+[19:10:01 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0289 ms
+[19:10:02 INF] HTTP GET /api/modules responded 200 in 471.7882 ms
+[19:10:03 INF] HTTP GET /api/custom-modules responded 200 in 0.5137 ms
+[19:10:03 INF] HTTP GET /api/modules responded 200 in 538.4472 ms
+[19:10:04 INF] HTTP GET /api/dashboard responded 200 in 2697.0561 ms
+[19:10:04 INF] HTTP GET /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/settings responded 200 in 1535.4963 ms
+[19:10:10 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0352 ms
+[19:10:10 INF] HTTP OPTIONS /api/modules responded 204 in 0.0126 ms
+[19:10:10 INF] HTTP OPTIONS /api/license responded 204 in 0.0075 ms
+[19:10:10 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0068 ms
+[19:10:10 INF] HTTP OPTIONS /api/modules responded 204 in 0.0129 ms
+[19:10:10 INF] HTTP GET /api/license responded 200 in 0.1112 ms
+[19:10:11 INF] HTTP GET /api/modules responded 200 in 717.5496 ms
+[19:10:12 INF] HTTP GET /api/modules responded 200 in 469.8163 ms
+[19:10:13 INF] HTTP GET /api/dashboard responded 200 in 2519.0397 ms
+[19:10:14 INF] HTTP GET /api/diagnostics responded 200 in 3613.6635 ms

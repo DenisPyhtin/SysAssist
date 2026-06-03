@@ -1,0 +1,20 @@
+{
+  "name": "@sysassist/module-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for building SysAssist module manifests and adapters.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "templates",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  }
+}

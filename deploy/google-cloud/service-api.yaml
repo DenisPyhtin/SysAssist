@@ -1,0 +1,78 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: sysassist-api
+  annotations:
+    run.googleapis.com/ingress: all
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "5"
+        run.googleapis.com/cpu-throttling: "true"
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      containers:
+        - image: us-central1-docker.pkg.dev/PROJECT_ID/sysassist/sysassist-api:latest
+          ports:
+            - name: http1
+              containerPort: 8080
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Production
+            - name: SysAssist__UseDemoData
+              value: "false"
+            - name: SysAssist__ApplyMigrationsOnStartup
+              value: "false"
+            - name: Cors__AllowedOrigins__0
+              value: https://sysassist-web.example.invalid
+            - name: ConnectionStrings__DefaultConnection
+              valueFrom:
+                secretKeyRef:
+                  name: COCKROACH_CONNECTION_STRING
+                  key: latest
+            - name: ConnectionStrings__SysAssistDb
+              valueFrom:
+                secretKeyRef:
+                  name: COCKROACH_CONNECTION_STRING
+                  key: latest
+            - name: Auth__JwtSecret
+              valueFrom:
+                secretKeyRef:
+                  name: JWT_SECRET
+                  key: latest
+            - name: Jwt__SigningKey
+              valueFrom:
+                secretKeyRef:
+                  name: JWT_SECRET
+                  key: latest
+            - name: Jwt__Issuer
+              value: SysAssist
+            - name: Jwt__Audience
+              value: sysassist-api
+            - name: ZABBIX_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: ZABBIX_API_TOKEN
+                  key: latest
+            - name: GRAFANA_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: GRAFANA_API_TOKEN
+                  key: latest
+            - name: TELEGRAM_BOT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: TELEGRAM_BOT_TOKEN
+                  key: latest
+            - name: SMTP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: SMTP_PASSWORD
+                  key: latest
+          resources:
+            limits:
+              cpu: "1"
+              memory: 512Mi

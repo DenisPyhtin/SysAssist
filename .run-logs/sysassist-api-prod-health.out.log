@@ -1,0 +1,77 @@
+Используются параметры запуска из src\SysAssist.Api\Properties\launchSettings.json...
+Сборка…
+[11:31:52 INF] Applying SysAssist database migrations and seed data.
+[11:31:52 INF] Cockroach Cloud detected; creating schema without PostgreSQL migration locks.
+[11:31:57 INF] Seeding SysAssist database.
+[11:32:15 INF] SysAssist database is ready.
+[11:32:15 INF] Now listening on: http://localhost:5089
+[11:32:15 INF] Application started. Press Ctrl+C to shut down.
+[11:32:15 INF] Hosting environment: Development
+[11:32:15 INF] Content root path: C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api
+[11:32:33 INF] HTTP POST /api/auth/login responded 200 in 1272.2672 ms
+[11:32:37 INF] HTTP GET /health/ready responded 200 in 3691.3161 ms
+[11:32:40 INF] HTTP GET /api/dashboard responded 200 in 2765.4751 ms
+[11:32:43 INF] HTTP GET /api/diagnostics responded 200 in 3445.4222 ms
+[11:32:44 INF] HTTP GET /api/modules responded 200 in 493.6414 ms
+[11:33:57 INF] HTTP GET /health/ready responded 200 in 3002.4281 ms
+[11:33:58 INF] HTTP POST /api/auth/login responded 200 in 1014.6758 ms
+[11:33:59 INF] HTTP GET /api/auth/me responded 200 in 535.6957 ms
+[11:34:02 INF] HTTP GET /api/dashboard responded 200 in 3144.4483 ms
+[11:34:02 INF] HTTP GET /api/modules responded 200 in 501.7673 ms
+[11:34:04 INF] Start processing HTTP request GET http://34.107.8.65:3000/api/health
+[11:34:04 INF] Sending HTTP request GET http://34.107.8.65:3000/api/health
+[11:34:05 INF] Received HTTP response headers after 1152.5447ms - 200
+[11:34:05 INF] End processing HTTP request after 1159.7037ms - 200
+[11:34:06 INF] Start processing HTTP request GET http://34.107.8.65:9090/-/healthy
+[11:34:06 INF] Sending HTTP request GET http://34.107.8.65:9090/-/healthy
+[11:34:07 INF] Received HTTP response headers after 1125.6468ms - 200
+[11:34:07 INF] End processing HTTP request after 1127.2826ms - 200
+[11:34:09 INF] Start processing HTTP request GET http://34.107.8.65/
+[11:34:09 INF] Sending HTTP request GET http://34.107.8.65/
+[11:34:11 INF] Received HTTP response headers after 1690.988ms - 200
+[11:34:11 INF] End processing HTTP request after 1692.851ms - 200
+[11:34:12 INF] Start processing HTTP request GET http://34.107.8.65:9093/-/ready
+[11:34:12 INF] Sending HTTP request GET http://34.107.8.65:9093/-/ready
+[11:34:13 INF] Received HTTP response headers after 1110.8125ms - 200
+[11:34:13 INF] End processing HTTP request after 1112.381ms - 200
+[11:34:13 INF] Start processing HTTP request GET http://34.107.8.65:9090/-/ready
+[11:34:13 INF] Sending HTTP request GET http://34.107.8.65:9090/-/ready
+[11:34:14 INF] Received HTTP response headers after 562.3862ms - 200
+[11:34:14 INF] End processing HTTP request after 563.5737ms - 200
+[11:34:16 INF] HTTP POST /api/diagnostics/run responded 200 in 13727.7327 ms
+[11:34:20 INF] HTTP GET /api/diagnostics responded 200 in 3516.5205 ms
+[11:34:20 INF] HTTP GET /api/logs responded 200 in 520.8350 ms
+[11:34:25 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[11:34:30 INF] HTTP GET /api/support-bundle responded 200 in 10348.9043 ms
+[11:34:44 INF] HTTP POST /api/auth/login responded 200 in 1048.3002 ms
+[11:34:46 INF] HTTP GET /api/dashboard responded 200 in 2742.9624 ms
+[11:34:47 INF] HTTP GET /api/modules responded 200 in 511.8396 ms
+[11:35:24 INF] HTTP GET /health/ready responded 200 in 2971.8794 ms
+[11:35:25 INF] HTTP POST /api/auth/login responded 200 in 1026.5652 ms
+[11:35:25 INF] HTTP GET /api/auth/me responded 200 in 496.0010 ms
+[11:35:28 INF] HTTP GET /api/dashboard responded 200 in 2687.0948 ms
+[11:35:29 INF] HTTP GET /api/modules responded 200 in 509.9205 ms
+[11:35:30 INF] Start processing HTTP request GET http://34.107.8.65:3000/api/health
+[11:35:30 INF] Sending HTTP request GET http://34.107.8.65:3000/api/health
+[11:35:31 INF] Received HTTP response headers after 1124.3749ms - 200
+[11:35:31 INF] End processing HTTP request after 1126.6132ms - 200
+[11:35:32 INF] Start processing HTTP request GET http://34.107.8.65:9090/-/healthy
+[11:35:32 INF] Sending HTTP request GET http://34.107.8.65:9090/-/healthy
+[11:35:33 INF] Received HTTP response headers after 1125.2813ms - 200
+[11:35:33 INF] End processing HTTP request after 1128.4035ms - 200
+[11:35:35 INF] Start processing HTTP request GET http://34.107.8.65/
+[11:35:35 INF] Sending HTTP request GET http://34.107.8.65/
+[11:35:37 INF] Received HTTP response headers after 1726.4146ms - 200
+[11:35:37 INF] End processing HTTP request after 1735.7524ms - 200
+[11:35:39 INF] Start processing HTTP request GET http://34.107.8.65:9093/-/ready
+[11:35:39 INF] Sending HTTP request GET http://34.107.8.65:9093/-/ready
+[11:35:40 INF] Received HTTP response headers after 1158.6848ms - 200
+[11:35:40 INF] End processing HTTP request after 1168.6091ms - 200
+[11:35:40 INF] Start processing HTTP request GET http://34.107.8.65:9090/-/ready
+[11:35:40 INF] Sending HTTP request GET http://34.107.8.65:9090/-/ready
+[11:35:40 INF] Received HTTP response headers after 553.4516ms - 200
+[11:35:40 INF] End processing HTTP request after 554.8087ms - 200
+[11:35:43 INF] HTTP POST /api/diagnostics/run responded 200 in 13864.7149 ms
+[11:35:46 INF] HTTP GET /api/diagnostics responded 200 in 3344.9957 ms
+[11:35:46 INF] HTTP GET /api/logs responded 200 in 504.5526 ms
+[11:35:57 INF] HTTP GET /api/support-bundle responded 200 in 10606.2893 ms

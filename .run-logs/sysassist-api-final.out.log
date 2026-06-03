@@ -1,0 +1,125 @@
+Используются параметры запуска из src\SysAssist.Api\Properties\launchSettings.json...
+Сборка…
+[19:39:53 INF] Applying SysAssist database migrations and seed data.
+[19:39:53 INF] Cockroach Cloud detected; creating schema without PostgreSQL migration locks.
+[19:39:57 INF] Seeding SysAssist database.
+[19:40:16 INF] SysAssist database is ready.
+[19:40:16 INF] Now listening on: http://localhost:5089
+[19:40:16 INF] Application started. Press Ctrl+C to shut down.
+[19:40:16 INF] Hosting environment: Development
+[19:40:16 INF] Content root path: C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api
+[19:40:24 INF] HTTP OPTIONS /api/modules responded 204 in 3.5128 ms
+[19:40:24 INF] HTTP OPTIONS /api/license responded 204 in 3.4789 ms
+[19:40:24 INF] HTTP OPTIONS /api/dashboard responded 204 in 3.5142 ms
+[19:40:24 INF] HTTP OPTIONS /api/diagnostics responded 204 in 3.4855 ms
+[19:40:24 INF] HTTP OPTIONS /api/modules responded 204 in 3.5200 ms
+[19:40:25 INF] HTTP GET /api/license responded 200 in 126.0329 ms
+[19:40:28 INF] HTTP GET /api/diagnostics responded 200 in 3713.8855 ms
+[19:40:29 INF] HTTP GET /api/modules responded 200 in 4021.0246 ms
+[19:40:29 INF] HTTP GET /api/modules responded 200 in 524.5015 ms
+[19:40:31 INF] HTTP GET /api/dashboard responded 200 in 6296.4923 ms
+[19:40:37 INF] HTTP GET /health/ready responded 200 in 3783.4158 ms
+[19:40:56 INF] HTTP POST /api/auth/login responded 200 in 698.2687 ms
+[19:40:59 INF] HTTP GET /api/dashboard responded 200 in 2886.8948 ms
+[19:40:59 INF] HTTP GET /api/modules responded 200 in 530.1151 ms
+[19:40:59 INF] HTTP POST /api/auth/login responded 400 in 3.3419 ms
+[19:40:59 ERR] HTTP POST /api/auth/login responded 500 in 2.1294 ms
+Microsoft.AspNetCore.Http.BadHttpRequestException: Failed to read parameter "LoginRequest request" from the request body as JSON.
+ ---> System.Text.Json.JsonException: 'l' is an invalid start of a property name. Expected a '"'. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+ ---> System.Text.Json.JsonReaderException: 'l' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 1.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.ReadConstructorArgumentsWithContinuation(ReadStack& state, Utf8JsonReader& reader, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack, T& value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsObjectAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync(HttpRequest request, JsonTypeInfo jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|101_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.Log.InvalidJsonRequestBody(HttpContext httpContext, String parameterTypeName, String parameterName, Exception exception, Boolean shouldThrow)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<HandleRequestBodyAndCompileRequestDelegateForJson>g__TryReadBodyAsync|101_0(HttpContext httpContext, Type bodyType, String parameterTypeName, String parameterName, Boolean allowEmptyRequestBody, Boolean throwOnBadRequest, JsonTypeInfo jsonTypeInfo)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass101_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Program.<>c.<<<Main>$>b__0_9>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 212
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Program.<>c.<<<Main>$>b__0_123>d.MoveNext() in C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api\Program.cs:line 814
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[19:41:11 INF] HTTP POST /api/auth/login responded 400 in 2.2068 ms
+[19:41:11 INF] HTTP POST /api/auth/login responded 400 in 1.0038 ms
+[19:41:11 INF] HTTP POST /api/auth/login responded 400 in 0.7990 ms
+[19:41:11 INF] HTTP POST /api/auth/login responded 400 in 0.6567 ms
+[19:41:11 INF] HTTP POST /api/auth/login responded 400 in 0.5909 ms
+[19:41:11 INF] HTTP POST /api/auth/login responded 400 in 0.6520 ms
+[19:41:11 INF] HTTP POST /api/auth/login responded 400 in 0.5209 ms
+[19:41:11 INF] HTTP POST /api/auth/login responded 400 in 0.5469 ms
+[19:41:11 INF] HTTP POST /api/auth/login responded 400 in 0.4737 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4310 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.5258 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4757 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4997 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4344 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4039 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4415 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.5021 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.5374 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4995 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.5826 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4750 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.5123 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.5378 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.5523 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.5718 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4478 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4989 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4752 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4607 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 400 in 0.4361 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 429 in 0.5619 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 429 in 0.1130 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 429 in 0.0994 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 429 in 0.1001 ms
+[19:41:12 INF] HTTP POST /api/auth/login responded 429 in 0.0915 ms
+[19:44:56 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.0810 ms
+[19:44:56 INF] HTTP OPTIONS /api/license responded 204 in 0.0380 ms
+[19:44:56 INF] HTTP OPTIONS /api/modules responded 204 in 0.0648 ms
+[19:44:56 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0223 ms
+[19:44:56 INF] HTTP OPTIONS /api/modules responded 204 in 0.0313 ms
+[19:44:56 INF] HTTP GET /api/license responded 200 in 0.5888 ms
+[19:44:56 INF] HTTP GET /api/modules responded 200 in 518.9368 ms
+[19:44:57 INF] HTTP GET /api/modules responded 200 in 473.3372 ms
+[19:44:58 INF] HTTP GET /api/dashboard responded 200 in 2654.8933 ms
+[19:44:59 INF] HTTP GET /api/diagnostics responded 200 in 3544.3138 ms
+[19:47:16 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.1856 ms
+[19:47:16 INF] HTTP OPTIONS /api/modules responded 204 in 0.0729 ms
+[19:47:16 INF] HTTP OPTIONS /api/license responded 204 in 0.0405 ms
+[19:47:16 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0281 ms
+[19:47:16 INF] HTTP OPTIONS /api/modules responded 204 in 0.0611 ms
+[19:47:16 INF] HTTP GET /api/license responded 200 in 0.4560 ms
+[19:47:17 INF] HTTP GET /api/modules responded 200 in 473.0306 ms
+[19:47:17 INF] HTTP GET /api/modules responded 200 in 484.1082 ms
+[19:47:20 INF] HTTP GET /api/diagnostics responded 200 in 3384.4397 ms
+[19:47:22 INF] HTTP GET /api/dashboard responded 200 in 5579.8946 ms
+[19:48:30 INF] HTTP OPTIONS /api/diagnostics responded 204 in 0.4316 ms
+[19:48:30 INF] HTTP OPTIONS /api/modules responded 204 in 0.0504 ms
+[19:48:30 INF] HTTP OPTIONS /api/license responded 204 in 0.0430 ms
+[19:48:30 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0767 ms
+[19:48:30 INF] HTTP GET /api/license responded 200 in 0.4263 ms
+[19:48:30 INF] HTTP OPTIONS /api/modules responded 204 in 0.1090 ms
+[19:48:31 INF] HTTP GET /api/modules responded 200 in 607.1278 ms
+[19:48:31 INF] HTTP GET /api/modules responded 200 in 483.2469 ms
+[19:48:33 INF] HTTP GET /api/dashboard responded 200 in 2725.2447 ms
+[19:48:33 INF] HTTP GET /api/diagnostics responded 200 in 3493.4651 ms

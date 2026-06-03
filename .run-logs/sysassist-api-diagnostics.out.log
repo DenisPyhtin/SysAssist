@@ -1,0 +1,50 @@
+Используются параметры запуска из src\SysAssist.Api\Properties\launchSettings.json...
+Сборка…
+[11:14:03 INF] Applying SysAssist database migrations and seed data.
+[11:14:04 INF] Cockroach Cloud detected; creating schema without PostgreSQL migration locks.
+[11:14:08 INF] Seeding SysAssist database.
+[11:14:26 INF] SysAssist database is ready.
+[11:14:26 INF] Now listening on: http://localhost:5089
+[11:14:26 INF] Application started. Press Ctrl+C to shut down.
+[11:14:26 INF] Hosting environment: Development
+[11:14:26 INF] Content root path: C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api
+[11:14:41 INF] HTTP GET /health/ready responded 200 in 3650.9635 ms
+[11:14:57 INF] HTTP OPTIONS /api/auth/login responded 204 in 1.2705 ms
+[11:14:58 INF] HTTP POST /api/auth/login responded 200 in 1190.9104 ms
+[11:15:01 INF] HTTP POST /api/auth/login responded 400 in 3475.4351 ms
+[11:15:02 INF] Start processing HTTP request GET http://34.107.8.65:3000/api/health
+[11:15:02 INF] Sending HTTP request GET http://34.107.8.65:3000/api/health
+[11:15:03 INF] Received HTTP response headers after 1199.4548ms - 200
+[11:15:03 INF] End processing HTTP request after 1225.7794ms - 200
+[11:15:04 INF] Start processing HTTP request GET http://34.107.8.65:9115/probe
+[11:15:04 INF] Sending HTTP request GET http://34.107.8.65:9115/probe
+[11:15:16 INF] Start processing HTTP request GET http://34.107.8.65:9100/metrics
+[11:15:16 INF] Sending HTTP request GET http://34.107.8.65:9100/metrics
+[11:15:30 INF] Start processing HTTP request GET http://34.107.8.65/
+[11:15:30 INF] Sending HTTP request GET http://34.107.8.65/
+[11:15:32 INF] Received HTTP response headers after 1813.3995ms - 200
+[11:15:32 INF] End processing HTTP request after 1822.6187ms - 200
+[11:15:46 INF] Start processing HTTP request GET http://34.107.8.65:9093/-/ready
+[11:15:46 INF] Sending HTTP request GET http://34.107.8.65:9093/-/ready
+[11:15:47 INF] Received HTTP response headers after 1171.1594ms - 200
+[11:15:47 INF] End processing HTTP request after 1182.2005ms - 200
+[11:15:47 INF] Start processing HTTP request GET http://34.107.8.65:9090/-/ready
+[11:15:47 INF] Sending HTTP request GET http://34.107.8.65:9090/-/ready
+[11:15:48 INF] Received HTTP response headers after 1113.37ms - 200
+[11:15:48 INF] End processing HTTP request after 1123.4758ms - 200
+[11:16:06 INF] HTTP POST /api/diagnostics/run responded 200 in 67572.2787 ms
+[11:16:09 INF] HTTP GET /api/diagnostics responded 200 in 3664.7361 ms
+[11:17:19 INF] HTTP GET /health/ready responded 200 in 3044.1398 ms
+[11:17:32 INF] HTTP POST /api/auth/login responded 200 in 1007.7215 ms
+[11:17:35 INF] HTTP GET /api/diagnostics responded 200 in 3535.2662 ms
+[11:17:36 INF] HTTP GET /api/modules responded 200 in 512.3386 ms
+[11:20:14 INF] HTTP POST /api/auth/login responded 200 in 5246.4442 ms
+[11:20:14 INF] HTTP GET /api/modules responded 200 in 509.3476 ms
+[11:20:26 INF] HTTP POST /api/auth/login responded 200 in 1039.7110 ms
+[11:20:27 INF] HTTP GET /api/modules responded 200 in 508.3546 ms
+[11:20:50 INF] HTTP POST /api/auth/login responded 200 in 979.3465 ms
+[11:20:51 INF] HTTP GET /api/modules responded 200 in 515.2004 ms
+[11:20:53 INF] HTTP POST /api/modules/019e8055-e953-745d-8b2c-5375dd1b1083/disable responded 200 in 2000.1890 ms
+[11:20:55 INF] HTTP POST /api/modules/019e8055-e953-7e85-b490-c2f5620466f6/disable responded 200 in 1980.6772 ms
+[11:20:57 INF] HTTP POST /api/modules/019e8055-e953-7ba4-8ddd-ac537092eafd/disable responded 200 in 2004.6228 ms
+[11:20:59 INF] HTTP POST /api/modules/019e8055-e953-7c28-a239-b3c1fecb7e88/disable responded 200 in 2042.8949 ms

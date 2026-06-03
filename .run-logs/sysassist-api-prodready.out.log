@@ -1,0 +1,25 @@
+Используются параметры запуска из src\SysAssist.Api\Properties\launchSettings.json...
+Сборка…
+[19:17:32 INF] Applying SysAssist database migrations and seed data.
+[19:17:33 INF] Cockroach Cloud detected; creating schema without PostgreSQL migration locks.
+[19:17:38 INF] Seeding SysAssist database.
+[19:17:57 INF] SysAssist database is ready.
+[19:17:57 INF] Now listening on: http://localhost:5089
+[19:17:57 INF] Application started. Press Ctrl+C to shut down.
+[19:17:57 INF] Hosting environment: Development
+[19:17:57 INF] Content root path: C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api
+[19:18:24 INF] HTTP GET /health/live responded 200 in 47.2632 ms
+[19:18:28 INF] HTTP GET /health/ready responded 200 in 3673.1503 ms
+[19:18:29 INF] HTTP POST /api/auth/login responded 200 in 782.8310 ms
+[19:18:29 INF] HTTP GET /api/license responded 200 in 34.3105 ms
+[19:18:42 INF] HTTP GET /health/ready responded 200 in 2887.7756 ms
+[19:23:17 INF] HTTP OPTIONS /api/diagnostics responded 204 in 1.9429 ms
+[19:23:17 INF] HTTP OPTIONS /api/modules responded 204 in 1.3480 ms
+[19:23:17 INF] HTTP OPTIONS /api/license responded 204 in 0.1870 ms
+[19:23:17 INF] HTTP OPTIONS /api/dashboard responded 204 in 0.0524 ms
+[19:23:17 INF] HTTP OPTIONS /api/modules responded 204 in 0.0280 ms
+[19:23:17 INF] HTTP GET /api/license responded 200 in 2.9421 ms
+[19:23:21 INF] HTTP GET /api/modules responded 200 in 3503.9849 ms
+[19:23:21 INF] HTTP GET /api/modules responded 200 in 503.0608 ms
+[19:23:23 INF] HTTP GET /api/dashboard responded 200 in 5805.1899 ms
+[19:23:24 INF] HTTP GET /api/diagnostics responded 200 in 6471.0189 ms

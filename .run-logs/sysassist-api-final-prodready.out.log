@@ -1,0 +1,42 @@
+Используются параметры запуска из src\SysAssist.Api\Properties\launchSettings.json...
+Сборка…
+[11:36:59 INF] Applying SysAssist database migrations and seed data.
+[11:36:59 INF] Cockroach Cloud detected; creating schema without PostgreSQL migration locks.
+[11:37:03 INF] Seeding SysAssist database.
+[11:37:21 INF] SysAssist database is ready.
+[11:37:21 INF] Now listening on: http://localhost:5089
+[11:37:21 INF] Application started. Press Ctrl+C to shut down.
+[11:37:21 INF] Hosting environment: Development
+[11:37:21 INF] Content root path: C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Api
+[11:37:25 INF] HTTP GET /health/ready responded 200 in 3733.8121 ms
+[11:37:43 INF] HTTP GET /health/ready responded 200 in 3025.4101 ms
+[11:37:54 INF] HTTP GET /health/ready responded 200 in 2996.7832 ms
+[11:37:55 INF] HTTP POST /api/auth/login responded 200 in 1167.2443 ms
+[11:37:56 INF] HTTP GET /api/auth/me responded 200 in 663.3068 ms
+[11:37:59 INF] HTTP GET /api/dashboard responded 200 in 2917.3044 ms
+[11:38:00 INF] HTTP GET /api/modules responded 200 in 541.2704 ms
+[11:38:01 INF] Start processing HTTP request GET http://34.107.8.65:3000/api/health
+[11:38:01 INF] Sending HTTP request GET http://34.107.8.65:3000/api/health
+[11:38:03 INF] Received HTTP response headers after 1175.9797ms - 200
+[11:38:03 INF] End processing HTTP request after 1191.0293ms - 200
+[11:38:04 INF] Start processing HTTP request GET http://34.107.8.65:9090/-/healthy
+[11:38:04 INF] Sending HTTP request GET http://34.107.8.65:9090/-/healthy
+[11:38:05 INF] Received HTTP response headers after 1252.3876ms - 200
+[11:38:05 INF] End processing HTTP request after 1254.4945ms - 200
+[11:38:07 INF] Start processing HTTP request GET http://34.107.8.65/
+[11:38:07 INF] Sending HTTP request GET http://34.107.8.65/
+[11:38:09 INF] Received HTTP response headers after 1743.5367ms - 200
+[11:38:09 INF] End processing HTTP request after 1752.4738ms - 200
+[11:38:10 INF] Start processing HTTP request GET http://34.107.8.65:9093/-/ready
+[11:38:10 INF] Sending HTTP request GET http://34.107.8.65:9093/-/ready
+[11:38:11 INF] Received HTTP response headers after 1132.6963ms - 200
+[11:38:11 INF] End processing HTTP request after 1142.0407ms - 200
+[11:38:11 INF] Start processing HTTP request GET http://34.107.8.65:9090/-/ready
+[11:38:11 INF] Sending HTTP request GET http://34.107.8.65:9090/-/ready
+[11:38:12 INF] Received HTTP response headers after 549.7535ms - 200
+[11:38:12 INF] End processing HTTP request after 550.632ms - 200
+[11:38:14 INF] HTTP POST /api/diagnostics/run responded 200 in 14239.6230 ms
+[11:38:18 INF] HTTP GET /api/diagnostics responded 200 in 3933.9181 ms
+[11:38:18 INF] HTTP GET /api/logs responded 200 in 644.4196 ms
+[11:38:24 WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[11:38:29 INF] HTTP GET /api/support-bundle responded 200 in 10542.0433 ms

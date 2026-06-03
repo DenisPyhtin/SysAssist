@@ -1,0 +1,20 @@
+{
+  "apiVersion": "sysassist.module/v1",
+  "key": "acme-http-monitor",
+  "name": "ACME HTTP Monitor",
+  "version": "0.1.0",
+  "author": "ACME Operations",
+  "category": "LocalCheck",
+  "description": "Checks an HTTP endpoint and emits a warning event when the expected response is not returned.",
+  "entrypoint": "http://localhost:7077",
+  "permissions": ["network:http"],
+  "tags": ["http", "probe", "custom"],
+  "settings": [
+    { "key": "endpoint-url", "type": "url", "required": true, "description": "URL to check." },
+    { "key": "expected-status", "type": "int", "required": true, "defaultValue": "200" },
+    { "key": "api-token", "type": "password", "secret": true, "description": "Optional bearer token." }
+  ],
+  "actions": [
+    { "key": "collect-diagnostics", "name": "Collect diagnostics", "risk": "Low", "requiresApproval": false }
+  ]
+}
