@@ -54,7 +54,7 @@ services:
       - "${SYSASSIST_WEB_PORT:-8080}:4173"
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:4173/health | grep -q healthy"]
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:4173/health | grep -q healthy"]
       interval: 30s
       timeout: 5s
       start_period: 10s
