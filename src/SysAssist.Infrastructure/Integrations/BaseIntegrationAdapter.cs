@@ -341,7 +341,7 @@ public sealed class ZabbixIntegrationAdapter(IModuleSettingsReader settingsReade
     {
         return request.ActionKey switch
         {
-            "collect_diagnostics" => await ZabbixApiActionAsync(state, "apiinfo.version", new { }, "Zabbix diagnostics collected.", ct, requiresAuth: false),
+            "collect_diagnostics" => await CollectZabbixDiagnosticsAsync(state, ct),
             "acknowledge_problem" => await AcknowledgeEventAsync(state, request, actionMask: 6, "Zabbix problem acknowledged.", ct),
             "suppress_flapping_trigger" => await AcknowledgeEventAsync(state, request, actionMask: 6, "Zabbix flapping trigger suppressed by acknowledgement.", ct),
             "close_resolved_problem" => await AcknowledgeEventAsync(state, request, actionMask: 1, "Zabbix problem close request submitted.", ct),
@@ -387,6 +387,25 @@ public sealed class ZabbixIntegrationAdapter(IModuleSettingsReader settingsReade
             },
             "Zabbix maintenance window created.",
             ct);
+    }
+
+    private async Task<ActionExecutionResult> CollectZabbixDiagnosticsAsync(AdapterModuleState state, CancellationToken ct)
+    {
+        if (ZabbixApiUrl(state) is not null)
+        {
+            return await ZabbixApiActionAsync(state, "apiinfo.version", new { }, "Zabbix diagnostics collected.", ct, requiresAuth: false);
+        }
+
+        var baseUrl = Setting(state, "BaseUrl");
+        if (Uri.TryCreate(baseUrl, UriKind.Absolute, out var uri) && uri.Port == 10051)
+        {
+            var health = await TcpHealthAsync(uri.Host, uri.Port, "Zabbix server", ct);
+            return health.Status is HealthStatus.Healthy or HealthStatus.Warning
+                ? JsonSuccess("Zabbix diagnostics collected.", ("transport", "tcp"), ("status", health.Status.ToString()), ("message", health.Message), ("latencyMs", health.LatencyMs))
+                : JsonFailure("Zabbix diagnostics failed.", ("transport", "tcp"), ("status", health.Status.ToString()), ("message", health.Message));
+        }
+
+        return new ActionExecutionResult(false, "Zabbix BaseUrl must be either API web endpoint or TCP server endpoint.");
     }
 
     private async Task<ActionExecutionResult> ZabbixApiActionAsync(AdapterModuleState state, string method, object parameters, string successMessage, CancellationToken ct, bool requiresAuth = true)
@@ -645,10 +664,15 @@ public sealed class PostgreSqlIntegrationAdapter(IModuleSettingsReader settingsR
     private async Task<ActionExecutionResult> CollectPostgresDiagnosticsAsync(AdapterModuleState state, CancellationToken ct)
     {
         await using var connection = await OpenPostgresConnectionAsync(state, ct);
+        var version = await ScalarAsync<string>(connection, "SELECT version()", ct);
+        var isCockroach = version.Contains("CockroachDB", StringComparison.OrdinalIgnoreCase);
         var active = await ScalarAsync<long>(connection, "SELECT count(*) FROM pg_stat_activity WHERE state = 'active'", ct);
         var idleInTx = await ScalarAsync<long>(connection, "SELECT count(*) FROM pg_stat_activity WHERE state = 'idle in transaction'", ct);
-        var blockers = await ScalarAsync<long>(connection, "SELECT count(DISTINCT unnest(pg_blocking_pids(pid))) FROM pg_stat_activity WHERE cardinality(pg_blocking_pids(pid)) > 0", ct);
-        return JsonSuccess("PostgreSQL diagnostics collected.", ("activeSessions", active), ("idleInTransaction", idleInTx), ("blockingBackends", blockers));
+        object blockers = isCockroach
+            ? "not_supported_by_cockroach"
+            : await ScalarAsync<long>(connection, "SELECT count(DISTINCT unnest(pg_blocking_pids(pid))) FROM pg_stat_activity WHERE cardinality(pg_blocking_pids(pid)) > 0", ct);
+
+        return JsonSuccess("PostgreSQL diagnostics collected.", ("dialect", isCockroach ? "cockroachdb" : "postgresql"), ("activeSessions", active), ("idleInTransaction", idleInTx), ("blockingBackends", blockers));
     }
 
     private async Task<ActionExecutionResult> TerminateIdleTransactionsAsync(AdapterModuleState state, ActionExecutionRequest request, CancellationToken ct)
@@ -751,6 +775,8 @@ public sealed class PostgreSqlIntegrationAdapter(IModuleSettingsReader settingsR
 
 public sealed class RedisIntegrationAdapter(IModuleSettingsReader settingsReader) : BaseIntegrationAdapter(settingsReader)
 {
+    private static readonly Encoding RedisProtocolEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
+
     public override string ModuleKey => "redis";
     protected override bool HasRealConfiguration(AdapterModuleState state) => Has(state, "RedisUrl") || Has(state, "Host");
     protected override async Task<IntegrationHealthResult> CheckRealHealthAsync(AdapterModuleState state, CancellationToken ct)
@@ -770,8 +796,8 @@ public sealed class RedisIntegrationAdapter(IModuleSettingsReader settingsReader
         using var client = new TcpClient();
         await client.ConnectAsync(host, port, ct);
         using var stream = client.GetStream();
-        using var reader = new StreamReader(stream, System.Text.Encoding.UTF8, leaveOpen: true);
-        using var writer = new StreamWriter(stream, System.Text.Encoding.UTF8, leaveOpen: true) { AutoFlush = true };
+        using var reader = new StreamReader(stream, RedisProtocolEncoding, leaveOpen: true);
+        using var writer = new StreamWriter(stream, RedisProtocolEncoding, leaveOpen: true) { AutoFlush = true };
         if (!string.IsNullOrWhiteSpace(password))
         {
             await writer.WriteAsync($"*2\r\n$4\r\nAUTH\r\n${password.Length}\r\n{password}\r\n".AsMemory(), ct);
@@ -851,8 +877,8 @@ public sealed class RedisIntegrationAdapter(IModuleSettingsReader settingsReader
         using var client = new TcpClient();
         await client.ConnectAsync(host, port, ct);
         using var stream = client.GetStream();
-        using var reader = new StreamReader(stream, Encoding.UTF8, leaveOpen: true);
-        using var writer = new StreamWriter(stream, Encoding.UTF8, leaveOpen: true) { AutoFlush = true };
+        using var reader = new StreamReader(stream, RedisProtocolEncoding, leaveOpen: true);
+        using var writer = new StreamWriter(stream, RedisProtocolEncoding, leaveOpen: true) { AutoFlush = true };
         if (!string.IsNullOrWhiteSpace(password))
         {
             await WriteRedisCommandAsync(writer, ct, "AUTH", password);
@@ -971,17 +997,53 @@ public sealed class DockerIntegrationAdapter(IModuleSettingsReader settingsReade
     private async Task<ActionExecutionResult> DockerApiActionAsync(AdapterModuleState state, HttpMethod method, string path, string successMessage, CancellationToken ct)
     {
         var baseUrl = DockerHttpBaseUrl(Setting(state, "DockerEndpoint"));
-        if (baseUrl is null)
+        if (baseUrl is not null)
         {
-            return new ActionExecutionResult(false, "DockerEndpoint HTTP/TCP API is required for remediation actions.");
+            using var request = new HttpRequestMessage(method, $"{baseUrl.TrimEnd('/')}{path}");
+            using var response = await HttpClient.SendAsync(request, ct);
+            var body = await response.Content.ReadAsStringAsync(ct);
+            return response.IsSuccessStatusCode
+                ? JsonSuccess(successMessage, ("transport", "http"), ("httpStatus", (int)response.StatusCode), ("body", Shorten(body)))
+                : JsonFailure($"Docker API action failed: HTTP {(int)response.StatusCode} {response.StatusCode}.", ("transport", "http"), ("body", Shorten(body)));
         }
 
-        using var request = new HttpRequestMessage(method, $"{baseUrl.TrimEnd('/')}{path}");
-        using var response = await HttpClient.SendAsync(request, ct);
-        var body = await response.Content.ReadAsStringAsync(ct);
-        return response.IsSuccessStatusCode
-            ? JsonSuccess(successMessage, ("httpStatus", (int)response.StatusCode), ("body", Shorten(body)))
-            : JsonFailure($"Docker API action failed: HTTP {(int)response.StatusCode} {response.StatusCode}.", ("body", Shorten(body)));
+        if (BoolSetting(state, "UseLocalDockerSocket") && OperatingSystem.IsLinux())
+        {
+            return await DockerSocketActionAsync(Setting(state, "DockerSocketPath") ?? "/var/run/docker.sock", method, path, successMessage, ct);
+        }
+
+        return new ActionExecutionResult(false, "DockerEndpoint HTTP/TCP API or Linux Docker socket is required for remediation actions.");
+    }
+
+    private static async Task<ActionExecutionResult> DockerSocketActionAsync(string socketPath, HttpMethod method, string path, string successMessage, CancellationToken ct)
+    {
+        if (!File.Exists(socketPath))
+        {
+            return new ActionExecutionResult(false, $"Docker socket not found: {socketPath}");
+        }
+
+        using var socket = new Socket(AddressFamily.Unix, SocketType.Stream, ProtocolType.Unspecified);
+        await socket.ConnectAsync(new UnixDomainSocketEndPoint(socketPath), ct);
+        var request = Encoding.ASCII.GetBytes($"{method.Method} {path} HTTP/1.1\r\nHost: docker\r\nConnection: close\r\nContent-Length: 0\r\n\r\n");
+        await socket.SendAsync(request, SocketFlags.None, ct);
+
+        using var responseBytes = new MemoryStream();
+        var buffer = new byte[8192];
+        int received;
+        while ((received = await socket.ReceiveAsync(buffer, SocketFlags.None, ct)) > 0)
+        {
+            responseBytes.Write(buffer, 0, received);
+        }
+
+        var response = Encoding.UTF8.GetString(responseBytes.ToArray());
+        var statusLineEnd = response.IndexOf("\r\n", StringComparison.Ordinal);
+        var statusLine = statusLineEnd > 0 ? response[..statusLineEnd] : response;
+        var bodyStart = response.IndexOf("\r\n\r\n", StringComparison.Ordinal);
+        var body = bodyStart >= 0 ? response[(bodyStart + 4)..] : string.Empty;
+        var ok = statusLine.Contains(" 2", StringComparison.Ordinal);
+        return ok
+            ? JsonSuccess(successMessage, ("transport", "unix-socket"), ("statusLine", statusLine), ("body", Shorten(body)))
+            : JsonFailure("Docker socket action failed.", ("transport", "unix-socket"), ("statusLine", statusLine), ("body", Shorten(body)));
     }
 
     private static string? DockerHttpBaseUrl(string? endpoint)
@@ -1109,6 +1171,11 @@ public sealed class LinuxHostIntegrationAdapter(IModuleSettingsReader settingsRe
     {
         if (BoolSetting(state, "AgentMode", true))
         {
+            if (request.ActionKey == "collect_diagnostics" && Has(state, "AgentBaseUrl"))
+            {
+                return await CollectLinuxAgentDiagnosticsAsync(state, ct);
+            }
+
             return await ExecuteWebhookActionAsync(state, request, ct);
         }
 
@@ -1126,6 +1193,36 @@ public sealed class LinuxHostIntegrationAdapter(IModuleSettingsReader settingsRe
             "vacuum_journal" => await VacuumJournalAsync(request, ct),
             _ => await base.ExecuteRealActionAsync(state, request, ct)
         };
+    }
+
+    private async Task<ActionExecutionResult> CollectLinuxAgentDiagnosticsAsync(AdapterModuleState state, CancellationToken ct)
+    {
+        var agentBaseUrl = Setting(state, "AgentBaseUrl")!;
+        var health = await GetHealthAsync(agentBaseUrl, ct);
+        using var response = await HttpClient.GetAsync(agentBaseUrl, ct);
+        var body = await response.Content.ReadAsStringAsync(ct);
+        var summary = SummarizeNodeExporterMetrics(body);
+        return response.IsSuccessStatusCode
+            ? JsonSuccess("Linux host diagnostics collected.", ("transport", "agent-http"), ("status", health.Status.ToString()), ("message", health.Message), ("latencyMs", health.LatencyMs), ("metrics", summary))
+            : JsonFailure("Linux host diagnostics failed.", ("transport", "agent-http"), ("httpStatus", (int)response.StatusCode), ("body", Shorten(body)));
+    }
+
+    private static string SummarizeNodeExporterMetrics(string body)
+    {
+        var prefixes = new[]
+        {
+            "node_load1",
+            "node_memory_MemAvailable_bytes",
+            "node_memory_MemTotal_bytes",
+            "node_filesystem_avail_bytes",
+            "node_filesystem_size_bytes",
+            "node_uname_info"
+        };
+        var lines = body
+            .Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Where(line => !line.StartsWith('#') && prefixes.Any(prefix => line.StartsWith(prefix, StringComparison.Ordinal)))
+            .Take(20);
+        return Shorten(string.Join('\n', lines));
     }
 
     private static Task<ActionExecutionResult> CollectLinuxDiagnosticsAsync(AdapterModuleState state, CancellationToken ct)

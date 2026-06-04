@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
 @import 'tailwindcss';
-@import '../../../style-libraries/sysassist-theme-aurora-ops/theme.css';
-@import '../../../style-libraries/sysassist-theme-copper-command/theme.css';
-@import '../../../style-libraries/sysassist-theme-midnight-grid/theme.css';
 
 :root {
   color: #eee2d2;

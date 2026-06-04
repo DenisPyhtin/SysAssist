@@ -442,14 +442,6 @@ public sealed class SysAssistApiService(
             return new OperationResultDto(false, "Action requires approval before execution.", correlationId);
         }
 
-        if (module.SafeMode)
-        {
-            await AuditAsync(actor, "ACTION_BLOCKED", action.ActionKey, "SafeMode", correlationId, cancellationToken);
-            AddNotification("local", "Operator,Engineer", "Action blocked", $"SafeMode blocked {action.ActionKey}.", NotificationStatus.LocalOnly, null);
-            await SaveAsync(cancellationToken);
-            return new OperationResultDto(false, "SafeMode is enabled; no real action was executed.", correlationId);
-        }
-
         var adapter = adapterFactory.GetAdapter(module.Key);
         var result = await adapter.ExecuteActionAsync(
             new ActionExecutionRequest(action.ActionKey, request.Target, request.ParametersJson, ApprovalGranted: !action.RequiresApproval),
