@@ -15,7 +15,7 @@ Recommended captures for diploma defense and QA:
 Docker may be unavailable in the Codex execution environment. Capture Docker screenshots on a local workstation with Docker Desktop after running:
 
 ```powershell
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist
+cd path\to\SysAssist
 docker compose up -d --build
 docker compose ps
 ```

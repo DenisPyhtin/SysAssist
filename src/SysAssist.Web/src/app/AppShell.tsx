@@ -145,6 +145,8 @@ const healthColors: Record<string, string> = {
   Unknown: '#d8c2a3',
 }
 
+const healthSummaryOrder = ['Healthy', 'Warning', 'Error', 'Unhealthy', 'Degraded', 'NotConfigured', 'Disabled', 'Unknown']
+
 function animateIfPresent(selector: string, fromVars: gsap.TweenVars, toVars: gsap.TweenVars) {
   const targets = gsap.utils.toArray(selector)
   if (targets.length > 0) {
@@ -1294,12 +1296,36 @@ function DashboardPage() {
     },
     onError: (error) => pushToast({ tone: 'danger', title: 'Diagnostics failed', message: mutationErrorMessage(error) }),
   })
-  const healthSummary = useMemo(() => (data?.healthSummary ?? []).map((item, index) => ({
-    ...item,
-    hasActivePeer: hoveredHealthIndex !== undefined,
-    isActive: hoveredHealthIndex === index,
-  } satisfies HealthSummaryChartItem)), [data?.healthSummary, hoveredHealthIndex])
-  const activeHealth = hoveredHealthIndex !== undefined ? healthSummary[hoveredHealthIndex] : healthSummary.find((item) => item.status === 'Warning' || item.status === 'NotConfigured') ?? healthSummary[0]
+  const moduleStatusSummary = useMemo(() => {
+    const counts = modules.reduce<Record<string, number>>((acc, module) => {
+      acc[module.healthStatus] = (acc[module.healthStatus] ?? 0) + 1
+      return acc
+    }, {})
+    return ['Healthy', 'Warning', 'Error', 'NotConfigured', 'Disabled'].map((status) => ({ status, count: counts[status] ?? 0 }))
+  }, [modules])
+  const healthSummary = useMemo(() => {
+    const dashboardSummary = data?.healthSummary ?? []
+    const source = dashboardSummary.some((item) => item.count > 0)
+      ? dashboardSummary
+      : moduleStatusSummary.filter((item) => item.count > 0)
+    return [...source]
+      .sort((left, right) => {
+        const leftIndex = healthSummaryOrder.indexOf(left.status)
+        const rightIndex = healthSummaryOrder.indexOf(right.status)
+        return (leftIndex === -1 ? 999 : leftIndex) - (rightIndex === -1 ? 999 : rightIndex)
+      })
+      .map((item, index) => ({
+        ...item,
+        hasActivePeer: hoveredHealthIndex !== undefined,
+        isActive: hoveredHealthIndex === index,
+      } satisfies HealthSummaryChartItem))
+  }, [data?.healthSummary, hoveredHealthIndex, moduleStatusSummary])
+  const activeHealth = hoveredHealthIndex !== undefined
+    ? healthSummary[hoveredHealthIndex]
+    : healthSummary.find((item) => ['Error', 'Unhealthy', 'Warning', 'NotConfigured'].includes(item.status) && item.count > 0)
+      ?? healthSummary.find((item) => item.status === 'Healthy' && item.count > 0)
+      ?? healthSummary.find((item) => item.count > 0)
+      ?? healthSummary[0]
   const activeHealthDescription = healthDescriptions[activeHealth?.status ?? 'Unknown'] ?? healthDescriptions.Unknown
   const activeHealthModules = modules.filter((module) => module.healthStatus === activeHealth?.status)
   const selectedIntakeMetric = intakeMetricOptions.find((item) => item.id === intakeMetric) ?? intakeMetricOptions[0]
@@ -1308,13 +1334,6 @@ function DashboardPage() {
   const intakeRangeLabel = intakeRange === 'custom' ? `Last ${intakeRangeMinutes} minutes` : selectedIntakeRange.label
   const intakeData = useMemo(() => buildIntakeTrend(sortedEvents, modules, intakeRangeMinutes), [intakeRangeMinutes, modules, sortedEvents])
   const comparisonMetric: IntakeMetric = intakeMetric === 'events' ? 'severity' : 'events'
-  const moduleStatusSummary = useMemo(() => {
-    const counts = modules.reduce<Record<string, number>>((acc, module) => {
-      acc[module.healthStatus] = (acc[module.healthStatus] ?? 0) + 1
-      return acc
-    }, {})
-    return ['Healthy', 'Warning', 'Error', 'NotConfigured', 'Disabled'].map((status) => ({ status, count: counts[status] ?? 0 }))
-  }, [modules])
   const severityData = useMemo(() => {
     const counts = events.reduce<Record<string, number>>((acc, event) => {
       acc[event.severity] = (acc[event.severity] ?? 0) + 1
@@ -2707,6 +2726,7 @@ function ModuleStorePage() {
 
 function ActionsPage() {
   const pushToast = useShellStore((state) => state.pushToast)
+  const queryClient = useQueryClient()
   const { data: actions = [] } = useQuery({ queryKey: ['actions'], queryFn: listActions })
   const { data: modules = [] } = useQuery({ queryKey: ['modules'], queryFn: listModules })
   const [moduleFilter, setModuleFilter] = useState('all')
@@ -2714,15 +2734,39 @@ function ActionsPage() {
   const [approvalFilter, setApprovalFilter] = useState('all')
   const [actionSearch, setActionSearch] = useState('')
   const [selectedActionId, setSelectedActionId] = useState<string>()
+  const [runningActionId, setRunningActionId] = useState<string>()
+  const [retryUntilByAction, setRetryUntilByAction] = useState<Record<string, number>>({})
+  const [now, setNow] = useState(() => Date.now())
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(Date.now()), 500)
+    return () => window.clearInterval(timer)
+  }, [])
   const mutation = useMutation({
-    mutationFn: executeAction,
-    onSuccess: (result) => pushToast({ tone: result.success ? 'success' : 'warning', title: result.message }),
+    mutationFn: (actionId: string) => executeAction(actionId),
+    onMutate: (actionId) => {
+      setRunningActionId(actionId)
+    },
+    onSuccess: (result) => {
+      pushToast({ tone: result.success ? 'success' : 'warning', title: result.message })
+      queryClient.invalidateQueries({ queryKey: ['actions'] })
+      queryClient.invalidateQueries({ queryKey: ['modules'] })
+      queryClient.invalidateQueries({ queryKey: ['audit'] })
+      queryClient.invalidateQueries({ queryKey: ['logs'] })
+    },
     onError: (error) => pushToast({ tone: 'danger', title: 'Action failed', message: mutationErrorMessage(error) }),
+    onSettled: (_result, _error, actionId) => {
+      if (actionId) {
+        setRetryUntilByAction((items) => ({ ...items, [actionId]: Date.now() + 2_000 }))
+      }
+      setRunningActionId(undefined)
+      window.setTimeout(() => mutation.reset(), 250)
+    },
   })
   const moduleById = new Map(modules.map((module) => [module.id, module]))
   const connectedModules = modules.filter(moduleReadyForActions)
-  const runnableActions = actions.filter((action) => action.isEnabled && moduleReadyForActions(moduleById.get(action.moduleId)))
-  const filtered = runnableActions.filter((action) => {
+  const enabledActions = actions.filter((action) => action.isEnabled)
+  const runnableActions = enabledActions.filter((action) => moduleReadyForActions(moduleById.get(action.moduleId)))
+  const filtered = enabledActions.filter((action) => {
     const module = moduleById.get(action.moduleId)
     const haystack = `${action.name} ${action.actionKey} ${action.description ?? ''} ${module?.name ?? ''}`.toLowerCase()
     return haystack.includes(actionSearch.toLowerCase())
@@ -2733,13 +2777,26 @@ function ActionsPage() {
   const selectedAction = filtered.find((action) => action.id === selectedActionId) ?? filtered[0]
   const selectedModule = selectedAction ? moduleById.get(selectedAction.moduleId) : undefined
   const selectedModuleReady = moduleReadyForActions(selectedModule)
-  const approvalCount = runnableActions.filter((action) => action.requiresApproval).length
+  const selectedActionRetryUntil = selectedAction ? retryUntilByAction[selectedAction.id] ?? 0 : 0
+  const selectedActionCooldownMs = Math.max(0, selectedActionRetryUntil - now)
+  const selectedActionRunning = selectedAction ? runningActionId === selectedAction.id : false
+  const anotherActionRunning = Boolean(runningActionId && runningActionId !== selectedAction?.id)
+  const actionRunDisabled = !selectedModuleReady || selectedActionRunning || anotherActionRunning || selectedActionCooldownMs > 0
+  const actionRunLabel = selectedActionRunning
+    ? 'Running...'
+    : anotherActionRunning
+      ? 'Another action is running'
+      : selectedActionCooldownMs > 0
+        ? `Retry in ${Math.ceil(selectedActionCooldownMs / 1000)}s`
+        : selectedAction?.requiresApproval ? 'Request / Run' : 'Run action'
+  const approvalCount = enabledActions.filter((action) => action.requiresApproval).length
   const risks = ['Low', 'Medium', 'High', 'Critical']
   return (
     <PageFrame icon={Play} title="Actions">
       <section className="actions-shell">
         <Panel className="actions-list-panel">
           <div className="actions-summary">
+            <div><strong>{enabledActions.length}</strong><span>Actions</span></div>
             <div><strong>{runnableActions.length}</strong><span>Ready</span></div>
             <div><strong>{connectedModules.length}</strong><span>Connected modules</span></div>
             <div><strong>{approvalCount}</strong><span>Approval</span></div>
@@ -2750,8 +2807,8 @@ function ActionsPage() {
               <input className="field search-field h-10 pl-9" placeholder="Search actions..." value={actionSearch} onChange={(event) => setActionSearch(event.target.value)} />
             </label>
             <select className="field h-10" value={moduleFilter} onChange={(event) => setModuleFilter(event.target.value)}>
-              <option value="all">Connected modules</option>
-              {connectedModules.map((module) => <option key={module.id} value={module.id}>{module.name}</option>)}
+              <option value="all">All modules</option>
+              {modules.map((module) => <option key={module.id} value={module.id}>{module.name}</option>)}
             </select>
             <select className="field h-10" value={riskFilter} onChange={(event) => setRiskFilter(event.target.value)}>
               <option value="all">All risks</option>
@@ -2779,7 +2836,7 @@ function ActionsPage() {
                 </button>
               )
             })}
-            {filtered.length === 0 ? <EmptyState icon={Play} title="No ready actions. Connect a module first." /> : null}
+            {filtered.length === 0 ? <EmptyState icon={Play} title="No actions match this view" /> : null}
           </div>
         </Panel>
         <Panel className="action-inspector-panel">
@@ -2798,16 +2855,19 @@ function ActionsPage() {
                 <DetailRow label="Execution" value={selectedAction.requiresApproval ? 'Approval required' : 'Direct run'} />
                 <DetailRow label="Status" value={selectedModuleReady ? 'Ready' : 'Unavailable'} />
                 <DetailRow label="Module" value={selectedModule?.healthStatus ?? 'Not connected'} />
+                <DetailRow label="SafeMode" value={selectedModule ? (selectedModule.safeMode ? 'Enabled' : 'Disabled') : 'Module not found'} />
               </div>
               <div className="action-policy-note">
                 {selectedAction.requiresApproval
                   ? 'This action opens the approval path before execution.'
-                  : 'This action can run directly, but module SafeMode can still block unsafe execution.'}
+                  : selectedModule?.safeMode
+                    ? 'SafeMode is enabled for this module. SysAssist will block unsafe remediation, then the action button unlocks automatically for retry.'
+                    : 'This action can run directly. If an adapter hangs, the UI unlocks automatically after the action timeout.'}
               </div>
               <div className="action-runbar">
-                <Button disabled={!selectedModuleReady || mutation.isPending} onClick={() => mutation.mutate(selectedAction.id)} variant="primary">
-                  {mutation.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Play className="h-4 w-4" />}
-                  {selectedAction.requiresApproval ? 'Request / Run' : 'Run action'}
+                <Button disabled={actionRunDisabled} onClick={() => mutation.mutate(selectedAction.id)} variant="primary">
+                  {selectedActionRunning ? <Loader2 className="h-4 w-4 animate-spin" /> : <Play className="h-4 w-4" />}
+                  {actionRunLabel}
                 </Button>
               </div>
             </>

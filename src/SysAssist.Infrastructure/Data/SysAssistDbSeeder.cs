@@ -20,6 +20,7 @@ public static class SysAssistDbSeeder
         var now = DateTimeOffset.UtcNow;
         secretProtector ??= NoOpSecretProtector.Instance;
         var forceEnableModules = configuration?.GetValue("SysAssist:ForceEnableModulesOnStartup", false) ?? false;
+        var resetBootstrapAdminPassword = configuration?.GetValue("SysAssist:ResetBootstrapAdminPasswordOnStartup", false) ?? false;
         var bootstrapAdminPassword = BootstrapAdminPassword(configuration);
 
         var roles = new[]
@@ -57,6 +58,14 @@ public static class SysAssistDbSeeder
                 CreatedAt = now
             };
             dbContext.Users.Add(admin);
+            await dbContext.SaveChangesAsync(cancellationToken);
+        }
+        else if (resetBootstrapAdminPassword)
+        {
+            EnsureStrongBootstrapAdminPassword(bootstrapAdminPassword);
+            admin.PasswordHash = passwordHasher.Hash(bootstrapAdminPassword!);
+            admin.IsActive = true;
+            admin.UpdatedAt = now;
             await dbContext.SaveChangesAsync(cancellationToken);
         }
 
@@ -102,15 +111,16 @@ public static class SysAssistDbSeeder
                 .ToArrayAsync(cancellationToken))
             .ToDictionary(setting => (setting.ModuleId, setting.Key), StringTupleComparer.OrdinalIgnoreCase);
         var existingActions = (await dbContext.IntegrationModuleActions
-                .Select(action => new { action.ModuleId, action.ActionKey })
                 .ToArrayAsync(cancellationToken))
-            .Select(action => (action.ModuleId, action.ActionKey))
-            .ToHashSet();
+            .ToDictionary(action => (action.ModuleId, action.ActionKey), StringTupleComparer.OrdinalIgnoreCase);
+        var existingActionKeys = existingActions
+            .Select(action => action.Key)
+            .ToHashSet(StringTupleComparer.OrdinalIgnoreCase);
 
         foreach (var module in modules.Values)
         {
             SeedSettings(dbContext, module, now, existingSettings, configuration, secretProtector);
-            SeedActions(dbContext, module, now, existingActions);
+            SeedActions(dbContext, module, now, existingActions, existingActionKeys);
         }
 
         await dbContext.SaveChangesAsync(cancellationToken);
@@ -205,26 +215,50 @@ public static class SysAssistDbSeeder
         SysAssistDbContext dbContext,
         IntegrationModule module,
         DateTimeOffset now,
-        HashSet<(Guid ModuleId, string ActionKey)> existingActions)
+        Dictionary<(Guid ModuleId, string Key), IntegrationModuleAction> existingActions,
+        HashSet<(Guid ModuleId, string Key)> existingActionKeys)
     {
-        var actionKey = module.SupportsActions ? "collect_diagnostics" : "send_notification";
-        if (!existingActions.Contains((module.Id, actionKey)))
+        foreach (var definition in RemediationActionCatalog.ForModule(module.Key))
         {
-            dbContext.IntegrationModuleActions.Add(new IntegrationModuleAction
+            if (existingActions.TryGetValue((module.Id, definition.ActionKey), out var existing))
+            {
+                existing.Name = definition.Name;
+                existing.Description = definition.Description;
+                existing.RiskLevel = definition.RiskLevel;
+                existing.RequiresApproval = definition.RequiresApproval;
+                existing.ParameterSchemaJson = definition.ParameterSchemaJson;
+                existing.UpdatedAt = now;
+                continue;
+            }
+
+            var action = new IntegrationModuleAction
             {
                 ModuleId = module.Id,
-                ActionKey = actionKey,
-                Name = module.SupportsActions ? "Collect diagnostics" : "Send notification",
-                Description = module.SupportsActions
-                    ? "Collect read-only diagnostics or propose a safe remediation."
-                    : "Send a local notification message.",
-                RiskLevel = module.SupportsActions ? RiskLevel.Medium : RiskLevel.Low,
-                RequiresApproval = module.SupportsActions,
+                ActionKey = definition.ActionKey,
+                Name = definition.Name,
+                Description = definition.Description,
+                RiskLevel = definition.RiskLevel,
+                RequiresApproval = definition.RequiresApproval,
                 IsEnabled = true,
-                ParameterSchemaJson = """{"type":"object","properties":{"target":{"type":"string"}}}""",
-                CreatedAt = now
-            });
-            existingActions.Add((module.Id, actionKey));
+                ParameterSchemaJson = definition.ParameterSchemaJson,
+                CreatedAt = now,
+                UpdatedAt = now
+            };
+            dbContext.IntegrationModuleActions.Add(action);
+            existingActions[(module.Id, definition.ActionKey)] = action;
+            existingActionKeys.Add((module.Id, definition.ActionKey));
+        }
+
+        var catalogKeys = RemediationActionCatalog.ForModule(module.Key)
+            .Select(action => action.ActionKey)
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+        foreach (var legacy in existingActions
+            .Where(item => item.Key.ModuleId == module.Id && !catalogKeys.Contains(item.Key.Key))
+            .Select(item => item.Value))
+        {
+            legacy.IsEnabled = false;
+            legacy.Description = $"{legacy.Description} Legacy action disabled because it is not part of the remediation catalog.";
+            legacy.UpdatedAt = now;
         }
     }
 

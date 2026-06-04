@@ -22,7 +22,7 @@ This checklist documents the current SysAssist security posture and the limits t
 - Login, settings, secret replacement, action execution, user writes, role writes, and custom module manifests have endpoint-level validation.
 - Login attempts write sanitized security logs with correlation id, client key, login, and result reason. Passwords and tokens are not logged.
 - Initial admin bootstrap uses `SysAssist:BootstrapAdminPassword`; the backend rejects missing, weak, or placeholder bootstrap values when creating a fresh admin.
-- The database seeder no longer resets an existing admin password or reactivates an existing admin account on startup.
+- The database seeder does not reset an existing admin password by default. Local presentation/bootstrap recovery can opt in with `SysAssist:ResetBootstrapAdminPasswordOnStartup=true`; keep it `false` for production.
 - Module secrets can be encrypted at rest with AES-GCM through `Security:SecretEncryptionKey` / `SYSASSIST_SECRET_ENCRYPTION_KEY`.
 - License validation uses signed ECDSA P-256 license keys and blocks protected API routes when invalid.
 - Required module settings are validated before real mode can be enabled.

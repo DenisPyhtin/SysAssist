@@ -633,6 +633,7 @@ public sealed class SysAssistApiService(
         var logs = dbContext is null ? DemoStore.SystemLogs.ToArray() : await dbContext.SystemLogs.AsNoTracking().OrderByDescending(item => item.CreatedAt).Take(50).ToArrayAsync(cancellationToken);
         var webhooks = dbContext is null ? DemoStore.Webhooks.Count : await dbContext.WebhookEvents.CountAsync(cancellationToken);
         var settings = dbContext is null ? DemoStore.Settings.ToArray() : await dbContext.IntegrationSettings.AsNoTracking().ToArrayAsync(cancellationToken);
+        var actions = dbContext is null ? DemoStore.Actions.ToArray() : await dbContext.IntegrationModuleActions.AsNoTracking().ToArrayAsync(cancellationToken);
         var healthChecks = dbContext is null
             ? DemoStore.HealthChecks.ToArray()
             : await dbContext.IntegrationHealthChecks.AsNoTracking().OrderByDescending(item => item.CheckedAt).ToArrayAsync(cancellationToken);
@@ -685,6 +686,9 @@ public sealed class SysAssistApiService(
             $"errorModules={enabledModules.Count(module => module.HealthStatus is HealthStatus.Error)}",
             $"notConfiguredModules={enabledModules.Count(module => module.HealthStatus is HealthStatus.NotConfigured)}",
             $"unknownModules={enabledModules.Count(module => module.HealthStatus is HealthStatus.Unknown)}",
+            $"remediationActions={actions.Length}",
+            $"enabledRemediationActions={actions.Count(action => action.IsEnabled)}",
+            $"modulesWithRemediationActions={actions.Select(action => action.ModuleId).Distinct().Count()}/{modules.Length}",
             $"lastHealthChecks={latestHealth.Count}",
             $"modulesWithoutHealthCheck={enabledModules.Count(module => !latestHealth.ContainsKey(module.Id))}",
             $"staleHealthChecks={staleHealthChecks}",
@@ -699,6 +703,9 @@ public sealed class SysAssistApiService(
             components.Add($"licenseStatus={licenseStatus.Status}:{licenseStatus.Edition}");
         }
 
+        components.AddRange(enabledModules
+            .Where(module => module.HealthStatus is HealthStatus.Warning or HealthStatus.Error or HealthStatus.NotConfigured or HealthStatus.Unknown)
+            .Select(module => $"diagnosticRemediation={module.Key}:{SuggestedDiagnosticsActionKey(module.Key)}"));
         components.AddRange(warnings.Select(warning => $"diagnosticWarning={warning}"));
 
         var status = licenseStatus is { IsValid: false }
@@ -1052,7 +1059,7 @@ public sealed class SysAssistApiService(
 
         var advisor = adapterFactory.GetAdapter("local-rule-advisor") as LocalRuleAdvisorAdapter;
         var advisorResult = advisor?.Recommend(incoming);
-        var action = await FindSuggestedActionAsync(module.Id, incoming.Severity, cancellationToken);
+        var action = await FindSuggestedActionAsync(module, incoming, cancellationToken);
         var recommendation = new EventRecommendation
         {
             EventId = incident.Id,
@@ -1098,20 +1105,55 @@ public sealed class SysAssistApiService(
         return incident;
     }
 
-    private async Task<IntegrationModuleAction?> FindSuggestedActionAsync(Guid moduleId, EventSeverity severity, CancellationToken cancellationToken)
+    private async Task<IntegrationModuleAction?> FindSuggestedActionAsync(IntegrationModule module, IncomingEventDto incoming, CancellationToken cancellationToken)
     {
         var actions = dbContext is null
-            ? DemoStore.Actions.Where(item => item.ModuleId == moduleId && item.IsEnabled).ToArray()
-            : await dbContext.IntegrationModuleActions.Where(item => item.ModuleId == moduleId && item.IsEnabled).ToArrayAsync(cancellationToken);
-        var action = actions.FirstOrDefault();
-        if (action is not null && severity is EventSeverity.Error or EventSeverity.Critical)
+            ? DemoStore.Actions.Where(item => item.ModuleId == module.Id && item.IsEnabled).ToArray()
+            : await dbContext.IntegrationModuleActions.Where(item => item.ModuleId == module.Id && item.IsEnabled).ToArrayAsync(cancellationToken);
+
+        return actions
+            .OrderByDescending(action => ScoreSuggestedAction(module.Key, action.ActionKey, incoming))
+            .ThenByDescending(action => incoming.Severity is EventSeverity.Error or EventSeverity.Critical ? (int)action.RiskLevel : -(int)action.RiskLevel)
+            .ThenBy(action => action.ActionKey)
+            .FirstOrDefault();
+    }
+
+    private static int ScoreSuggestedAction(string moduleKey, string actionKey, IncomingEventDto incoming)
+    {
+        var definition = RemediationActionCatalog.Find(moduleKey, actionKey);
+        var text = $"{incoming.EventType} {incoming.Target} {incoming.Summary} {incoming.PayloadJson}".ToLowerInvariant();
+        var score = actionKey.Equals("collect_diagnostics", StringComparison.OrdinalIgnoreCase) ? 1 : 0;
+        if (definition is not null)
         {
-            action.RequiresApproval = true;
-            action.RiskLevel = severity == EventSeverity.Critical ? RiskLevel.Critical : RiskLevel.High;
+            score += definition.Symptoms.Count(symptom => text.Contains(symptom.ToLowerInvariant(), StringComparison.Ordinal));
         }
 
-        return action;
+        if (incoming.Severity is EventSeverity.Error or EventSeverity.Critical && definition?.RiskLevel is RiskLevel.High or RiskLevel.Critical)
+        {
+            score++;
+        }
+
+        return score;
     }
+
+    private static string SuggestedDiagnosticsActionKey(string moduleKey) =>
+        moduleKey switch
+        {
+            "zabbix" => "collect_diagnostics",
+            "grafana" => "add_incident_annotation",
+            "prometheus-alertmanager" => "verify_alert_route",
+            "postgresql" => "terminate_idle_in_transaction",
+            "redis" => "purge_expired_memory",
+            "docker" => "restart_container",
+            "nginx" => "test_nginx_config",
+            "linux-host" => "restart_systemd_service",
+            "http-endpoint" => "retry_endpoint_probe",
+            "file-system" => "clean_old_files",
+            "smtp-email" => "send_escalation_digest",
+            "telegram-bot" => "send_oncall_page",
+            "local-rule-advisor" => "generate_runbook",
+            _ => "collect_diagnostics"
+        };
 
     private void AddRecommendation(EventRecommendation recommendation)
     {
@@ -1347,18 +1389,7 @@ internal static class DemoStore
                 Description = setting.Description
             }))
         .ToList();
-    public static readonly List<IntegrationModuleAction> Actions = Modules.Select(module => new IntegrationModuleAction
-    {
-        ModuleId = module.Id,
-        ActionKey = "collect_diagnostics",
-        Name = "Collect diagnostics",
-        Description = module.SupportsActions
-            ? "Collect read-only diagnostics and prepare a safe remediation proposal."
-            : "Record a local notification or diagnostic note.",
-        RiskLevel = RiskLevel.Medium,
-        RequiresApproval = module.SupportsActions,
-        IsEnabled = true
-    }).ToList();
+    public static readonly List<IntegrationModuleAction> Actions = BuildActions();
     public static readonly List<IncidentEvent> Events = [];
     public static readonly List<ApprovalRequest> Approvals = [];
     public static readonly List<EventRecommendation> Recommendations = [];
@@ -1386,5 +1417,22 @@ internal static class DemoStore
             UseFallbackMode = false,
             SafeMode = true
         }).ToList();
+    }
+
+    private static List<IntegrationModuleAction> BuildActions()
+    {
+        return Modules
+            .SelectMany(module => RemediationActionCatalog.ForModule(module.Key).Select(definition => new IntegrationModuleAction
+            {
+                ModuleId = module.Id,
+                ActionKey = definition.ActionKey,
+                Name = definition.Name,
+                Description = definition.Description,
+                RiskLevel = definition.RiskLevel,
+                RequiresApproval = definition.RequiresApproval,
+                IsEnabled = true,
+                ParameterSchemaJson = definition.ParameterSchemaJson
+            }))
+            .ToList();
     }
 }

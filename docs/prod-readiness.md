@@ -8,6 +8,8 @@ This checklist is the release gate for running SysAssist as a real product, not 
 - The endpoint is admin-only and intentionally remains reachable when the license is invalid so operators can see why the product is blocked.
 - Run `scripts/prod-smoke.ps1 -RequireProductionReadiness` in the deployment pipeline after the API is started with production configuration.
 - Local development can run `scripts/prod-smoke.ps1` without the switch; it can read `SysAssist__BootstrapAdminPassword` from `.env` and still verifies readiness, auth, dashboard counters, module health, diagnostics, logs, and support bundle export.
+- Server deployment uses `docker-compose.prod.yml`: run `sysassist-migrate` first, then `sysassist-api` and `sysassist-web`.
+- When the API is behind nginx or another TLS reverse proxy, enable `ReverseProxy:TrustForwardedHeaders=true` only while keeping the API container on a private/internal network.
 
 ## Release Gates
 
@@ -63,6 +65,7 @@ This checklist is the release gate for running SysAssist as a real product, not 
 ## Operations
 
 - Deploy behind HTTPS and a production reverse proxy or managed ingress.
+- Keep the API private and expose only the web/reverse-proxy entrypoint.
 - Keep security headers enabled.
 - Keep API rate limiting enabled for login, webhooks, diagnostics runs, module tests, settings writes, user writes, and action execution.
 - Tune `RateLimiting:*` values against expected customer traffic before go-live.

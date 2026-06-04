@@ -1,46 +1,50 @@
-# SysAssist
+<p align="center">
+  <img src="src/SysAssist.Web/public/app-icon.png" alt="SysAssist" width="96" height="96" />
+</p>
 
-SysAssist is a modular enterprise coordination platform for IT events from monitoring and infrastructure sources. It does not replace Zabbix, Grafana, Prometheus, CockroachDB, Redis, Docker, nginx, Linux hosts, or notification tools. It coordinates them: receives events, normalizes incidents, creates local recommendations, checks action risk, sends dangerous actions to approval, records audit history, and exports support bundles.
+<h1 align="center">SysAssist</h1>
 
-The project is production-shaped but demo-friendly. It runs locally without real external APIs through fallback mode, keeps CockroachDB as the database target, and documents Google Cloud Run plus CockroachDB Cloud as the production deployment option.
+<p align="center">
+  Enterprise-grade IT incident coordination platform for monitoring, infrastructure, diagnostics, approvals, remediation actions, and audit.
+</p>
 
-## Stack
+<p align="center">
+  <strong>.NET 9</strong> · <strong>React + Vite</strong> · <strong>CockroachDB</strong> · <strong>Encrypted Secrets</strong> · <strong>Signed Licensing</strong> · <strong>Production Readiness Gates</strong>
+</p>
 
-- Backend: C# / .NET 9 / ASP.NET Core Web API
-- Frontend: React + Vite + TypeScript
-- Database: CockroachDB via EF Core and Npgsql
-- Auth: JWT bearer wiring
-- Logging: Serilog
-- Docs: Swagger/OpenAPI
-- UI: Tailwind CSS, shadcn-style primitives, Motion/Framer Motion, React Flow, Recharts, TanStack Query, Zustand, Lucide React
+---
 
-## Architecture
+## What Is SysAssist?
 
-SysAssist follows a Clean Architecture layout:
+SysAssist is not another monitoring system. It is an operational coordination layer that connects existing monitoring and infrastructure tools, normalizes events, recommends safe remediation, routes risky actions through approvals, records audit evidence, and exports support bundles.
 
-- `SysAssist.Domain`: entities, enums, and core model.
-- `SysAssist.Contracts`: DTOs shared across API/application boundaries.
-- `SysAssist.Application`: service interfaces and use-case contracts.
-- `SysAssist.Infrastructure`: EF Core, CockroachDB, auth, module catalog, adapters, fallback store, and workflow implementation.
-- `SysAssist.Api`: ASP.NET Core endpoints, JWT auth, policies, CORS, Swagger, Serilog, correlation ids, and exception handling.
-- `SysAssist.Web`: React enterprise dashboard.
-- `tests/SysAssist.Tests`: xUnit coverage for hashing, modules, workflow, approvals, audit, and support bundle security.
+The system is designed to look and behave like a real product:
 
-See [docs/architecture.md](C:/Users/8-Bits/Desktop/Sys/SysAssist/docs/architecture.md:1).
+- real database mode through CockroachDB/Npgsql;
+- encrypted module secrets;
+- signed license validation;
+- role-based access control;
+- production readiness gate;
+- real adapter health diagnostics;
+- Docker and server deployment artifacts;
+- focused automated smoke checks.
 
-## Why CockroachDB
+## Product Capabilities
 
-CockroachDB gives SysAssist a PostgreSQL wire-compatible, horizontally scalable SQL database with transactions and JSONB-friendly storage for payloads, execution results, webhook payloads, logs, and support exports. EF Core uses Npgsql, UUID primary keys, string-backed enums, JSONB columns, and explicit indexes.
+| Area | What SysAssist Provides |
+| --- | --- |
+| Dashboard | Operator view with incident intake, module health, readiness, queue state, and recent evidence. |
+| Modules | Registry of built-in integrations with settings, masked secrets, health checks, polling, webhooks, and action catalogs. |
+| Remediation | 65 remediation actions across 13 modules, with risk levels, approval rules, SafeMode, and execution audit. |
+| Diagnostics | Real adapter health evidence, database connectivity, secret protection state, stale checks, module warnings, and remediation hints. |
+| Security | JWT auth, RBAC policies, AES-GCM module secret encryption, rate limits, request size limits, security headers, and support-bundle redaction. |
+| Licensing | ECDSA P-256 signed license validation with production blocking when invalid. |
+| Audit | Login events, module checks, diagnostics, approvals, action execution, support exports, and correlation IDs. |
+| Deployment | Local Docker lab, production Docker Compose stack, migration container, nginx examples, and Google Cloud Run samples. |
 
-The local demo can use in-memory fallback data, but real/deployed mode keeps CockroachDB. SQLite is intentionally not used.
+## Built-In Modules
 
-## Why React and Vite
-
-The frontend is an operator console: dense dashboards, searchable event tables, approval queues, module forms, charts, and workflow diagrams. React/Vite keeps local development fast while supporting a production static build served by nginx or Cloud Run.
-
-## Modules
-
-The baseline module registry contains 13 modules:
+SysAssist ships with 13 baseline modules:
 
 1. Zabbix
 2. Grafana
@@ -56,269 +60,135 @@ The baseline module registry contains 13 modules:
 12. Telegram Bot
 13. Local Rule Advisor
 
-Module Registry shows state, health, fallback mode, SafeMode, polling/webhook/action capabilities, and manual operations. Module Settings exposes a dynamic settings form, masks secrets, replaces secrets through a dedicated endpoint, and lists module actions with risk badges.
+Every module has health status, connection settings, SafeMode, fallback controls, and at least five remediation actions.
 
-## Run Backend
+## Architecture
+
+```mermaid
+flowchart LR
+    Web["React Operator UI"] --> Api["ASP.NET Core API"]
+    Api --> Auth["JWT + RBAC"]
+    Api --> License["Signed License Gate"]
+    Api --> Service["SysAssist Workflow Service"]
+    Service --> Db["CockroachDB / Npgsql"]
+    Service --> Adapters["Integration Adapters"]
+    Adapters --> Monitoring["Zabbix / Grafana / Alertmanager"]
+    Adapters --> Infra["Docker / Nginx / Linux / HTTP"]
+    Adapters --> Data["PostgreSQL / Redis / Filesystem"]
+    Adapters --> Notify["SMTP / Telegram"]
+    Service --> Audit["Audit + Support Bundle"]
+```
+
+Project layout:
+
+| Path | Purpose |
+| --- | --- |
+| `src/SysAssist.Api` | ASP.NET Core endpoints, auth, CORS, rate limits, health, readiness, Swagger in Development. |
+| `src/SysAssist.Application` | Application contracts and service interfaces. |
+| `src/SysAssist.Contracts` | DTOs shared by API, tests, and UI clients. |
+| `src/SysAssist.Domain` | Core entities and enums. |
+| `src/SysAssist.Infrastructure` | EF Core, CockroachDB, adapters, security, licensing, seeding, and workflow implementation. |
+| `src/SysAssist.Web` | React/Vite operator console. |
+| `tests/SysAssist.Tests` | xUnit tests for security, workflow, modules, actions, support bundles, and diagnostics. |
+| `deploy` | Docker, nginx, systemd, and Google Cloud deployment examples. |
+| `scripts` | Smoke checks, production secret generation, and Telegram launcher bot. |
+| `docs` | Architecture, security, production readiness, server deployment, demo, and module SDK notes. |
+
+## Tech Stack
+
+- Backend: C# 13, .NET 9, ASP.NET Core Minimal APIs
+- Frontend: React 19, Vite 8, TypeScript, TanStack Query, Zustand, Recharts, Framer Motion, GSAP, Lucide
+- Database: CockroachDB with EF Core and Npgsql
+- Security: JWT Bearer, RBAC, AES-GCM secret protection, ECDSA license verification
+- Observability: Serilog, audit log, health/readiness endpoints, diagnostics endpoint
+- Packaging: Docker, Docker Compose, nginx, Cloud Run examples
+
+## Quick Start
+
+### 1. Clone And Configure
 
 ```powershell
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist
-dotnet restore SysAssist.sln
-dotnet run --project src/SysAssist.Api
+git clone <repo-url> SysAssist
+cd SysAssist
+copy .env.example .env
 ```
 
-The API uses demo data by default, so CockroachDB is optional for local startup. With the checked-in launch profile, Swagger is available at `http://localhost:5089/swagger` when running in Development, and health is available at `GET /health`.
+Set these values in `.env` before real database mode:
 
-To connect CockroachDB, copy `src/SysAssist.Api/appsettings.Development.example.json` to `src/SysAssist.Api/appsettings.Development.json`, set `SysAssist:UseDemoData` to `false`, and update `ConnectionStrings:SysAssistDb`.
-
-For real integrations, disable fallback mode only after the required settings for a module are present. Each module validates its required real-mode fields before enabling.
-
-## CockroachDB and EF Core
-
-CockroachDB runs through Docker Compose:
-
-```powershell
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist
-docker compose up cockroachdb cockroach-init
-```
-
-When `SysAssist:UseDemoData=false` and `SysAssist:ApplyMigrationsOnStartup=true`, the backend applies EF Core migrations and seeds the database during Development startup. Seed data includes the `admin` user, five roles, 13 integration modules, baseline settings/actions, incidents, audit entries, and system logs. A fresh database requires `SysAssist:BootstrapAdminPassword` from `.env` or secret storage to create the initial admin password.
-
-Manual migration commands:
-
-```powershell
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist
-dotnet tool restore
-dotnet dotnet-ef database update --project src/SysAssist.Infrastructure --startup-project src/SysAssist.Api --context SysAssistDbContext
-```
-
-## Auth and Roles
-
-The backend uses JWT Bearer auth. In demo mode and seeded CockroachDB mode, the bootstrap administrator is:
-
-- Login: `admin`
-- Password: value from `SysAssist:BootstrapAdminPassword` / `SYSASSIST_BOOTSTRAP_ADMIN_PASSWORD`
-
-Useful checks:
-
-```powershell
-$body = @{ login = "admin"; password = $env:SYSASSIST_BOOTSTRAP_ADMIN_PASSWORD } | ConvertTo-Json
-$login = Invoke-RestMethod http://localhost:5089/api/auth/login -Method Post -ContentType application/json -Body $body
-$headers = @{ Authorization = "Bearer $($login.accessToken)" }
-Invoke-RestMethod http://localhost:5089/api/auth/me -Headers $headers
-Invoke-RestMethod http://localhost:5089/api/dashboard -Headers $headers
-```
-
-Policies are configured as `RequireAdmin`, `RequireOperatorOrHigher`, `RequireEngineerOrHigher`, `RequireSeniorAdmin`, and `RequireAuditorOrAdmin`.
-
-Role overview:
-
-- Admin: platform administration, module enable/disable, users/roles, audit/support access.
-- SeniorAdmin: approval authority.
-- Engineer: module operations and diagnostics.
-- Operator: dashboard, events, notifications, and safe event fetches.
-- Auditor: audit/log/support-bundle access.
-
-## Module Registry and Settings
-
-The backend exposes the Stage 4 module registry through `/api/modules`. It returns the 13 baseline modules and supports enable/disable, health checks, manual fetch, settings update, and secret replacement.
-
-Secret settings are never returned in plain text. A configured secret is returned as `value: "********"` with `hasValue: true`. Replace a secret with:
-
-```powershell
-Invoke-RestMethod "http://localhost:5089/api/modules/$moduleId/settings/ApiToken/secret" -Method Put -Headers $headers -ContentType application/json -Body '{"value":"new-secret"}'
-```
-
-Real mode validation is enforced: enabling a module with `UseFallbackMode=false` fails until all required settings for that module are present. Disabled modules keep old events/audit/logs, but manual fetch returns a warning result.
-
-Fallback mode means an adapter returns deterministic local/demo health and events instead of calling real external systems. SafeMode means dangerous actions are simulated and audited instead of executed. SafeMode defaults to `true`.
-
-## Integration Adapters
-
-Stage 5 adds an adapter architecture behind the module APIs. `IIntegrationAdapterFactory` resolves the adapter by module key, and every adapter supports:
-
-- health checks through `POST /api/modules/{id}/health`
-- event fetch through `POST /api/modules/{id}/fetch-events`
-- action execution through `POST /api/actions/{id}/execute`
-
-All 13 module adapters are registered. In fallback mode they return demo health/events without external services. In real mode they read `IntegrationSettings`; missing required settings produce `NotConfigured` instead of crashing. Destructive actions require approval and `SafeMode=false`.
-
-Webhook endpoints:
-
-```text
-POST /api/webhooks/zabbix
-POST /api/webhooks/grafana
-POST /api/webhooks/alertmanager
-```
-
-Webhook payloads are stored in `WebhookEvents`, normalized into `IncidentEvents`, passed through the local rule advisor, and audited/logged.
-
-## Event Workflow, Approvals, and Support Bundle
-
-Stage 6 completes the event lifecycle. Adapter fetches and webhooks create normalized incidents, the local rule advisor writes recommendations, and high-risk suggested actions move the incident to `PendingApproval`. Only Admin and SeniorAdmin users can approve or reject requests. Approval in `SafeMode=true` records an honest simulation; approval with safe mode disabled delegates execution to the module adapter. Rejected and already-decided approvals are blocked and audited.
-
-The support bundle endpoint exports a JSON file for auditors and administrators:
-
-```text
-GET /api/support-bundle
-```
-
-The export includes product/version metadata, CockroachDB provider metadata, enabled modules without secrets, health history, incidents, recommendations, approvals, actions, audit, logs, notifications, users/roles without password hashes, and diagnostics for database connectivity, unhealthy modules, pending approvals, recent errors, polling status, webhook count, and security warnings.
-
-## Real Integration Setup
-
-General flow for real integrations:
-
-1. Open Modules.
-2. Select the module.
-3. Fill required settings such as base URLs, hostnames, credentials, webhook secrets, or tokens.
-4. Replace secrets through secret fields; secret values are never returned after save.
-5. Set `UseFallbackMode=false`.
-6. Keep `SafeMode=true` until the integration is verified.
-7. Run Test Connection.
-8. Fetch Events or send a webhook.
-9. Review audit/logs before enabling real actions.
-
-High and critical actions require approval even when SafeMode is off.
-
-## Run Frontend
-
-```powershell
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Web
-npm install
-npm run dev
-```
-
-The frontend opens on `http://localhost:5173`. It calls the API configured by `VITE_API_BASE_URL`; local development defaults to `http://localhost:5089`, while Docker Compose sets `VITE_API_BASE_URL=http://localhost:5000`. If the API is offline, the UI uses deterministic local fallback data so the screens remain reviewable without CockroachDB.
-
-## Build
-
-```powershell
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist
-dotnet build SysAssist.sln
-dotnet test SysAssist.sln
-
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist\src\SysAssist.Web
-npm run build
-```
-
-## Tests
-
-The xUnit suite covers:
-
-- password hashing verification;
-- module enable/disable state changes;
-- required module settings validation;
-- fallback fetch events;
-- event normalization;
-- recommendation creation;
-- high/critical approval creation;
-- approve/reject audit behavior;
-- support bundle secret/password-hash exclusion.
-
-Run:
-
-```powershell
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist
-dotnet test SysAssist.sln
-```
-
-## Security Notes
-
-Security checklist and known limits are in [docs/security-checklist.md](C:/Users/8-Bits/Desktop/Sys/SysAssist/docs/security-checklist.md:1).
-
-Highlights:
-
-- Password hashes are not returned by API DTOs or support bundles.
-- Secret settings are masked.
-- Approval and audit protect high-risk actions.
-- SafeMode defaults to `true`.
-- CORS is explicit and configurable.
-- Production exception responses hide stack traces.
-- Bootstrap admin credentials must come from secret storage and must be rotated before any real deployment handover.
-- SSO/OIDC, rate limiting, immutable external audit storage, and production WAF/IAP controls are future hardening items.
-
-## Demo Script
-
-A guided commission/demo script is available in [docs/demo-script.md](C:/Users/8-Bits/Desktop/Sys/SysAssist/docs/demo-script.md:1). It walks through login, dashboard, module settings, HTTP Endpoint Checker setup, test connection, fetch events, pending approval, approve, audit, and support bundle download.
-
-Diploma defense notes are available in [docs/DIPLOMA_NOTES.md](C:/Users/8-Bits/Desktop/Sys/SysAssist/docs/DIPLOMA_NOTES.md:1). Screenshot capture guidance is in [docs/screenshots/README.md](C:/Users/8-Bits/Desktop/Sys/SysAssist/docs/screenshots/README.md:1).
-
-## Docker Compose
-
-Docker may be unavailable inside the Codex execution environment, so do not treat a failed Docker command here as proof that the lab is broken. The compose files are intended to be run on a local machine with Docker Desktop or a compatible Docker Engine.
-
-The local lab keeps CockroachDB as the database. It does not use SQLite.
-
-Services:
-
-- `cockroachdb`: single-node insecure CockroachDB for local demo work.
-- `cockroach-init`: creates the `sysassist` database.
-- `redis`: Redis demo dependency.
-- `nginx-demo`: simple HTTP endpoint/log source for adapter testing.
-- `sysassist-api`: ASP.NET Core API.
-- `sysassist-web`: React build served by nginx.
-- optional `monitoring` profile: Prometheus, Grafana, and Alertmanager.
-
-Start CockroachDB first:
-
-```powershell
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist
-docker compose up -d cockroachdb cockroach-init
-docker compose ps
-```
-
-The API reads the CockroachDB connection from environment variables. `docker-compose.yml` sets both supported keys:
-
-```text
-ConnectionStrings__SysAssistDb=Host=cockroachdb;Port=26257;Database=sysassist;Username=root;Password=;SSL Mode=Disable
-ConnectionStrings__DefaultConnection=Host=cockroachdb;Port=26257;Database=sysassist;Username=root;Password=;SSL Mode=Disable
-```
-
-`ConnectionStrings__SysAssistDb` is the primary key used by the app. `ConnectionStrings__DefaultConnection` is accepted as a compatibility alias for Docker/local lab scripts. JWT signing also supports both `Jwt__SigningKey` and the `Auth__JwtSecret` alias.
-
-Run migrations on a machine where CockroachDB is available:
-
-```powershell
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist
-dotnet tool restore
-$env:ConnectionStrings__SysAssistDb="Host=localhost;Port=26257;Database=sysassist;Username=root;Password=;SSL Mode=Disable"
-dotnet dotnet-ef database update --project src/SysAssist.Infrastructure --startup-project src/SysAssist.Api --context SysAssistDbContext
-```
-
-Alternatively, the API container can apply migrations automatically because compose sets:
-
-```text
+```env
 SysAssist__UseDemoData=false
-SysAssist__ApplyMigrationsOnStartup=true
+SysAssist__BootstrapAdminPassword=<strong-admin-password>
+Auth__JwtSecret=<long-random-secret>
+Security__SecretEncryptionKey=<base64-32-byte-key>
+Licensing__PublicKey=<signed-license-public-key>
+Licensing__LicenseKey=<signed-license-token>
+ConnectionStrings__SysAssistDb=Host=localhost;Port=26257;Database=sysassist;Username=root;Password=;SSL Mode=Disable
 ```
 
-Start the full local lab:
+Generate local production-shaped secrets:
 
 ```powershell
-cd C:\Users\8-Bits\Desktop\Sys\SysAssist
-docker compose up -d --build
+scripts\generate-prod-secrets.ps1
 ```
 
-Check containers and logs:
+### 2. Start Local Database
 
 ```powershell
-docker compose ps
-docker compose logs -f sysassist-api
-docker compose logs -f sysassist-web
+docker compose up -d cockroachdb cockroach-init
+```
+
+### 3. Run API
+
+```powershell
+dotnet restore SysAssist.sln
+dotnet run --project src/SysAssist.Api --urls http://localhost:5089
+```
+
+Health checks:
+
+```text
+GET http://localhost:5089/health/live
+GET http://localhost:5089/health/ready
+```
+
+### 4. Run Web UI
+
+```powershell
+cd src/SysAssist.Web
+npm install
+npm run dev -- --host 127.0.0.1 --port 5173
 ```
 
 Open:
 
-- API health: `http://localhost:5000/health`
-- API Swagger: `http://localhost:5000/swagger`
-- Frontend: `http://localhost:5173`
-- CockroachDB SQL UI: `http://localhost:8080`
-- nginx demo health: `http://localhost:8088/health`
+```text
+http://localhost:5173
+```
 
-Login with the bootstrap credential configured in `.env` or secret storage:
+Login:
 
-- Login: `admin`
-- Password: value from `SysAssist:BootstrapAdminPassword` / `SYSASSIST_BOOTSTRAP_ADMIN_PASSWORD`
+```text
+admin / value from SysAssist__BootstrapAdminPassword
+```
+
+## Docker Lab
+
+The local lab starts CockroachDB, Redis, nginx demo endpoint, API, Web UI, and optional monitoring services.
+
+```powershell
+copy .env.example .env
+docker compose up -d --build
+```
+
+Open:
+
+| Service | URL |
+| --- | --- |
+| Web UI | `http://localhost:5173` |
+| API | `http://localhost:5000` |
+| Swagger | `http://localhost:5000/swagger` |
+| Cockroach SQL UI | `http://localhost:8080` |
+| nginx demo endpoint | `http://localhost:8088/health` |
 
 Optional monitoring profile:
 
@@ -326,20 +196,143 @@ Optional monitoring profile:
 docker compose --profile monitoring up -d
 ```
 
-Monitoring URLs:
+## Production Server Deployment
 
-- Prometheus: `http://localhost:9090`
-- Grafana: `http://localhost:3000`
-- Alertmanager: `http://localhost:9093`
+Production deployment uses:
 
-## Google Cloud Production Option
+- external CockroachDB/Cockroach Cloud;
+- `.env.production` or a secret manager;
+- one-shot `sysassist-migrate` container;
+- API container with startup migrations disabled;
+- Web container serving React and proxying `/api` to the internal API;
+- optional nginx/systemd samples for VPS operation.
 
-Google Cloud deployment examples live in `deploy/google-cloud`. They cover:
+Fast path:
 
-- Cloud Run services for `sysassist-api` and `sysassist-web`.
-- Artifact Registry image builds through Cloud Build.
-- CockroachDB Cloud connection through Secret Manager.
-- Secret Manager entries for JWT and integration tokens.
-- CORS update steps after the frontend URL is known.
+```bash
+cp .env.production.example .env.production
+# fill domain, CockroachDB, JWT, encryption, license, CORS, and bootstrap values
 
-Start with [README_DEPLOY_GCP.md](C:/Users/8-Bits/Desktop/Sys/SysAssist/deploy/google-cloud/README_DEPLOY_GCP.md:1). The local Docker Compose lab remains the primary demo path; Google Cloud is the production deployment option.
+docker compose --env-file .env.production -f docker-compose.prod.yml build
+docker compose --env-file .env.production -f docker-compose.prod.yml run --rm sysassist-migrate
+docker compose --env-file .env.production -f docker-compose.prod.yml up -d sysassist-api sysassist-web
+```
+
+Then run:
+
+```powershell
+$env:SYSASSIST_SMOKE_ADMIN_PASSWORD = "<admin-password>"
+scripts\prod-smoke.ps1 -ApiUrl https://sysassist.example.com -RequireProductionReadiness
+```
+
+Full deployment guide: [docs/server-deployment.md](docs/server-deployment.md)
+
+Google Cloud Run samples: [deploy/google-cloud](deploy/google-cloud)
+
+## Production Readiness Gate
+
+SysAssist exposes an admin-only gate:
+
+```text
+GET /api/production-readiness
+```
+
+The gate returns `Ready` only when required production conditions pass:
+
+- `ASPNETCORE_ENVIRONMENT=Production`
+- demo data disabled;
+- startup migrations disabled;
+- explicit `AllowedHosts`;
+- HTTPS CORS origins;
+- strong JWT secret;
+- module secret encryption key;
+- valid license;
+- healthy CockroachDB connection;
+- fresh healthy diagnostics;
+- enabled modules are healthy;
+- fallback mode is off for enabled modules;
+- SafeMode remains enabled.
+
+Checklist: [docs/prod-readiness.md](docs/prod-readiness.md)
+
+## Verification
+
+Local verification commands:
+
+```powershell
+dotnet test SysAssist.sln --no-restore
+
+cd src/SysAssist.Web
+npm run build
+```
+
+End-to-end smoke:
+
+```powershell
+scripts\prod-smoke.ps1 -ApiUrl http://localhost:5089
+```
+
+The smoke script checks:
+
+- readiness;
+- login;
+- dashboard counters;
+- module registry;
+- diagnostics run;
+- production readiness endpoint;
+- logs;
+- support bundle export.
+
+## Security Model
+
+SysAssist is built with a conservative security posture:
+
+- no default source-controlled production password;
+- module secrets are encrypted with AES-GCM;
+- secret DTOs return only masked values;
+- support bundles exclude password hashes, license tokens, JWT keys, encryption keys, and raw module secrets;
+- destructive actions are guarded by risk levels and approval workflow;
+- SafeMode defaults to enabled;
+- rate limits protect auth, webhooks, and write operations;
+- production mode refuses weak critical configuration.
+
+Security checklist: [docs/security-checklist.md](docs/security-checklist.md)
+
+## Telegram Launcher Bot
+
+For demos and local workstation operation, SysAssist includes an external Telegram launcher bot:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\sysassist-telegram-bot.ps1
+```
+
+Commands include `/up`, `/status`, `/diagnostics`, `/modules`, `/actions`, and `/whoami`.
+
+Guide: [docs/telegram-launcher-bot.md](docs/telegram-launcher-bot.md)
+
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Server deployment](docs/server-deployment.md)
+- [Production readiness](docs/prod-readiness.md)
+- [Security checklist](docs/security-checklist.md)
+- [Module SDK](docs/modules-sdk.md)
+- [Demo script](docs/demo-script.md)
+- [Diploma notes](docs/DIPLOMA_NOTES.md)
+- [Google Cloud deployment](deploy/google-cloud/README_DEPLOY_GCP.md)
+
+## Current Production Notes
+
+SysAssist is ready for a controlled demo and production-shaped server deployment. For a regulated enterprise launch, finish these hardening items:
+
+- SSO/OIDC and refresh-token lifecycle;
+- immutable external audit sink;
+- WAF/IAP or private ingress;
+- backup/restore drill for CockroachDB;
+- provider-specific webhook signature validation per vendor;
+- hosted scheduler with leases for background polling;
+- secret rotation procedure for encrypted module settings.
+
+## License
+
+SysAssist includes its own runtime product license validation. Repository/source-code licensing should be defined separately before public distribution.

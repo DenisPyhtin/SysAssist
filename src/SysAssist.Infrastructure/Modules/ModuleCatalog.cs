@@ -32,7 +32,9 @@ internal static class ModuleCatalog
         new("TimeoutSeconds", "int", DefaultValue: "15", Description: "External request timeout."),
         new("RetryCount", "int", DefaultValue: "3", Description: "External request retry count."),
         new("Description", "string", Description: "Operator-facing module notes."),
-        new("Tags", "string", Description: "Comma-separated module tags.")
+        new("Tags", "string", Description: "Comma-separated module tags."),
+        new("RemediationWebhookUrl", "url", Description: "Optional module-owned action endpoint for self-healing commands."),
+        new("RemediationWebhookToken", "password", IsSecret: true, Description: "Bearer token for the remediation webhook.")
     ];
 
     public static readonly IReadOnlyCollection<ModuleDefinition> Modules =
@@ -41,10 +43,10 @@ internal static class ModuleCatalog
             Setting("BaseUrl", "url", "http://34.107.8.65:10051", required: true), Secret("ApiToken"), Setting("Username", "string"), Secret("Password"),
             Setting("UseApiToken", "bool", "true"), Setting("VerifySsl", "bool", "true"), Setting("EventSeverityMin", "string", "Warning"),
             Setting("HostGroupFilter", "string"), Setting("PollingIntervalSeconds", "int", "60")),
-        Module("grafana", "Grafana", ModuleType.Alerting, "Grafana alert webhook receiver.", false, true, false,
+        Module("grafana", "Grafana", ModuleType.Alerting, "Grafana alert webhook receiver.", false, true, true,
             Setting("BaseUrl", "url", "http://34.107.8.65:3000", required: true), Secret("ApiToken"), Secret("WebhookSecret"), Setting("OrganizationId", "string"),
             Setting("AlertFolderFilter", "string"), Setting("VerifySsl", "bool", "true")),
-        Module("prometheus-alertmanager", "Prometheus Alertmanager", ModuleType.Monitoring, "Prometheus Alertmanager integration.", true, true, false,
+        Module("prometheus-alertmanager", "Prometheus Alertmanager", ModuleType.Monitoring, "Prometheus Alertmanager integration.", true, true, true,
             Setting("PrometheusBaseUrl", "url", "http://34.107.8.65:9090"), Setting("AlertmanagerBaseUrl", "url", "http://34.107.8.65:9093", required: true), Secret("WebhookSecret"), Setting("ReceiverName", "string", "sysassist"),
             Setting("SeverityFilter", "string", "warning,critical"), Setting("SilenceAuthor", "string", "SysAssist"), Setting("VerifySsl", "bool", "true")),
         Module("postgresql", "PostgreSQL", ModuleType.Database, "PostgreSQL compatible database checks.", true, false, true,
@@ -65,19 +67,19 @@ internal static class ModuleCatalog
             Setting("Hostname", "string", "34.107.8.65", required: true), Setting("AgentMode", "bool", "true"), Setting("AgentBaseUrl", "url", "http://34.107.8.65:9100/metrics"),
             Setting("CpuThresholdPercent", "int", "85"), Setting("MemoryThresholdPercent", "int", "85"), Setting("DiskThresholdPercent", "int", "90"),
             Setting("CheckMountPath", "string", "/")),
-        Module("http-endpoint", "HTTP Endpoint Checker", ModuleType.LocalCheck, "HTTP endpoint availability checks.", true, false, false,
+        Module("http-endpoint", "HTTP Endpoint Checker", ModuleType.LocalCheck, "HTTP endpoint availability checks.", true, false, true,
             Setting("EndpointUrl", "url", "http://34.107.8.65:9115/probe", required: true), Setting("Method", "string", "GET"), Setting("ExpectedStatusCode", "int", "200"),
             Setting("TimeoutSeconds", "int", "10"), Setting("ExpectedText", "string"), Setting("HeadersJson", "json", "{}"), Setting("CheckIntervalSeconds", "int", "60")),
-        Module("file-system", "File System Monitor", ModuleType.LocalCheck, "File and disk space monitoring.", true, false, false,
+        Module("file-system", "File System Monitor", ModuleType.LocalCheck, "File and disk space monitoring.", true, false, true,
             Setting("Path", "string", required: true), Setting("FileMask", "string", "*.*"), Setting("MaxFileSizeMb", "int", "1024"),
             Setting("MinFreeSpaceGb", "int", "5"), Setting("WatchMode", "bool", "false"), Setting("IncludeSubdirectories", "bool", "false")),
-        Module("smtp-email", "SMTP Email", ModuleType.Notification, "SMTP notification delivery.", false, false, false,
+        Module("smtp-email", "SMTP Email", ModuleType.Notification, "SMTP notification delivery.", false, false, true,
             Setting("SmtpHost", "string", required: true), Setting("SmtpPort", "int", "587"), Setting("Username", "string"), Secret("Password"),
             Setting("FromEmail", "string", required: true), Setting("FromName", "string", "SysAssist"), Setting("UseTls", "bool", "true"), Setting("DefaultRecipients", "string")),
-        Module("telegram-bot", "Telegram Bot", ModuleType.Notification, "Telegram bot notification delivery.", false, true, false,
+        Module("telegram-bot", "Telegram Bot", ModuleType.Notification, "Telegram bot notification delivery.", false, true, true,
             Secret("BotToken", required: true), Setting("DefaultChatId", "string", required: true), Setting("ParseMode", "string", "Markdown"),
             Setting("DisableNotification", "bool", "false")),
-        Module("local-rule-advisor", "Local Rule Advisor", ModuleType.Advisor, "Local rule-based recommendation engine.", false, false, false,
+        Module("local-rule-advisor", "Local Rule Advisor", ModuleType.Advisor, "Local rule-based recommendation engine.", false, false, true,
             Setting("Enabled", "bool", "true"), Setting("ConfidenceThreshold", "decimal", "0.70"), Setting("RulesetVersion", "string", "default-v1"),
             Setting("ExplainMode", "bool", "true"), Setting("UseHistoricalEvents", "bool", "true"))
     ];

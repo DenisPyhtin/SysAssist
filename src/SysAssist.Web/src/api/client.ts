@@ -384,11 +384,25 @@ export function executeCustomModuleAction(key: string, actionKey: string, parame
   })
 }
 
-export function executeAction(id: string): Promise<OperationResultDto> {
-  return apiFetch(`/api/actions/${id}/execute`, {
-    method: 'POST',
-    body: JSON.stringify({ target: '', parametersJson: '{}' }),
-  })
+export async function executeAction(id: string, timeoutMs = 45_000): Promise<OperationResultDto> {
+  const controller = new AbortController()
+  const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs)
+
+  try {
+    return await apiFetch(`/api/actions/${id}/execute`, {
+      method: 'POST',
+      signal: controller.signal,
+      body: JSON.stringify({ target: '', parametersJson: '{}' }),
+    })
+  } catch (error) {
+    if (error instanceof DOMException && error.name === 'AbortError') {
+      throw new Error(`Action timed out after ${Math.round(timeoutMs / 1000)} seconds. The UI was unlocked, so you can retry after checking SafeMode and module status.`)
+    }
+
+    throw error
+  } finally {
+    window.clearTimeout(timeoutId)
+  }
 }
 
 export function listAudit(): Promise<AuditEntryDto[]> {

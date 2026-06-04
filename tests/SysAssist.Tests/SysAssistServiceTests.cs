@@ -105,6 +105,37 @@ public sealed class SysAssistServiceTests
     }
 
     [Fact]
+    public async Task RemediationCatalog_ContainsAtLeastFortyEightHealingActionsAcrossAllModules()
+    {
+        var service = CreateService();
+        var modules = await service.ListModulesAsync(CancellationToken.None);
+        var actions = await service.ListActionsAsync(CancellationToken.None);
+        var actionsByModule = actions.GroupBy(action => action.ModuleId).ToDictionary(group => group.Key, group => group.ToArray());
+        var expectedActionKeys = new[]
+        {
+            "terminate_idle_in_transaction",
+            "purge_expired_memory",
+            "restart_container",
+            "reload_nginx",
+            "restart_systemd_service",
+            "clean_old_files",
+            "create_alert_silence",
+            "call_recovery_webhook"
+        };
+
+        Assert.True(actions.Count >= 48, $"Expected at least 48 remediation actions, got {actions.Count}.");
+        Assert.All(modules, module =>
+        {
+            Assert.True(module.SupportsActions, $"{module.Key} must expose remediation actions.");
+            Assert.True(actionsByModule.TryGetValue(module.Id, out var moduleActions), $"{module.Key} has no actions.");
+            Assert.True(moduleActions!.Length >= 5, $"{module.Key} must expose at least 5 actions.");
+            Assert.Contains(moduleActions, action => action.ActionKey == "collect_diagnostics");
+        });
+        Assert.All(expectedActionKeys, key => Assert.Contains(actions, action => action.ActionKey == key));
+        Assert.Contains(actions, action => action.RequiresApproval && action.RiskLevel is "High" or "Critical");
+    }
+
+    [Fact]
     public async Task Diagnostics_ReportRealHealthEvidenceAndFreshnessFields()
     {
         var service = CreateService();
@@ -115,6 +146,9 @@ public sealed class SysAssistServiceTests
         Assert.Contains(diagnostics.Components, component => component.StartsWith("lastDiagnosticsRunAt=", StringComparison.Ordinal));
         Assert.Contains(diagnostics.Components, component => component.StartsWith("healthStaleAfterMinutes=", StringComparison.Ordinal));
         Assert.Contains(diagnostics.Components, component => component.StartsWith("staleHealthChecks=", StringComparison.Ordinal));
+        Assert.Contains(diagnostics.Components, component => component.StartsWith("remediationActions=", StringComparison.Ordinal));
+        Assert.Contains(diagnostics.Components, component => component.StartsWith("modulesWithRemediationActions=", StringComparison.Ordinal));
+        Assert.Contains(diagnostics.Components, component => component.StartsWith("diagnosticRemediation=", StringComparison.Ordinal));
     }
 
     [Fact]
