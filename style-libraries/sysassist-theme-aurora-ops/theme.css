@@ -1,0 +1,39 @@
+:root[data-sysassist-theme="aurora-ops"] {
+  --coffee-ink: #071312;
+  --coffee-deep: #0d1f1d;
+  --espresso: #132a27;
+  --mocha: #183731;
+  --roast: #2f5d52;
+  --caramel: #7bd6c2;
+  --latte: #b9e6d8;
+  --cream: #eefcf6;
+  --sage: #8fe0a5;
+  --berry: #79a9ff;
+}
+
+[data-sysassist-theme="aurora-ops"] body {
+  background:
+    linear-gradient(rgba(123, 214, 194, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(123, 214, 194, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, #071312 0%, #0d1f1d 58%, #102923 100%);
+  background-size: 44px 44px, 44px 44px, auto;
+}
+
+[data-sysassist-theme="aurora-ops"] .glass-panel {
+  border-color: rgba(123, 214, 194, 0.18);
+  background:
+    linear-gradient(180deg, rgba(24, 55, 49, 0.92), rgba(13, 31, 29, 0.9)),
+    rgba(13, 31, 29, 0.88);
+}
+
+[data-sysassist-theme="aurora-ops"] .kpi-card,
+[data-sysassist-theme="aurora-ops"] .store-module-card,
+[data-sysassist-theme="aurora-ops"] .user-module-card {
+  border-color: rgba(123, 214, 194, 0.18);
+  background: linear-gradient(135deg, rgba(24, 55, 49, 0.78), rgba(7, 19, 18, 0.68));
+}
+
+[data-sysassist-theme="aurora-ops"] .coffee-rule,
+[data-sysassist-theme="aurora-ops"] .audit-action-bars i {
+  background: linear-gradient(90deg, #7bd6c2, #8fe0a5, #79a9ff);
+}

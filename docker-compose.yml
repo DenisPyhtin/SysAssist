@@ -1,0 +1,107 @@
+services:
+  cockroachdb:
+    image: cockroachdb/cockroach:v24.3.5
+    command: start-single-node --insecure --advertise-addr=cockroachdb
+    ports:
+      - "26257:26257"
+      - "8080:8080"
+    volumes:
+      - cockroach-data:/cockroach/cockroach-data
+    healthcheck:
+      test: ["CMD", "cockroach", "sql", "--insecure", "--host=localhost:26257", "--execute=SELECT 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  cockroach-init:
+    image: cockroachdb/cockroach:v24.3.5
+    depends_on:
+      cockroachdb:
+        condition: service_healthy
+    command: sql --insecure --host=cockroachdb:26257 --execute "CREATE DATABASE IF NOT EXISTS sysassist;"
+    restart: "no"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  nginx-demo:
+    image: nginx:1.27-alpine
+    ports:
+      - "8088:80"
+    volumes:
+      - ./deploy/docker/nginx-demo.conf:/etc/nginx/conf.d/default.conf:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/health | grep -q ok"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  sysassist-api:
+    build:
+      context: .
+      dockerfile: deploy/docker/api.Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      SysAssist__UseDemoData: "false"
+      SysAssist__ApplyMigrationsOnStartup: "true"
+      ConnectionStrings__SysAssistDb: Host=cockroachdb;Port=26257;Database=sysassist;Username=root;Password=;SSL Mode=Disable
+      ConnectionStrings__DefaultConnection: Host=cockroachdb;Port=26257;Database=sysassist;Username=root;Password=;SSL Mode=Disable
+      Cors__AllowedOrigins__0: http://localhost:5173
+      Jwt__Issuer: SysAssist
+      Jwt__Audience: sysassist-api
+      Jwt__SigningKey: ${Auth__JwtSecret:?set Auth__JwtSecret in .env}
+      Auth__JwtSecret: ${Auth__JwtSecret:?set Auth__JwtSecret in .env}
+      Security__SecretEncryptionKey: ${Security__SecretEncryptionKey:?set Security__SecretEncryptionKey in .env}
+      Security__RequireEncryptionInRealMode: "true"
+      Licensing__PublicKey: ${Licensing__PublicKey:?set Licensing__PublicKey in .env}
+      Licensing__LicenseKey: ${Licensing__LicenseKey:?set Licensing__LicenseKey in .env}
+      Licensing__AllowDevelopmentBypass: "false"
+    ports:
+      - "5000:8080"
+    depends_on:
+      cockroach-init:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+      nginx-demo:
+        condition: service_healthy
+
+  sysassist-web:
+    build:
+      context: .
+      dockerfile: deploy/docker/web.Dockerfile
+      args:
+        VITE_API_BASE_URL: http://localhost:5000
+    ports:
+      - "5173:4173"
+    depends_on:
+      - sysassist-api
+
+  prometheus:
+    image: prom/prometheus:v2.55.1
+    profiles: ["monitoring", "full-lab"]
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana:11.4.0
+    profiles: ["monitoring", "full-lab"]
+    ports:
+      - "3000:3000"
+
+  alertmanager:
+    image: prom/alertmanager:v0.27.0
+    profiles: ["monitoring", "full-lab"]
+    ports:
+      - "9093:9093"
+
+volumes:
+  cockroach-data:

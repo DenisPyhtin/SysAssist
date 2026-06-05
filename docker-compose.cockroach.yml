@@ -1,0 +1,36 @@
+services:
+  sysassist-migrate:
+    entrypoint: ["/bin/sh", "-c"]
+    command: "echo Cockroach Cloud schema is initialized by the SysAssist initializer; exit 0"
+    networks:
+      - default
+      - infra_default
+    volumes:
+      - /opt/sysassist/secrets/cockroach-root.crt:/run/secrets/cockroach/root.crt:ro
+
+  sysassist-api:
+    networks:
+      - default
+      - infra_default
+    group_add:
+      - "122"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/sysassist/secrets/cockroach-root.crt:/run/secrets/cockroach/root.crt:ro
+    depends_on:
+      sysassist-migrate:
+        condition: service_completed_successfully
+
+  sysassist-web:
+    networks:
+      default:
+      infra_default:
+        aliases:
+          - sysassist-web
+    depends_on:
+      sysassist-api:
+        condition: service_healthy
+
+networks:
+  infra_default:
+    external: true

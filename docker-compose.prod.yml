@@ -1,0 +1,61 @@
+services:
+  sysassist-migrate:
+    build:
+      context: .
+      dockerfile: deploy/docker/migrator.Dockerfile
+    env_file:
+      - .env.production
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      DOTNET_ENVIRONMENT: Production
+      SysAssist__UseDemoData: "false"
+      SysAssist__ApplyMigrationsOnStartup: "false"
+    restart: "no"
+
+  sysassist-api:
+    build:
+      context: .
+      dockerfile: deploy/docker/api.Dockerfile
+    env_file:
+      - .env.production
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      DOTNET_EnableDiagnostics: "0"
+      ReverseProxy__TrustForwardedHeaders: "true"
+      SysAssist__UseDemoData: "false"
+      SysAssist__ApplyMigrationsOnStartup: "false"
+      SysAssist__ForceEnableModulesOnStartup: "false"
+      SysAssist__ResetBootstrapAdminPasswordOnStartup: "false"
+    depends_on:
+      sysassist-migrate:
+        condition: service_completed_successfully
+    expose:
+      - "8080"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "-H", "X-Forwarded-Proto: https", "http://localhost:8080/health/live"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 5
+
+  sysassist-web:
+    build:
+      context: .
+      dockerfile: deploy/docker/web.Dockerfile
+      args:
+        VITE_API_BASE_URL: ""
+        NGINX_CONF: deploy/docker/web.prod.nginx.conf
+    depends_on:
+      sysassist-api:
+        condition: service_healthy
+    ports:
+      - "${SYSASSIST_WEB_PORT:-8080}:4173"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:4173/health | grep -q healthy"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 5

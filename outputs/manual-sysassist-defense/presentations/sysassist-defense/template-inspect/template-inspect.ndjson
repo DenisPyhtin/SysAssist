@@ -1,0 +1,66 @@
+{"kind":"slide","id":"sl/2x4nap4r","slide":2,"title":"Дипломный проект","textShapes":3}
+{"kind":"shape","id":"sh/udg7adsj","slide":2,"name":"Прямоугольник 10","bbox":[32,115,1248,604.72]}
+{"kind":"textbox","id":"sh/cvixczed","slide":2,"name":"Заголовок 1","placeholder":"title","text":"Дипломный проект","textPreview":"Дипломный проект","textChars":16,"textLines":1,"bbox":[266.24,174.33,779.52,97.44]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":2,"name":"Подзаголовок 2","placeholder":"subtitle","text":"Тема","textPreview":"Тема","textChars":4,"textLines":1,"bbox":[106.83,316.67,1098.34,162.88]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":2,"name":"TextBox 9","text":"Выполнил: ФИО студента\nСтудент 3 курса\nГруппы  \nРуководитель:\nФИО руководителя","textPreview":"Выполнил: ФИО студента | Студент 3 курса | Группы   | Руководитель: | ФИО руководителя","textChars":78,"textLines":5,"bbox":[847.84,521.41,357.33,156.45]}
+{"kind":"shape","id":"sh/54zidony","slide":2,"name":"Прямоугольник 6","bbox":[0,0,32,719.72]}
+{"kind":"shape","id":"sh/cvixczed","slide":2,"name":"Прямоугольник 16","bbox":[598.5,-566.5,115,1248]}
+{"kind":"slide","id":"sl/pg3ex0nu","slide":3,"title":"Актуальность","textShapes":2}
+{"kind":"shape","id":"sh/ylc7u54z","slide":3,"name":"Прямоугольник 4","bbox":[0,0,32,719.72]}
+{"kind":"shape","id":"sh/gr2p8nqx","slide":3,"name":"Прямоугольник 6","bbox":[32,115,1248,604.72]}
+{"kind":"shape","id":"sh/9cvixcze","slide":3,"name":"Прямоугольник 5","bbox":[598.5,-566.5,115,1248]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":3,"name":"Заголовок 1","placeholder":"title","text":"Актуальность","textPreview":"Актуальность","textChars":12,"textLines":1,"bbox":[32,29.07,1248,71.48]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":3,"name":"Прямоугольник 7","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1204.87,638.64,49.21,52.29]}
+{"kind":"slide","id":"sl/s72x4nap","slide":4,"title":"Сведения о предприятии","textShapes":2}
+{"kind":"shape","id":"sh/vmtwra5g","slide":4,"name":"Прямоугольник 13","bbox":[0,0,32,719.72]}
+{"kind":"shape","id":"sh/61032lsz","slide":4,"name":"Прямоугольник 14","bbox":[598.5,-566.5,115,1248]}
+{"kind":"shape","id":"sh/dsji5sne","slide":4,"name":"Прямоугольник 15","bbox":[32,115,1248,604.72]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":4,"name":"Заголовок 1","placeholder":"title","text":"Сведения о предприятии","textPreview":"Сведения о предприятии","textChars":22,"textLines":1,"bbox":[32,24.16,1248,84]}
+{"kind":"shape","id":"sh/dsji5sne","slide":4,"name":"Текст 2","placeholder":"body","bbox":[166.1,157.39,979.8,259.97]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":4,"name":"Прямоугольник 9","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1204.87,638.64,49.21,52.29]}
+{"kind":"slide","id":"sl/val87ed8","slide":5,"title":"Постановка проблемы","textShapes":2}
+{"kind":"shape","id":"sh/fmlkjm1c","slide":5,"name":"Прямоугольник 6","bbox":[0,0,32,719.72]}
+{"kind":"shape","id":"sh/8jqh0fep","slide":5,"name":"Прямоугольник 7","bbox":[598.5,-566.5,115,1248]}
+{"kind":"shape","id":"sh/x4nap4r6","slide":5,"name":"Прямоугольник 8","bbox":[32,112.91,1248,604.72]}
+{"kind":"shape","id":"sh/xs72x4na","slide":5,"name":"Текст 2","bbox":[44.11,174.46,1223.77,485.8]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":5,"name":"TextBox 5","text":"Постановка проблемы","textPreview":"Постановка проблемы","textChars":19,"textLines":1,"bbox":[32,4.18,1248,106.63]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":5,"name":"Прямоугольник 10","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1204.87,638.64,49.21,52.29]}
+{"kind":"slide","id":"sl/mlkjm1cf","slide":6,"title":"Цели и задачи","textShapes":3}
+{"kind":"shape","id":"sh/nuxc3ylc","slide":6,"name":"Прямоугольник 9","bbox":[598.5,-566.5,115,1248]}
+{"kind":"shape","id":"sh/vy90je9c","slide":6,"name":"Прямоугольник 8","bbox":[0,0,32,719.72]}
+{"kind":"shape","id":"sh/y90je9cv","slide":6,"name":"Прямоугольник 10","bbox":[32,115,1248,604.72]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":6,"name":"Заголовок 6","placeholder":"title","text":"Цели и задачи","textPreview":"Цели и задачи","textChars":13,"textLines":1,"bbox":[32,9.34,1248,96.32]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":6,"name":"Текст 7","placeholder":"body","text":"    Цель дипломного проекта:\n\nЗадачи:\n ","textPreview":"Цель дипломного проекта: |  | Задачи: |","textChars":39,"textLines":4,"bbox":[49.71,139.36,1212,571.3]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":6,"name":"Прямоугольник 13","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1204.87,638.64,49.21,52.29]}
+{"kind":"slide","id":"sl/58z25kb6","slide":7,"title":"Выбор ПО для разработки","textShapes":2}
+{"kind":"shape","id":"sh/onyd0z61","slide":7,"name":"Прямоугольник 10","bbox":[598.5,-566.5,115,1248]}
+{"kind":"shape","id":"sh/d8v6psfi","slide":7,"name":"Прямоугольник 9","bbox":[0,0,32,719.72]}
+{"kind":"shape","id":"sh/z25kb6xk","slide":7,"name":"Прямоугольник 11","bbox":[32,115.28,1248,604.72]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":7,"name":"Заголовок 1","placeholder":"title","text":"Выбор ПО для разработки","textPreview":"Выбор ПО для разработки","textChars":23,"textLines":1,"bbox":[32,17.27,1248,90.41]}
+{"kind":"shape","id":"sh/r65wjudg","slide":7,"name":"Текст 2","placeholder":"body","bbox":[423,201.93,837.75,420.82]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":7,"name":"Прямоугольник 12","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1204.87,638.64,49.21,52.29]}
+{"kind":"slide","id":"sl/0z61032l","slide":8,"title":"Проектирование информационной системы","textShapes":2}
+{"kind":"shape","id":"sh/qtcj6tov","slide":8,"name":"Прямоугольник 8","bbox":[0,0,32,719.72]}
+{"kind":"shape","id":"sh/svu9knih","slide":8,"name":"Прямоугольник 9","bbox":[598.5,-566.5,115,1248]}
+{"kind":"shape","id":"sh/hgn29gr2","slide":8,"name":"Прямоугольник 10","bbox":[32,115,1248,604.72]}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":8,"name":"Заголовок 1","placeholder":"title","text":"Проектирование информационной системы","textPreview":"Проектирование информационной системы","textChars":37,"textLines":1,"bbox":[115.29,243.26,1081.42,181.19]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":8,"name":"Прямоугольник 7","text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1204.87,638.64,49.21,52.29]}
+{"kind":"slide","id":"sl/fu18jqh0","slide":9,"title":"Демонстрация работы информационной системы","textShapes":2}
+{"kind":"shape","id":"sh/5gbq1ory","slide":9,"name":"Прямоугольник 8","bbox":[0,0,32,719.72]}
+{"kind":"shape","id":"sh/cvixczed","slide":9,"name":"Прямоугольник 7","bbox":[598.5,-566.5,115,1248]}
+{"kind":"shape","id":"sh/18jqh0fe","slide":9,"name":"Прямоугольник 9","bbox":[32,115,1248,604.72]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":9,"name":"Заголовок 1","placeholder":"title","text":"Демонстрация работы информационной системы","textPreview":"Демонстрация работы информационной системы","textChars":42,"textLines":1,"bbox":[167.5,264.61,977,190.5]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":9,"name":"Прямоугольник 6","text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1204.87,638.64,49.21,52.29]}
+{"kind":"slide","id":"sl/qh0fepkz","slide":10,"title":"Заключение","textShapes":2}
+{"kind":"shape","id":"sh/onyd0z61","slide":10,"name":"Прямоугольник 5","bbox":[0,0,32,719.72]}
+{"kind":"shape","id":"sh/6hcrmhk3","slide":10,"name":"Прямоугольник 3","bbox":[598.5,-566.5,115,1248]}
+{"kind":"shape","id":"sh/d8v6psfi","slide":10,"name":"Прямоугольник 6","bbox":[32,115,1248,604.72]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":10,"name":"Заголовок 1","placeholder":"title","text":"Заключение","textPreview":"Заключение","textChars":10,"textLines":1,"bbox":[32,17.24,1248,80.52]}
+{"kind":"shape","id":"sh/z25kb6xk","slide":10,"name":"Объект 4","bbox":[94.5,199.08,1123,422.56]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":10,"name":"Прямоугольник 8","text":"19","textPreview":"19","textChars":2,"textLines":1,"bbox":[1204.87,638.64,49.21,52.29]}
+{"kind":"slide","id":"sl/29gr2p8n","slide":11,"title":"Спасибо за внимание!","textShapes":2}
+{"kind":"shape","id":"sh/94fu18jq","slide":11,"name":"Прямоугольник 5","bbox":[0,0,32,719.72]}
+{"kind":"shape","id":"sh/kjm1cfa9","slide":11,"name":"Прямоугольник 6","bbox":[598.5,-566.5,115,1248]}
+{"kind":"shape","id":"sh/2hwfyxob","slide":11,"name":"Прямоугольник 4","bbox":[32,115,1248,604.72]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":11,"name":"TextBox 7","text":"Спасибо за внимание!","textPreview":"Спасибо за внимание!","textChars":20,"textLines":1,"bbox":[206.63,310.73,898.74,106.63]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":11,"name":"Прямоугольник 9","text":"20","textPreview":"20","textChars":2,"textLines":1,"bbox":[1204.87,638.64,49.21,52.29]}

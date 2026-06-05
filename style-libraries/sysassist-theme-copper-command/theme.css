@@ -1,0 +1,38 @@
+:root[data-sysassist-theme="copper-command"] {
+  --coffee-ink: #0d1117;
+  --coffee-deep: #141b25;
+  --espresso: #1c2633;
+  --mocha: #273447;
+  --roast: #485568;
+  --caramel: #d19a4d;
+  --latte: #efc985;
+  --cream: #f7efe2;
+  --sage: #c9ad62;
+  --berry: #df7464;
+}
+
+[data-sysassist-theme="copper-command"] body {
+  background:
+    linear-gradient(rgba(209, 154, 77, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(223, 116, 100, 0.028) 1px, transparent 1px),
+    linear-gradient(180deg, #0d1117 0%, #141b25 54%, #1c2633 100%);
+  background-size: 42px 42px, 42px 42px, auto;
+}
+
+[data-sysassist-theme="copper-command"] .glass-panel {
+  border-color: rgba(229, 168, 95, 0.2);
+  background:
+    linear-gradient(180deg, rgba(39, 52, 71, 0.94), rgba(20, 27, 37, 0.91)),
+    rgba(20, 27, 37, 0.9);
+}
+
+[data-sysassist-theme="copper-command"] .kpi-card,
+[data-sysassist-theme="copper-command"] .audit-record-card {
+  border-color: rgba(229, 168, 95, 0.18);
+  background: linear-gradient(135deg, rgba(39, 52, 71, 0.78), rgba(13, 17, 23, 0.68));
+}
+
+[data-sysassist-theme="copper-command"] .coffee-rule,
+[data-sysassist-theme="copper-command"] .audit-action-bars i {
+  background: linear-gradient(90deg, #e5a85f, #f0d2a4, #e68573);
+}

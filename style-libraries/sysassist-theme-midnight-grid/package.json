@@ -1,0 +1,20 @@
+{
+  "name": "@sysassist/theme-midnight-grid",
+  "version": "1.0.0",
+  "description": "Midnight Grid style library for SysAssist.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./theme.css": "./theme.css",
+    "./manifest": "./manifest.json",
+    "./dashboard-preset": "./dashboard-preset.ts"
+  },
+  "types": "./src/index.ts",
+  "files": [
+    "dashboard-preset.ts",
+    "manifest.json",
+    "src",
+    "theme.css"
+  ],
+  "license": "UNLICENSED"
+}

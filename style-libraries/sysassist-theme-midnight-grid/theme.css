@@ -1,0 +1,39 @@
+:root[data-sysassist-theme="midnight-grid"] {
+  --coffee-ink: #080b12;
+  --coffee-deep: #0d1320;
+  --espresso: #131c2d;
+  --mocha: #1b2840;
+  --roast: #2e4a6f;
+  --caramel: #82aaff;
+  --latte: #bac8ff;
+  --cream: #eef3ff;
+  --sage: #73d7c0;
+  --berry: #d093ff;
+}
+
+[data-sysassist-theme="midnight-grid"] body {
+  background:
+    linear-gradient(rgba(130, 170, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(130, 170, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, #080b12 0%, #0d1320 56%, #131c2d 100%);
+  background-size: 36px 36px, 36px 36px, auto;
+}
+
+[data-sysassist-theme="midnight-grid"] .glass-panel {
+  border-color: rgba(130, 170, 255, 0.18);
+  background:
+    linear-gradient(180deg, rgba(27, 40, 64, 0.94), rgba(13, 19, 32, 0.91)),
+    rgba(13, 19, 32, 0.9);
+}
+
+[data-sysassist-theme="midnight-grid"] .kpi-card,
+[data-sysassist-theme="midnight-grid"] .module-picker-item,
+[data-sysassist-theme="midnight-grid"] .store-module-card {
+  border-color: rgba(130, 170, 255, 0.18);
+  background: linear-gradient(135deg, rgba(27, 40, 64, 0.78), rgba(8, 11, 18, 0.68));
+}
+
+[data-sysassist-theme="midnight-grid"] .coffee-rule,
+[data-sysassist-theme="midnight-grid"] .audit-action-bars i {
+  background: linear-gradient(90deg, #82aaff, #73d7c0, #d093ff);
+}

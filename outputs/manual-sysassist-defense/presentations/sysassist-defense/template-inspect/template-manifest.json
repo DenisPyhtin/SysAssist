@@ -1,0 +1,156 @@
+{
+  "sourcePptx": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\source-template.pptx",
+  "workspace": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense",
+  "outDir": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect",
+  "generatedAt": "2026-06-04T14:48:08.808Z",
+  "slideCount": 10,
+  "slideArtifacts": [
+    {
+      "slide": 1,
+      "previewPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\source-slides\\source-slide-01.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-01.png",
+      "layoutPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\layouts\\source-slide-01.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-01.layout.json"
+    },
+    {
+      "slide": 2,
+      "previewPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\source-slides\\source-slide-02.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-02.png",
+      "layoutPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\layouts\\source-slide-02.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-02.layout.json"
+    },
+    {
+      "slide": 3,
+      "previewPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\source-slides\\source-slide-03.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-03.png",
+      "layoutPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\layouts\\source-slide-03.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-03.layout.json"
+    },
+    {
+      "slide": 4,
+      "previewPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\source-slides\\source-slide-04.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-04.png",
+      "layoutPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\layouts\\source-slide-04.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-04.layout.json"
+    },
+    {
+      "slide": 5,
+      "previewPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\source-slides\\source-slide-05.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-05.png",
+      "layoutPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\layouts\\source-slide-05.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-05.layout.json"
+    },
+    {
+      "slide": 6,
+      "previewPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\source-slides\\source-slide-06.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-06.png",
+      "layoutPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\layouts\\source-slide-06.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-06.layout.json"
+    },
+    {
+      "slide": 7,
+      "previewPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\source-slides\\source-slide-07.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-07.png",
+      "layoutPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\layouts\\source-slide-07.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-07.layout.json"
+    },
+    {
+      "slide": 8,
+      "previewPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\source-slides\\source-slide-08.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-08.png",
+      "layoutPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\layouts\\source-slide-08.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-08.layout.json"
+    },
+    {
+      "slide": 9,
+      "previewPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\source-slides\\source-slide-09.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-09.png",
+      "layoutPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\layouts\\source-slide-09.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-09.layout.json"
+    },
+    {
+      "slide": 10,
+      "previewPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\source-slides\\source-slide-10.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-10.png",
+      "layoutPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\layouts\\source-slide-10.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-10.layout.json"
+    }
+  ],
+  "inspectPath": "C:\\Users\\8-Bits\\Desktop\\Sys\\SysAssist\\outputs\\manual-sysassist-defense\\presentations\\sysassist-defense\\template-inspect\\template-inspect.ndjson",
+  "inspectRelativePath": "template-inspect/template-inspect.ndjson",
+  "inspectTruncated": false,
+  "inspectMetadata": {
+    "revision": "odklaa",
+    "target": {
+      "id": "pr/jmibj9"
+    },
+    "kind": {
+      "requested": "slide,textbox,shape,image,table,chart",
+      "tokens": [
+        "slide",
+        "textbox",
+        "shape",
+        "image",
+        "table",
+        "chart"
+      ]
+    },
+    "include": {
+      "tokens": []
+    },
+    "exclude": {
+      "tokens": []
+    },
+    "notices": []
+  },
+  "extractedMedia": [],
+  "fonts": [
+    "+mj-cs",
+    "+mj-ea",
+    "+mj-lt",
+    "+mn-cs",
+    "+mn-ea",
+    "+mn-lt",
+    "Angsana New",
+    "Arial",
+    "Calibri",
+    "Calibri Light",
+    "Cordia New",
+    "DaunPenh",
+    "DokChampa",
+    "Estrangelo Edessa",
+    "Euphemia",
+    "Gautami",
+    "Iskoola Pota",
+    "Kalinga",
+    "Kartika",
+    "Latha",
+    "MV Boli",
+    "Mangal",
+    "Microsoft Himalaya",
+    "Microsoft Uighur",
+    "Microsoft Yi Baiti",
+    "Mongolian Baiti",
+    "MoolBoran",
+    "Nyala",
+    "Plantagenet Cherokee",
+    "Raavi",
+    "Shruti",
+    "Sylfaen",
+    "Times New Roman",
+    "Tunga",
+    "Vrinda",
+    "新細明體",
+    "游ゴシック",
+    "游ゴシック Light",
+    "等线",
+    "等线 Light",
+    "맑은 고딕"
+  ],
+  "packageParts": {
+    "mediaCount": 0,
+    "slideXmlCount": 10,
+    "chartCount": 0,
+    "tableSlideCount": 0
+  }
+}

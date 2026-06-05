@@ -1,0 +1,19 @@
+import { dashboardPreset } from '../dashboard-preset'
+import '../theme.css'
+
+export { dashboardPreset }
+
+export const copperCommandStyleLibrary = {
+  apiVersion: 'sysassist.style/v1',
+  key: 'theme-copper-command',
+  name: 'Copper Command Theme',
+  version: '1.0.0',
+  author: 'SysAssist Design',
+  description: 'Warm command palette with approval-pressure, remediation funnel, and risk heat strip presets.',
+  themeAttribute: 'copper-command',
+  themeCss: 'theme.css',
+  tags: ['theme', 'dashboard', 'warm', 'charts'],
+  dashboardPreset,
+} as const
+
+export default copperCommandStyleLibrary
