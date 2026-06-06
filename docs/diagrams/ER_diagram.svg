@@ -1,0 +1,237 @@
+<svg width="1800" height="1300" viewBox="0 0 1800 1300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ER-диаграмма базы данных SysAssist</title>
+  <desc id="desc">Визуальная ER-диаграмма CockroachDB базы данных SysAssist: пользователи, роли, интеграции, инциденты, рекомендации, согласования, аудит, логи, webhook и support bundle.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4E7D3"/>
+      <stop offset="1" stop-color="#E7CDA8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#2A1B14" flood-opacity="0.16"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#B87333"/>
+    </marker>
+    <style>
+      .title { font-family: Arial, sans-serif; font-weight: 800; font-size: 42px; fill: #2A1B14; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 21px; fill: #4B2E1E; }
+      .group-title { font-family: Arial, sans-serif; font-weight: 800; font-size: 25px; fill: #2A1B14; }
+      .table { fill: #FFF8EF; stroke: #4B2E1E; stroke-width: 2; rx: 16; filter: url(#shadow); }
+      .table-core { fill: #FFF8EF; stroke: #B87333; stroke-width: 4; rx: 16; filter: url(#shadow); }
+      .header { fill: #2A1B14; rx: 14; }
+      .header-accent { fill: #4B2E1E; rx: 14; }
+      .table-name { font-family: Arial, sans-serif; font-weight: 800; font-size: 19px; fill: #FFF8EF; text-anchor: middle; dominant-baseline: middle; }
+      .field { font-family: Arial, sans-serif; font-size: 15px; fill: #2A1B14; }
+      .pk { font-family: Arial, sans-serif; font-weight: 800; font-size: 15px; fill: #2A1B14; }
+      .fk { font-family: Arial, sans-serif; font-weight: 700; font-size: 15px; fill: #B87333; }
+      .rel { stroke: #B87333; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .rel-soft { stroke: #4B2E1E; stroke-width: 2.5; fill: none; marker-end: url(#arrow); opacity: 0.82; }
+      .label { font-family: Arial, sans-serif; font-weight: 700; font-size: 14px; fill: #2A1B14; text-anchor: middle; }
+      .note { font-family: Arial, sans-serif; font-size: 16px; fill: #4B2E1E; }
+      .legend { fill: #FFF8EF; stroke: #B87333; stroke-width: 2; rx: 14; filter: url(#shadow); }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1300" fill="url(#bg)"/>
+  <circle cx="1580" cy="120" r="220" fill="#FFF8EF" opacity="0.35"/>
+  <circle cx="170" cy="1190" r="260" fill="#B87333" opacity="0.10"/>
+
+  <text x="900" y="58" class="title" text-anchor="middle">ER-диаграмма базы данных SysAssist</text>
+  <text x="900" y="92" class="subtitle" text-anchor="middle">CockroachDB · EF Core · 15 DbSet · пользователи, модули, инциденты, согласования, аудит и логи</text>
+
+  <!-- Group labels -->
+  <text x="185" y="150" class="group-title">Доступ</text>
+  <text x="585" y="150" class="group-title">Интеграции</text>
+  <text x="1080" y="150" class="group-title">Инциденты и решения</text>
+  <text x="1510" y="150" class="group-title">Аудит и эксплуатация</text>
+
+  <!-- Table function via manual blocks -->
+  <!-- users -->
+  <rect x="70" y="175" width="270" height="180" class="table"/>
+  <rect x="70" y="175" width="270" height="42" class="header"/>
+  <text x="205" y="197" class="table-name">users</text>
+  <text x="90" y="245" class="pk">PK id</text>
+  <text x="90" y="272" class="field">login UNIQUE</text>
+  <text x="90" y="299" class="field">email UNIQUE</text>
+  <text x="90" y="326" class="field">display_name</text>
+  <text x="90" y="350" class="field">password_hash</text>
+
+  <!-- roles -->
+  <rect x="70" y="440" width="270" height="145" class="table"/>
+  <rect x="70" y="440" width="270" height="42" class="header"/>
+  <text x="205" y="462" class="table-name">roles</text>
+  <text x="90" y="510" class="pk">PK id</text>
+  <text x="90" y="537" class="field">name UNIQUE</text>
+  <text x="90" y="564" class="field">description</text>
+
+  <!-- user_roles -->
+  <rect x="70" y="655" width="270" height="150" class="table-core"/>
+  <rect x="70" y="655" width="270" height="42" class="header-accent"/>
+  <text x="205" y="677" class="table-name">user_roles</text>
+  <text x="90" y="725" class="pk">PK user_id + role_id</text>
+  <text x="90" y="752" class="fk">FK user_id → users</text>
+  <text x="90" y="779" class="fk">FK role_id → roles</text>
+
+  <!-- integration_modules -->
+  <rect x="445" y="175" width="300" height="235" class="table-core"/>
+  <rect x="445" y="175" width="300" height="42" class="header-accent"/>
+  <text x="595" y="197" class="table-name">integration_modules</text>
+  <text x="465" y="245" class="pk">PK id</text>
+  <text x="465" y="272" class="field">key UNIQUE</text>
+  <text x="465" y="299" class="field">name</text>
+  <text x="465" y="326" class="field">type</text>
+  <text x="465" y="353" class="field">health_status INDEX</text>
+  <text x="465" y="380" class="field">is_enabled INDEX</text>
+
+  <!-- settings -->
+  <rect x="410" y="485" width="290" height="175" class="table"/>
+  <rect x="410" y="485" width="290" height="42" class="header"/>
+  <text x="555" y="507" class="table-name">integration_settings</text>
+  <text x="430" y="555" class="pk">PK id</text>
+  <text x="430" y="582" class="fk">FK module_id</text>
+  <text x="430" y="609" class="field">key + module_id UNIQUE</text>
+  <text x="430" y="636" class="field">value, value_type</text>
+
+  <!-- health -->
+  <rect x="765" y="485" width="305" height="175" class="table"/>
+  <rect x="765" y="485" width="305" height="42" class="header"/>
+  <text x="917" y="507" class="table-name">integration_health_checks</text>
+  <text x="785" y="555" class="pk">PK id</text>
+  <text x="785" y="582" class="fk">FK module_id</text>
+  <text x="785" y="609" class="field">status, message</text>
+  <text x="785" y="636" class="field">checked_at INDEX, details_json</text>
+
+  <!-- actions -->
+  <rect x="410" y="735" width="305" height="195" class="table"/>
+  <rect x="410" y="735" width="305" height="42" class="header"/>
+  <text x="562" y="757" class="table-name">integration_module_actions</text>
+  <text x="430" y="805" class="pk">PK id</text>
+  <text x="430" y="832" class="fk">FK module_id</text>
+  <text x="430" y="859" class="field">action_key + module_id UNIQUE</text>
+  <text x="430" y="886" class="field">name, risk_level</text>
+  <text x="430" y="913" class="field">parameter_schema_json</text>
+
+  <!-- incident_events -->
+  <rect x="880" y="175" width="335" height="265" class="table-core"/>
+  <rect x="880" y="175" width="335" height="42" class="header-accent"/>
+  <text x="1047" y="197" class="table-name">incident_events</text>
+  <text x="900" y="245" class="pk">PK id</text>
+  <text x="900" y="272" class="fk">FK module_id → integration_modules</text>
+  <text x="900" y="299" class="field">source, event_type, target</text>
+  <text x="900" y="326" class="field">severity INDEX, status INDEX</text>
+  <text x="900" y="353" class="field">correlation_id INDEX</text>
+  <text x="900" y="380" class="field">external_event_id INDEX</text>
+  <text x="900" y="407" class="field">payload_json</text>
+
+  <!-- recommendation -->
+  <rect x="900" y="735" width="320" height="195" class="table-core"/>
+  <rect x="900" y="735" width="320" height="42" class="header-accent"/>
+  <text x="1060" y="757" class="table-name">event_recommendations</text>
+  <text x="920" y="805" class="pk">PK id</text>
+  <text x="920" y="832" class="fk">FK event_id UNIQUE</text>
+  <text x="920" y="859" class="fk">FK suggested_action_id</text>
+  <text x="920" y="886" class="field">classification, confidence</text>
+  <text x="920" y="913" class="field">explanation, next_step</text>
+
+  <!-- approval -->
+  <rect x="1300" y="175" width="330" height="245" class="table-core"/>
+  <rect x="1300" y="175" width="330" height="42" class="header-accent"/>
+  <text x="1465" y="197" class="table-name">approval_requests</text>
+  <text x="1320" y="245" class="pk">PK id</text>
+  <text x="1320" y="272" class="fk">FK event_id INDEX</text>
+  <text x="1320" y="299" class="fk">FK action_id</text>
+  <text x="1320" y="326" class="fk">FK requested_by_user_id</text>
+  <text x="1320" y="353" class="fk">FK decided_by_user_id</text>
+  <text x="1320" y="380" class="field">status INDEX, decision_comment</text>
+  <text x="1320" y="407" class="field">execution_result_json</text>
+
+  <!-- audit -->
+  <rect x="1300" y="505" width="330" height="195" class="table-core"/>
+  <rect x="1300" y="505" width="330" height="42" class="header-accent"/>
+  <text x="1465" y="527" class="table-name">audit_entries</text>
+  <text x="1320" y="575" class="pk">PK id</text>
+  <text x="1320" y="602" class="field">actor INDEX</text>
+  <text x="1320" y="629" class="field">action, resource, result</text>
+  <text x="1320" y="656" class="field">created_at INDEX</text>
+  <text x="1320" y="683" class="field">correlation_id INDEX</text>
+
+  <!-- system logs -->
+  <rect x="1300" y="765" width="330" height="185" class="table"/>
+  <rect x="1300" y="765" width="330" height="42" class="header"/>
+  <text x="1465" y="787" class="table-name">system_logs</text>
+  <text x="1320" y="835" class="pk">PK id</text>
+  <text x="1320" y="862" class="field">level INDEX</text>
+  <text x="1320" y="889" class="field">component INDEX</text>
+  <text x="1320" y="916" class="field">message, details_json</text>
+
+  <!-- notifications -->
+  <rect x="1300" y="1015" width="330" height="185" class="table"/>
+  <rect x="1300" y="1015" width="330" height="42" class="header"/>
+  <text x="1465" y="1037" class="table-name">notification_messages</text>
+  <text x="1320" y="1085" class="pk">PK id</text>
+  <text x="1320" y="1112" class="fk">FK related_event_id</text>
+  <text x="1320" y="1139" class="field">channel, recipient, subject</text>
+  <text x="1320" y="1166" class="field">status INDEX, error_message</text>
+
+  <!-- webhook -->
+  <rect x="880" y="1015" width="335" height="185" class="table"/>
+  <rect x="880" y="1015" width="335" height="42" class="header"/>
+  <text x="1047" y="1037" class="table-name">webhook_events</text>
+  <text x="900" y="1085" class="pk">PK id</text>
+  <text x="900" y="1112" class="fk">FK module_id</text>
+  <text x="900" y="1139" class="field">source, external_event_id</text>
+  <text x="900" y="1166" class="field">payload_json, processing_status</text>
+
+  <!-- support bundle -->
+  <rect x="470" y="1015" width="330" height="185" class="table"/>
+  <rect x="470" y="1015" width="330" height="42" class="header"/>
+  <text x="635" y="1037" class="table-name">support_bundle_exports</text>
+  <text x="490" y="1085" class="pk">PK id</text>
+  <text x="490" y="1112" class="field">requested_by</text>
+  <text x="490" y="1139" class="field">file_name</text>
+  <text x="490" y="1166" class="field">included_sections_json</text>
+
+  <!-- Relations -->
+  <path d="M 205 355 L 205 645" class="rel"/>
+  <text x="235" y="505" class="label">1:N</text>
+  <path d="M 205 585 L 205 645" class="rel"/>
+  <text x="235" y="620" class="label">1:N</text>
+
+  <path d="M 595 410 L 555 475" class="rel"/>
+  <text x="548" y="452" class="label">1:N</text>
+  <path d="M 745 310 C 850 330, 890 420, 915 480" class="rel"/>
+  <text x="825" y="375" class="label">1:N</text>
+  <path d="M 595 410 L 562 725" class="rel"/>
+  <text x="610" y="570" class="label">1:N</text>
+  <path d="M 745 245 L 870 250" class="rel"/>
+  <text x="815" y="232" class="label">1:N</text>
+  <path d="M 745 360 C 865 740, 935 930, 1035 1010" class="rel-soft"/>
+  <text x="845" y="810" class="label">1:N</text>
+
+  <path d="M 1047 440 L 1060 725" class="rel"/>
+  <text x="1093" y="590" class="label">1:1</text>
+  <path d="M 1215 290 L 1290 290" class="rel"/>
+  <text x="1250" y="275" class="label">1:N</text>
+  <path d="M 715 840 C 800 835, 835 830, 895 825" class="rel-soft"/>
+  <text x="812" y="815" class="label">action</text>
+  <path d="M 715 870 C 960 700, 1180 380, 1290 330" class="rel-soft"/>
+  <text x="1000" y="590" class="label">action</text>
+
+  <path d="M 1215 390 C 1280 470, 1380 500, 1465 500" class="rel-soft"/>
+  <text x="1325" y="455" class="label">логическая</text>
+  <path d="M 1215 350 L 1290 1098" class="rel-soft"/>
+  <text x="1257" y="760" class="label">event</text>
+
+  <path d="M 340 265 C 740 450, 1180 310, 1290 325" class="rel-soft"/>
+  <text x="760" y="235" class="label">requested / decided by</text>
+
+  <!-- Legend -->
+  <rect x="70" y="1045" width="325" height="150" class="legend"/>
+  <text x="92" y="1082" class="note">Обозначения:</text>
+  <text x="92" y="1115" class="note">PK — первичный ключ</text>
+  <text x="92" y="1148" class="note">FK — внешний ключ</text>
+  <text x="92" y="1181" class="note">1:N — один ко многим</text>
+  <text x="92" y="1214" class="note">1:1 — один к одному</text>
+
+  <text x="900" y="1260" class="subtitle" text-anchor="middle">Главная цепочка: IntegrationModule → IncidentEvent → EventRecommendation → ApprovalRequest → AuditEntry</text>
+</svg>
