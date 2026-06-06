@@ -1,8 +1,3 @@
-# ER-диаграмма базы данных SysAssist
-
-Диаграмма построена строго по `src/SysAssist.Infrastructure/Data/SysAssistDbContext.cs`.
-
-В ней отражены только реально настроенные таблицы, ключи, внешние ключи и связи из `OnModelCreating`.
 
 ```mermaid
 erDiagram
@@ -223,5 +218,3 @@ flowchart LR
     Q --> L[audit_entries]
     E --> N[notification_messages]
 ```
-
-Важно: `audit_entries` в текущей реализации не имеет физического внешнего ключа на `approval_requests` или `incident_events`. Связь с процессом выполняется через поля `actor`, `action`, `resource`, `result`, `details` и `correlation_id`.
